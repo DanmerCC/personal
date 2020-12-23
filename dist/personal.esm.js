@@ -424,12 +424,857 @@ const __vue_component__$1 = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$1
 }, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, createInjector, undefined, undefined);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$2 = {
+  props: {
+    columns: {
+      default: () => []
+    },
+    items: {
+      default: () => []
+    },
+    pkey: {
+      default: "id"
+    },
+    page: {
+      type: Number,
+      default: 1
+    },
+    limit: {
+      type: Number,
+      default: 100
+    },
+    actioncolumn: {
+      default: false
+    },
+    responsive: {
+      default: true
+    },
+    columselecteds: {
+      default: null
+    },
+    select: {
+      default: false
+    },
+    rowclickeable: {
+      default: false
+    }
+  },
+
+  data() {
+    return {
+      dpage: this.page,
+      dlimit: this.limit,
+      selectable: this.select,
+      selecteds: [],
+      pkeySelected: null,
+      columnsSelecteds: this.addOrderIndexColumns(this.columns),
+      showConfigTable: false
+    };
+  },
+
+  methods: {
+    handleRowClick(item) {
+      if (this.rowclickeable) this.$emit("rowclick", item);
+    },
+
+    handleCheck($event, columna) {
+      console.log($event, columna);
+    },
+
+    isHover(pkey) {
+      return this.pkeySelected == pkey;
+    },
+
+    handle(keyselected) {
+      this.pkeySelected = keyselected;
+    },
+
+    unSelectPage() {
+      this.selecteds = this.selecteds.filter(x => !this.idsItems.includes(x[this.pkey]));
+    },
+
+    selectAllPage() {
+      this.selecteds.push(...this.items.filter(x => {
+        return !this.idsSelecteds.includes(x[this.pkey]) && x.selectable;
+      }));
+    },
+
+    isSelected(item) {
+      return this.selecteds.filter(x => x[this.pkey] == item[this.pkey]).length > 0;
+    },
+
+    handleSelect($event, item) {
+      console.log(item);
+
+      if ($event) {
+        this.addSelectedList(item);
+      } else {
+        this.removeSelectedList(item);
+      }
+    },
+
+    addSelectedList(item) {
+      this.selecteds.push(item);
+    },
+
+    removeSelectedList(item) {
+      this.selecteds = this.selecteds.filter(x => x[this.pkey] != item[this.pkey]);
+    },
+
+    interpret(item, column) {
+      if (column == "this") {
+        return item;
+      }
+
+      let tempobject = item;
+      let nodes = column.value.split(".");
+      let detectUndefined = false;
+      nodes.forEach(ele => {
+        if (typeof tempobject[ele] == "undefined") {
+          detectUndefined = true;
+        }
+
+        tempobject = tempobject[ele];
+      });
+      return detectUndefined ? item : tempobject;
+    },
+
+    intersect(item, column) {
+      return item[column.value.split(".")[0]];
+    },
+
+    addOrderIndexColumns(items) {
+      for (let yy = 0; yy < items.length; yy++) {
+        items[yy]["order"] = yy + 1;
+      }
+
+      return items;
+    }
+
+  },
+  computed: {
+    columnsSelectedsInOrder() {
+      return _.orderBy(this.columnsSelecteds, "order");
+    },
+
+    idsItems() {
+      return this.items.map(x => x[this.pkey]);
+    },
+
+    idsSelecteds() {
+      return this.selecteds.map(x => x[this.pkey]);
+    },
+
+    responsiveclass() {
+      var classbase = " ";
+
+      if (this.responsive) {
+        classbase += "scrollable-y ";
+      }
+
+      return classbase;
+    },
+
+    haveSomeUnselected() {
+      let count = 0;
+      let count_selectables = this.items.filter(x => x.selectable).length;
+      this.items.forEach(i => {
+        if (this.selectable) {
+          if (this.idsSelecteds.includes(i[this.pkey]) && i.selectable) {
+            count++;
+          }
+        } else {
+          if (this.idsSelecteds.includes(i[this.pkey])) {
+            count++;
+          }
+        }
+      });
+      return count < (this.selectable ? count_selectables : this.items.length);
+    }
+
+  },
+  watch: {
+    page() {
+      this.$emit("update:page", this.dpage);
+    },
+
+    selecteds(value) {
+      this.$emit("update:selected", this.selecteds);
+    },
+
+    columnsSelecteds() {
+      this.$emit("update:columselecteds", this.columnsSelecteds);
+    }
+
+  },
+
+  mounted() {
+    this.$emit("update:columselecteds", this.columnsSelecteds);
+  }
+
+};
+
+/* script */
+const __vue_script__$2 = script$2;
+/* template */
+
+var __vue_render__$2 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: 'card ' + _vm.responsiveclass
+  }, [_c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "row align-items-center head-options"
+  }, [_c('div', {
+    staticClass: "col-11 text-center"
+  }, [_c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.selectable,
+      expression: "selectable"
+    }]
+  }, [_vm._v(_vm._s(_vm.selecteds.length) + " Seleccionados")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-1 config-icon text-right"
+  }, [_c('i', {
+    staticClass: "fa fa-cog",
+    attrs: {
+      "aria-hidden": "true"
+    },
+    on: {
+      "click": function ($event) {
+        _vm.showConfigTable = true;
+      }
+    }
+  })])]), _vm._v(" "), _vm.selectable ? _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-2 no-space-left"
+  }, [_c('drop-down', {
+    scopedSlots: _vm._u([{
+      key: "primary",
+      fn: function () {
+        return [_c('div', {
+          staticClass: "group-control"
+        }, [_vm.haveSomeUnselected ? _c('div', {
+          staticClass: "btn btn-sm",
+          on: {
+            "click": function ($event) {
+              return _vm.selectAllPage();
+            }
+          }
+        }, [_c('i', {
+          staticClass: "fa fa-check-square fa-2",
+          attrs: {
+            "aria-hidden": "true"
+          }
+        })]) : _c('div', {
+          staticClass: "btn btn-sm btn-secondary",
+          on: {
+            "click": function ($event) {
+              return _vm.unSelectPage();
+            }
+          }
+        }, [_c('i', {
+          staticClass: "fa fa-check-square fa-2",
+          attrs: {
+            "aria-hidden": "true"
+          }
+        })])])];
+      },
+      proxy: true
+    }], null, false, 2537025323)
+  }, [_vm._v(" "), [_vm.haveSomeUnselected ? _c('drop-down-item', [_c('div', {
+    staticClass: "btn btn-light",
+    on: {
+      "click": function ($event) {
+        return _vm.selectAllPage();
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-check-square-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v("\n                Seleccionar Pagina\n              ")])]) : _vm._e(), _vm._v(" "), !_vm.haveSomeUnselected ? _c('drop-down-item', [_c('div', {
+    staticClass: "btn btn-light",
+    on: {
+      "click": function ($event) {
+        return _vm.unSelectPage();
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-check-square-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v("\n                Deseleccionar Pagina\n              ")])]) : _vm._e()]], 2)], 1), _vm._v(" "), _c('div', {
+    staticClass: "col-10"
+  }, [_vm._t("top-options", null, {
+    "selecteds": _vm.selecteds
+  })], 2)]) : _vm._e()]), _vm._v(" "), _c('table', {
+    staticClass: "table table-responsive-sm table-sm"
+  }, [_c('thead', [_c('tr', [_vm.selectable ? _c('th', {
+    staticClass: "select-td"
+  }, [_vm._v("Seleccion")]) : _vm._e(), _vm._v(" "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
+    return _c('th', {
+      key: column.order
+    }, [_vm._t("column", [[_vm._v("\n              " + _vm._s(column.name) + "\n            ")]], {
+      "column": column
+    })], 2);
+  }), _vm._v(" "), _vm.actioncolumn ? _c('th', {
+    staticClass: "medium-td"
+  }, [_vm._v("Mas")]) : _vm._e()], 2)]), _vm._v(" "), _c('tbody', [_vm._l(_vm.items, function (item) {
+    return _c('tr', {
+      key: item.order,
+      on: {
+        "mouseover": function ($event) {
+          return _vm.handle(item[_vm.pkey]);
+        },
+        "mouseleave": function ($event) {
+          _vm.pkeySelected = null;
+        },
+        "click": function ($event) {
+          $event.stopPropagation();
+          return _vm.handleRowClick(item);
+        }
+      }
+    }, [_vm.selectable ? _c('td', {
+      staticClass: "select-td",
+      on: {
+        "click": function ($event) {
+          $event.stopPropagation();
+          return _vm.$refs.rowselectbox.click();
+        }
+      }
+    }, [_c('checkable-item', {
+      ref: "rowselectbox",
+      refInFor: true,
+      attrs: {
+        "checked": _vm.isSelected(item),
+        "value": item
+      },
+      on: {
+        "change": _vm.handleSelect
+      }
+    })], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.columnsSelectedsInOrder, function (c) {
+      return _c('td', {
+        key: c.order
+      }, [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
+        "row": item,
+        "column": c,
+        "item": _vm.interpret(item, c)
+      })], {
+        "item": _vm.interpret(item, c),
+        "row": item,
+        "hover": _vm.isHover(item[_vm.pkey])
+      })], 2);
+    }), _vm._v(" "), _vm.actioncolumn ? _c('td', [_vm._t("action", [_vm._v("\n            --\n          ")], {
+      "item": item,
+      "row": item,
+      "hover": _vm.isHover(item[_vm.pkey])
+    })], 2) : _vm._e()], 2);
+  }), _vm._v(" "), _vm.items.lenght == 0 ? _c('tr', {
+    staticClass: "select-td text-center"
+  }, [_c('td', {
+    attrs: {
+      "colspan": _vm.items.lenght
+    }
+  }, [_vm._v("No hay datos")])]) : _vm._e()], 2)]), _vm._v(" "), _vm._t("paginate", null, {
+    "perpage": _vm.limit
+  }), _vm._v(" "), _vm.showConfigTable ? _c('modal-component', {
+    attrs: {
+      "title": "Configuracion de columnas"
+    },
+    on: {
+      "close": function ($event) {
+        _vm.showConfigTable = false;
+      }
+    },
+    scopedSlots: _vm._u([{
+      key: "body",
+      fn: function () {
+        return [_c('table', {
+          staticClass: "table table-sm"
+        }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Columna")]), _vm._v(" "), _c('th', [_vm._v("Visible")])])]), _vm._v(" "), _c('tbody', _vm._l(_vm.columns, function (col, index) {
+          return _c('tr', {
+            key: index
+          }, [_c('td', [_vm._v(_vm._s(col.name))]), _vm._v(" "), _c('td', [_c('input', {
+            directives: [{
+              name: "model",
+              rawName: "v-model",
+              value: _vm.columnsSelecteds,
+              expression: "columnsSelecteds"
+            }],
+            staticClass: "form-control",
+            attrs: {
+              "type": "checkbox"
+            },
+            domProps: {
+              "value": col,
+              "checked": Array.isArray(_vm.columnsSelecteds) ? _vm._i(_vm.columnsSelecteds, col) > -1 : _vm.columnsSelecteds
+            },
+            on: {
+              "change": [function ($event) {
+                var $$a = _vm.columnsSelecteds,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false;
+
+                if (Array.isArray($$a)) {
+                  var $$v = col,
+                      $$i = _vm._i($$a, $$v);
+
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.columnsSelecteds = $$a.concat([$$v]));
+                  } else {
+                    $$i > -1 && (_vm.columnsSelecteds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+                  }
+                } else {
+                  _vm.columnsSelecteds = $$c;
+                }
+              }, function ($event) {
+                return _vm.handleCheck($event, col);
+              }]
+            }
+          })])]);
+        }), 0)])];
+      },
+      proxy: true
+    }], null, false, 1350803417)
+  }) : _vm._e(), _vm._v(" "), _c('paginator')], 2);
+};
+
+var __vue_staticRenderFns__$2 = [];
+/* style */
+
+const __vue_inject_styles__$2 = function (inject) {
+  if (!inject) return;
+  inject("data-v-68d55d40_0", {
+    source: "tbody[data-v-68d55d40]{font-size:10px;font-weight:700}table[data-v-68d55d40]{max-height:250px;overflow:scroll}input[data-v-68d55d40]{height:17px}.scrollable-y[data-v-68d55d40]{overflow-y:auto}.select-td[data-v-68d55d40]{width:60px}.medium-td[data-v-68d55d40]{max-width:120px}.no-space-left[data-v-68d55d40]{padding-left:1px}.config-icon[data-v-68d55d40]{padding-left:0}.config-icon>i[data-v-68d55d40]{padding-top:10px}.col-1.config-icon.text-right[data-v-68d55d40]{padding-right:0}tr[data-v-68d55d40]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$2 = "data-v-68d55d40";
+/* module identifier */
+
+const __vue_module_identifier__$2 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$2 = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$2 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$2,
+  staticRenderFns: __vue_staticRenderFns__$2
+}, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, false, createInjector, undefined, undefined);
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$3 = {
+  props: {
+    persona: {
+      default: null
+    },
+    title: {
+      default: ""
+    },
+    modalClasses: {
+      default: ""
+    },
+    isLarge: {
+      default: false
+    },
+    isSmall: {
+      default: false
+    },
+    isExtraLarge: {
+      default: false
+    },
+    hasHeader: {
+      default: true
+    },
+    backdropClose: {
+      default: true
+    },
+    backdropCloseConfirm: {
+      default: false
+    },
+    backdropCloseConfirmText: {
+      default: "Are you sure?"
+    },
+    labelCancel: {
+      default: 'Cancel'
+    }
+  },
+  methods: {
+    close() {
+      this.$emit("close");
+    },
+
+    closeBackdrop() {
+      if (!this.backdropClose) {
+        return false;
+      }
+
+      if (this.backdropCloseConfirm && !confirm(this.backdropCloseConfirmText)) {
+        return false;
+      }
+
+      this.close();
+    }
+
+  },
+  computed: {
+    modalSizeClasses() {
+      if (this.isLarge) {
+        return "modal-lg";
+      }
+
+      if (this.isSmall) {
+        return "modal-sm";
+      }
+
+      if (this.isExtraLarge) {
+        return "modal-xl";
+      }
+
+      return "";
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$3 = script$3;
+/* template */
+
+var __vue_render__$3 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('transition', {
+    attrs: {
+      "name": "modal"
+    }
+  }, [_c('div', {
+    staticClass: "unspace"
+  }, [_c('div', {
+    class: 'modal ' + _vm.modalClasses,
+    staticStyle: {
+      "display": "block"
+    },
+    attrs: {
+      "tabindex": "-1",
+      "role": "dialog",
+      "aria-labelledby": "Modal"
+    },
+    on: {
+      "click": function ($event) {
+        $event.stopPropagation();
+      }
+    }
+  }, [_c('div', {
+    class: 'modal-dialog ' + _vm.modalSizeClasses,
+    attrs: {
+      "role": "document"
+    },
+    on: {
+      "click": function ($event) {
+        $event.stopPropagation();
+      }
+    }
+  }, [_c('div', {
+    staticClass: "modal-content"
+  }, [_vm._t("precontent"), _vm._v(" "), _vm.hasHeader ? _c('div', {
+    staticClass: "modal-header"
+  }, [_c('h5', {
+    staticClass: "modal-title"
+  }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('button', {
+    staticClass: "close",
+    attrs: {
+      "type": "button",
+      "aria-label": "Close"
+    },
+    on: {
+      "click": _vm.close
+    }
+  }, [_c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "modal-body"
+  }, [_vm._t("body")], 2), _vm._v(" "), _c('div', {
+    staticClass: "modal-footer"
+  }, [_vm._t("footer"), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": function ($event) {
+        return _vm.close();
+      }
+    }
+  }, [_vm._v(_vm._s(_vm.labelCancel))])], 2)], 2)])]), _vm._v(" "), _c('div', {
+    staticClass: "modal-backdrop show"
+  })])]);
+};
+
+var __vue_staticRenderFns__$3 = [];
+/* style */
+
+const __vue_inject_styles__$3 = function (inject) {
+  if (!inject) return;
+  inject("data-v-53b9873c_0", {
+    source: ".modal-xl[data-v-53b9873c]{width:90%;max-width:1200px}.unspace[data-v-53b9873c]{height:0}.breadcrumb-menu .btn[data-v-53b9873c]{color:#fff}.breadcrumb-menu .btn[data-v-53b9873c]:hover{color:#6c757d}.modal-title[data-v-53b9873c]{color:#6c757d}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$3 = "data-v-53b9873c";
+/* module identifier */
+
+const __vue_module_identifier__$3 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$3 = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$3 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$3,
+  staticRenderFns: __vue_staticRenderFns__$3
+}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, createInjector, undefined, undefined);
+
 /* eslint-disable import/prefer-default-export */
 
 var components = /*#__PURE__*/Object.freeze({
     __proto__: null,
     PreviewFile: __vue_component__,
-    PersonalSample: __vue_component__$1
+    PersonalSample: __vue_component__$1,
+    DataTable: __vue_component__$2,
+    ModalComponent: __vue_component__$3
 });
 
 // Import vue components
@@ -448,4 +1293,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };
+export { __vue_component__$2 as DataTable, __vue_component__$3 as ModalComponent, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };
