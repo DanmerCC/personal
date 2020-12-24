@@ -1157,7 +1157,74 @@ var __vue_is_functional_template__$3 = false;
 var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$3,
   staticRenderFns: __vue_staticRenderFns__$3
-}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$2,ModalComponent: __vue_component__$3});var install = function installPersonal(Vue) {
+}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, undefined, createInjectorSSR, undefined);//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$4 = {
+  props: {
+    value: {
+      default: true
+    }
+  },
+  methods: {
+    nextPage: function nextPage(topage) {
+      if (topage <= 0) {
+        return;
+      }
+
+      this.$emit('change', topage);
+    }
+  }
+};/* script */
+var __vue_script__$4 = script$4;
+/* template */
+
+var __vue_render__$4 = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('nav', [_vm._ssrNode("<ul class=\"pagination\" data-v-12bc7998><li" + _vm._ssrAttr("disabled", true) + _vm._ssrClass(null, _vm.value - 2 < 0 ? 'page-item disabled' : 'page-item') + " data-v-12bc7998><span class=\"page-link\" data-v-12bc7998> Anterior</span></li> " + (_vm.value - 1 > 0 ? "<li class=\"page-item\" data-v-12bc7998><span class=\"page-link\" data-v-12bc7998>" + _vm._ssrEscape(" " + _vm._s(_vm.value - 1)) + "</span></li>" : "<!---->") + " <li class=\"page-item active\" data-v-12bc7998><span class=\"page-link\" data-v-12bc7998>" + _vm._ssrEscape(" " + _vm._s(_vm.value)) + "</span></li> <li class=\"page-item\" data-v-12bc7998><span class=\"page-link\" data-v-12bc7998>" + _vm._ssrEscape(" " + _vm._s(_vm.value + 1)) + "</span></li> <li class=\"page-item\" data-v-12bc7998><span class=\"page-link\" data-v-12bc7998> Siguiente</span></li></ul>")]);
+};
+
+var __vue_staticRenderFns__$4 = [];
+/* style */
+
+var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
+  if (!inject) return;
+  inject("data-v-12bc7998_0", {
+    source: "li.page-item[data-v-12bc7998]{cursor:pointer}li.page-item.disabled[data-v-12bc7998]{cursor:not-allowed}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+var __vue_scope_id__$4 = "data-v-12bc7998";
+/* module identifier */
+
+var __vue_module_identifier__$4 = "data-v-12bc7998";
+/* functional template */
+
+var __vue_is_functional_template__$4 = false;
+/* style inject shadow dom */
+
+var __vue_component__$4 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$4,
+  staticRenderFns: __vue_staticRenderFns__$4
+}, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$2,ModalComponent: __vue_component__$3,Paginate: __vue_component__$4});var install = function installPersonal(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -1190,4 +1257,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.DataTable=__vue_component__$2;exports.ModalComponent=__vue_component__$3;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.default=plugin;
+exports.DataTable=__vue_component__$2;exports.ModalComponent=__vue_component__$3;exports.Paginate=__vue_component__$4;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.default=plugin;

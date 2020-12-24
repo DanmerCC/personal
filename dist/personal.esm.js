@@ -1267,6 +1267,130 @@ const __vue_component__$3 = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$3
 }, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, createInjector, undefined, undefined);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$4 = {
+  props: {
+    value: {
+      default: true
+    }
+  },
+  methods: {
+    nextPage(topage) {
+      if (topage <= 0) {
+        return;
+      }
+
+      this.$emit('change', topage);
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$4 = script$4;
+/* template */
+
+var __vue_render__$4 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('nav', [_c('ul', {
+    staticClass: "pagination"
+  }, [_c('li', {
+    class: _vm.value - 2 < 0 ? 'page-item disabled' : 'page-item',
+    attrs: {
+      "disabled": true
+    },
+    on: {
+      "click": function ($event) {
+        return _vm.nextPage(_vm.value - 1);
+      }
+    }
+  }, [_c('span', {
+    staticClass: "page-link"
+  }, [_vm._v(" Anterior")])]), _vm._v(" "), _vm.value - 1 > 0 ? _c('li', {
+    staticClass: "page-item",
+    on: {
+      "click": function ($event) {
+        return _vm.nextPage(_vm.value - 1);
+      }
+    }
+  }, [_c('span', {
+    staticClass: "page-link"
+  }, [_vm._v(" " + _vm._s(_vm.value - 1))])]) : _vm._e(), _vm._v(" "), _c('li', {
+    staticClass: "page-item active",
+    on: {
+      "click": function ($event) {
+        return _vm.nextPage(_vm.value);
+      }
+    }
+  }, [_c('span', {
+    staticClass: "page-link"
+  }, [_vm._v(" " + _vm._s(_vm.value))])]), _vm._v(" "), _c('li', {
+    staticClass: "page-item",
+    on: {
+      "click": function ($event) {
+        return _vm.nextPage(_vm.value + 1);
+      }
+    }
+  }, [_c('span', {
+    staticClass: "page-link"
+  }, [_vm._v(" " + _vm._s(_vm.value + 1))])]), _vm._v(" "), _c('li', {
+    staticClass: "page-item",
+    on: {
+      "click": function ($event) {
+        return _vm.nextPage(_vm.value + 1);
+      }
+    }
+  }, [_c('span', {
+    staticClass: "page-link"
+  }, [_vm._v(" Siguiente")])])])]);
+};
+
+var __vue_staticRenderFns__$4 = [];
+/* style */
+
+const __vue_inject_styles__$4 = function (inject) {
+  if (!inject) return;
+  inject("data-v-12bc7998_0", {
+    source: "li.page-item[data-v-12bc7998]{cursor:pointer}li.page-item.disabled[data-v-12bc7998]{cursor:not-allowed}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$4 = "data-v-12bc7998";
+/* module identifier */
+
+const __vue_module_identifier__$4 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$4 = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$4 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$4,
+  staticRenderFns: __vue_staticRenderFns__$4
+}, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, false, createInjector, undefined, undefined);
+
 /* eslint-disable import/prefer-default-export */
 
 var components = /*#__PURE__*/Object.freeze({
@@ -1274,7 +1398,8 @@ var components = /*#__PURE__*/Object.freeze({
     PreviewFile: __vue_component__,
     PersonalSample: __vue_component__$1,
     DataTable: __vue_component__$2,
-    ModalComponent: __vue_component__$3
+    ModalComponent: __vue_component__$3,
+    Paginate: __vue_component__$4
 });
 
 // Import vue components
@@ -1293,4 +1418,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$2 as DataTable, __vue_component__$3 as ModalComponent, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };
+export { __vue_component__$2 as DataTable, __vue_component__$3 as ModalComponent, __vue_component__$4 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };
