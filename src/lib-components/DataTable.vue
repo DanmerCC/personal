@@ -157,10 +157,13 @@
       </template>
     </modal-component>
     <paginator></paginator>
+    <slot name='append'>
+    </slot>
   </div>
 </template>
 
 <script>
+import _ from 'lodash';
 export default {
   props: {
     columns: {
