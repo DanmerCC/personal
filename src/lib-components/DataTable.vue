@@ -156,7 +156,7 @@
         </table>
       </template>
     </modal-component>
-    <paginator></paginator>
+    <paginator v-model="page"></paginator>
     <slot name='append'>
     </slot>
   </div>
