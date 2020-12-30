@@ -1,5 +1,5 @@
 <template>
-<transition name="modal">
+  <transition name="modal">
     <div class="unspace">
       <div
         :class="'modal ' + modalClasses"
@@ -9,28 +9,39 @@
         style="display: block"
         @click.stop=""
       >
-        <div :class="'modal-dialog ' + modalSizeClasses" role="document" @click.stop>
+        <div
+          :class="'modal-dialog ' + modalSizeClasses"
+          role="document"
+          @click.stop
+        >
+        <slot name='everybody'>
           <div class="modal-content">
-              <slot name="precontent">
-              </slot>
+            <slot name="precontent"> </slot>
             <div class="modal-header" v-if="hasHeader">
+              <slot name="prepend-head"> </slot>
               <h5 class="modal-title">{{ title }}</h5>
 
-              <button type="button" class="close" aria-label="Close" @click="close">
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                @click="close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-                <slot name="body"></slot>
+              <slot name="body"></slot>
             </div>
 
             <div class="modal-footer">
-                <slot name="footer"></slot>
-              <button type="button" class="btn btn-secondary" @click="close()">{{ labelCancel }}</button>
-
+              <slot name="footer"></slot>
+              <button type="button" class="btn btn-secondary" @click="close()">
+                {{ labelCancel }}
+              </button>
             </div>
-
           </div>
+          </slot>
         </div>
       </div>
 
@@ -41,20 +52,21 @@
 
 <script>
 export default {
-props:{
-    persona:{default:null},
+  props: {
+    persona: { default: null },
     title: { default: "" },
     modalClasses: { default: "" },
     isLarge: { default: false },
     isSmall: { default: false },
-    isExtraLarge:{default:false},
+    isExtraLarge: { default: false },
     hasHeader: { default: true },
     backdropClose: { default: true },
     backdropCloseConfirm: { default: false },
     backdropCloseConfirmText: { default: "Are you sure?" },
-    labelCancel:{default:'Cancel'}
-    },
-methods:{
+    labelCancel: { default: "Cancel" },
+
+  },
+  methods: {
     close() {
       this.$emit("close");
     },
@@ -69,9 +81,9 @@ methods:{
         return false;
       }
       this.close();
-    }
-},
-computed: {
+    },
+  },
+  computed: {
     modalSizeClasses() {
       if (this.isLarge) {
         return "modal-lg";
@@ -83,27 +95,31 @@ computed: {
         return "modal-xl";
       }
       return "";
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
+.modal-content{
+    max-height: 400px;
+    overflow:scroll;
+}
 .modal-xl {
-    width: 90%;
-   max-width:1200px;
+  width: 90%;
+  max-width: 1200px;
 }
 .unspace {
-    height: 0;
+  height: 0;
 }
 .breadcrumb-menu .btn {
-    color:white
+  color: white;
 }
 .breadcrumb-menu .btn:hover {
-    color:#6c757d
+  color: #6c757d;
 }
 
 .modal-title {
-    color:#6c757d
+  color: #6c757d;
 }
 </style>
