@@ -13,62 +13,56 @@
           ></i>
         </div>
       </div>
-      <div v-if="selectable" class="row">
-        <div class="col-2 no-space-left">
-          <drop-down>
-            <template v-slot:primary>
-              <div class="group-control">
-                <div
-                  class="btn btn-sm"
-                  v-if="haveSomeUnselected"
-                  @click="selectAllPage()"
-                >
-                  <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
-                </div>
-                <div
-                  class="btn btn-sm btn-secondary"
-                  v-else
-                  @click="unSelectPage()"
-                >
-                  <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
-                </div>
-              </div>
-            </template>
-            <template>
-              <drop-down-item v-if="haveSomeUnselected">
-                <div class="btn btn-light" @click="selectAllPage()">
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                  Seleccionar Pagina
-                </div>
-              </drop-down-item>
-              <drop-down-item v-if="!haveSomeUnselected">
-                <div class="btn btn-light" @click="unSelectPage()">
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                  Deseleccionar Pagina
-                </div>
-              </drop-down-item>
-            </template>
-          </drop-down>
-        </div>
-        <div class="col-10">
-          <slot name="top-options" :selecteds="selecteds"> </slot>
-        </div>
-      </div>
     </div>
-
     <table class="table table-responsive-sm table-sm">
       <thead>
-        <tr>
-          <th v-if="selectable" class="select-td">Seleccion</th>
-          <th v-for="column in columnsSelectedsInOrder" :key="column.order">
-            <slot name="column" :column="column">
-              <template>
-                {{ column.name }}
-              </template>
-            </slot>
+        <tr v-if="selectable">
+          <th class="select-td " >
+              <drop-down>
+                  <template v-slot:primary>
+                      <div class="group-control">
+                          <div class="btn btn-sm" v-if="haveSomeUnselected" @click="selectAllPage()">
+                              <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
+                          </div >
+                          <div class="btn btn-sm btn-secondary" v-else @click="unSelectPage()">
+                          <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
+                          </div >
+                      </div>
+                  </template>
+                  <template>
+                      <drop-down-item v-if="haveSomeUnselected">
+                          <div
+                          class="btn btn-light"
+                          @click="selectAllPage()">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Seleccionar Pagina
+                          </div>
+                      </drop-down-item>
+                      <drop-down-item v-if="!haveSomeUnselected">
+                          <div
+                          class="btn btn-light"
+                          @click="unSelectPage()">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Deseleccionar Pagina
+                          </div>
+                      </drop-down-item>
+                  </template>
+              </drop-down>
           </th>
-          <th v-if="actioncolumn" class="medium-td">Mas</th>
-        </tr>
+          <th :colspan="columnsSelectedsInOrder.length+(actioncolumn?2:1)">
+              <slot name="top-options" :selecteds="selecteds">
+              </slot>
+          </th>
+      </tr>
+      <tr>
+        <th v-if="selectable" class="select-td">Seleccion</th>
+        <th v-for="column in columnsSelectedsInOrder" :key="column.order">
+          <slot name="column" :column="column">
+            <template>
+              {{ column.name }}
+            </template>
+          </slot>
+        </th>
+        <th v-if="actioncolumn" class="medium-td">Mas</th>
+      </tr>
       </thead>
       <tbody>
         <tr

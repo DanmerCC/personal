@@ -953,10 +953,10 @@ var __vue_render__$5 = function () {
         _vm.showConfigTable = true;
       }
     }
-  })])]), _vm._v(" "), _vm.selectable ? _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-2 no-space-left"
+  })])])]), _vm._v(" "), _c('table', {
+    staticClass: "table table-responsive-sm table-sm"
+  }, [_c('thead', [_vm.selectable ? _c('tr', [_c('th', {
+    staticClass: "select-td "
   }, [_c('drop-down', {
     scopedSlots: _vm._u([{
       key: "primary",
@@ -1003,7 +1003,7 @@ var __vue_render__$5 = function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v("\n                Seleccionar Pagina\n              ")])]) : _vm._e(), _vm._v(" "), !_vm.haveSomeUnselected ? _c('drop-down-item', [_c('div', {
+  }), _vm._v(" Seleccionar Pagina\n                        ")])]) : _vm._e(), _vm._v(" "), !_vm.haveSomeUnselected ? _c('drop-down-item', [_c('div', {
     staticClass: "btn btn-light",
     on: {
       "click": function ($event) {
@@ -1015,18 +1015,18 @@ var __vue_render__$5 = function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v("\n                Deseleccionar Pagina\n              ")])]) : _vm._e()]], 2)], 1), _vm._v(" "), _c('div', {
-    staticClass: "col-10"
+  }), _vm._v(" Deseleccionar Pagina\n                        ")])]) : _vm._e()]], 2)], 1), _vm._v(" "), _c('th', {
+    attrs: {
+      "colspan": _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)
+    }
   }, [_vm._t("top-options", null, {
     "selecteds": _vm.selecteds
-  })], 2)]) : _vm._e()]), _vm._v(" "), _c('table', {
-    staticClass: "table table-responsive-sm table-sm"
-  }, [_c('thead', [_c('tr', [_vm.selectable ? _c('th', {
+  })], 2)]) : _vm._e(), _vm._v(" "), _c('tr', [_vm.selectable ? _c('th', {
     staticClass: "select-td"
   }, [_vm._v("Seleccion")]) : _vm._e(), _vm._v(" "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
     return _c('th', {
       key: column.order
-    }, [_vm._t("column", [[_vm._v("\n              " + _vm._s(column.name) + "\n            ")]], {
+    }, [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
       "column": column
     })], 2);
   }), _vm._v(" "), _vm.actioncolumn ? _c('th', {
@@ -1156,8 +1156,8 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-60eb00e3_0", {
-    source: "tbody[data-v-60eb00e3]{font-size:10px;font-weight:700}table[data-v-60eb00e3]{max-height:250px;overflow:scroll}input[data-v-60eb00e3]{height:17px}.scrollable-y[data-v-60eb00e3]{overflow-y:auto}.select-td[data-v-60eb00e3]{width:60px}.medium-td[data-v-60eb00e3]{max-width:120px}.no-space-left[data-v-60eb00e3]{padding-left:1px}.config-icon[data-v-60eb00e3]{padding-left:0}.config-icon>i[data-v-60eb00e3]{padding-top:10px}.col-1.config-icon.text-right[data-v-60eb00e3]{padding-right:0}tr[data-v-60eb00e3]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-6b17caa0_0", {
+    source: "tbody[data-v-6b17caa0]{font-size:10px;font-weight:700}table[data-v-6b17caa0]{max-height:250px;overflow:scroll}input[data-v-6b17caa0]{height:17px}.scrollable-y[data-v-6b17caa0]{overflow-y:auto}.select-td[data-v-6b17caa0]{width:60px}.medium-td[data-v-6b17caa0]{max-width:120px}.no-space-left[data-v-6b17caa0]{padding-left:1px}.config-icon[data-v-6b17caa0]{padding-left:0}.config-icon>i[data-v-6b17caa0]{padding-top:10px}.col-1.config-icon.text-right[data-v-6b17caa0]{padding-right:0}tr[data-v-6b17caa0]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1165,7 +1165,7 @@ const __vue_inject_styles__$5 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$5 = "data-v-60eb00e3";
+const __vue_scope_id__$5 = "data-v-6b17caa0";
 /* module identifier */
 
 const __vue_module_identifier__$5 = undefined;
