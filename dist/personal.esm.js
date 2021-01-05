@@ -1550,7 +1550,9 @@ var components = /*#__PURE__*/Object.freeze({
     DataTable: __vue_component__$5,
     ModalComponent: __vue_component__$6,
     Paginate: __vue_component__$7,
-    CheckableItem: __vue_component__$2
+    CheckableItem: __vue_component__$2,
+    DropDown: __vue_component__$3,
+    DropDownItem: __vue_component__$4
 });
 
 // Import vue components
@@ -1569,4 +1571,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$2 as CheckableItem, __vue_component__$5 as DataTable, __vue_component__$6 as ModalComponent, __vue_component__$7 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };
+export { __vue_component__$2 as CheckableItem, __vue_component__$5 as DataTable, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$6 as ModalComponent, __vue_component__$7 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };

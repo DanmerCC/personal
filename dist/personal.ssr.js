@@ -1317,7 +1317,7 @@ var __vue_is_functional_template__$7 = false;
 var __vue_component__$7 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$7,
   staticRenderFns: __vue_staticRenderFns__$7
-}, __vue_inject_styles__$7, __vue_script__$7, __vue_scope_id__$7, __vue_is_functional_template__$7, __vue_module_identifier__$7, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$5,ModalComponent: __vue_component__$6,Paginate: __vue_component__$7,CheckableItem: __vue_component__$2});var install = function installPersonal(Vue) {
+}, __vue_inject_styles__$7, __vue_script__$7, __vue_scope_id__$7, __vue_is_functional_template__$7, __vue_module_identifier__$7, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$5,ModalComponent: __vue_component__$6,Paginate: __vue_component__$7,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4});var install = function installPersonal(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -1350,4 +1350,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.CheckableItem=__vue_component__$2;exports.DataTable=__vue_component__$5;exports.ModalComponent=__vue_component__$6;exports.Paginate=__vue_component__$7;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.default=plugin;
+exports.CheckableItem=__vue_component__$2;exports.DataTable=__vue_component__$5;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.ModalComponent=__vue_component__$6;exports.Paginate=__vue_component__$7;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.default=plugin;

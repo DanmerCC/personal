@@ -6,3 +6,5 @@ export { default as DataTable } from './DataTable.vue';
 export { default as ModalComponent } from './ModalComponent.vue';
 export { default as Paginate } from './Paginate.vue';
 export { default as CheckableItem } from './CheckableItem.vue'
+export { default as DropDown } from './DropDown.vue'
+export { default as DropDownItem } from './DropDownItem.vue'
