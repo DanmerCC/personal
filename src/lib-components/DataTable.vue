@@ -163,7 +163,15 @@
 
 <script>
 import _ from 'lodash';
+import CheckableItem from '@/lib-components/CheckableItem'
+import DropDown from '@/lib-components/DropDown'
+import DropDownItem from '@/lib-components/DropDownItem'
 export default {
+  components:{
+    'checkable-item':CheckableItem,
+    'drop-down':DropDown,
+    'drop-down-item':DropDownItem
+  },
   props: {
     columns: {
       default: () => [],
@@ -309,6 +317,9 @@ export default {
     columnsSelecteds() {
       this.$emit("update:columselecteds", this.columnsSelecteds);
     },
+    columns(value){
+      this.columnsSelecteds = this.addOrderIndexColumns(value)
+    }
   },
   mounted() {
     this.$emit("update:columselecteds", this.columnsSelecteds);

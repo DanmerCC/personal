@@ -18,7 +18,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
-    
+    "@fortawesome/fontawesome-free": "^5.15.1"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0",

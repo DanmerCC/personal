@@ -1,6 +1,6 @@
 <script>
 import Vue from 'vue';
-import { PersonalSample,PreviewFile,ModalComponent,DataTable } from '@/entry';
+import { PersonalSample,PreviewFile,ModalComponent,DataTable,CheckableItem } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
@@ -8,7 +8,8 @@ export default Vue.extend({
     PersonalSample,
     PreviewFile,
     ModalComponent,
-    DataTable
+    DataTable,
+    'checkable-item':CheckableItem
   },
   data(){
     return {
@@ -45,6 +46,9 @@ export default Vue.extend({
         </div>
       </template>
     </modal-component>
-    <data-table :items="data" :columns="headers"></data-table>
+    <data-table :items="data" :columns="headers" :select="true">
+
+    </data-table>
+    <checkable-item></checkable-item>
   </div>
 </template>
