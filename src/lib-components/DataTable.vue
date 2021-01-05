@@ -66,7 +66,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="item in items"
+          v-for="(item,index) in items"
           :key="item.order"
           @mouseover="handle(item[pkey])"
           @mouseleave="pkeySelected = null"
@@ -75,7 +75,7 @@
           <td
             class="select-td"
             v-if="selectable"
-            @click.stop="$refs.rowselectbox.click()"
+            @click.stop="$refs.rowselectbox[index].$el.click()"
           >
             <checkable-item
               ref="rowselectbox"
@@ -224,7 +224,7 @@ export default {
       );
     },
     handleSelect($event, item) {
-      console.log(item);
+      
       if ($event) {
         this.addSelectedList(item);
       } else {

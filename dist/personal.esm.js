@@ -801,8 +801,6 @@ var script$5 = {
     },
 
     handleSelect($event, item) {
-      console.log(item);
-
       if ($event) {
         this.addSelectedList(item);
       } else {
@@ -1031,7 +1029,7 @@ var __vue_render__$5 = function () {
     })], 2);
   }), _vm._v(" "), _vm.actioncolumn ? _c('th', {
     staticClass: "medium-td"
-  }, [_vm._v("Mas")]) : _vm._e()], 2)]), _vm._v(" "), _c('tbody', [_vm._l(_vm.items, function (item) {
+  }, [_vm._v("Mas")]) : _vm._e()], 2)]), _vm._v(" "), _c('tbody', [_vm._l(_vm.items, function (item, index) {
     return _c('tr', {
       key: item.order,
       on: {
@@ -1051,7 +1049,7 @@ var __vue_render__$5 = function () {
       on: {
         "click": function ($event) {
           $event.stopPropagation();
-          return _vm.$refs.rowselectbox.click();
+          return _vm.$refs.rowselectbox[index].$el.click();
         }
       }
     }, [_c('checkable-item', {
@@ -1156,8 +1154,8 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-6b17caa0_0", {
-    source: "tbody[data-v-6b17caa0]{font-size:10px;font-weight:700}table[data-v-6b17caa0]{max-height:250px;overflow:scroll}input[data-v-6b17caa0]{height:17px}.scrollable-y[data-v-6b17caa0]{overflow-y:auto}.select-td[data-v-6b17caa0]{width:60px}.medium-td[data-v-6b17caa0]{max-width:120px}.no-space-left[data-v-6b17caa0]{padding-left:1px}.config-icon[data-v-6b17caa0]{padding-left:0}.config-icon>i[data-v-6b17caa0]{padding-top:10px}.col-1.config-icon.text-right[data-v-6b17caa0]{padding-right:0}tr[data-v-6b17caa0]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-70dbca58_0", {
+    source: "tbody[data-v-70dbca58]{font-size:10px;font-weight:700}table[data-v-70dbca58]{max-height:250px;overflow:scroll}input[data-v-70dbca58]{height:17px}.scrollable-y[data-v-70dbca58]{overflow-y:auto}.select-td[data-v-70dbca58]{width:60px}.medium-td[data-v-70dbca58]{max-width:120px}.no-space-left[data-v-70dbca58]{padding-left:1px}.config-icon[data-v-70dbca58]{padding-left:0}.config-icon>i[data-v-70dbca58]{padding-top:10px}.col-1.config-icon.text-right[data-v-70dbca58]{padding-right:0}tr[data-v-70dbca58]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1165,7 +1163,7 @@ const __vue_inject_styles__$5 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$5 = "data-v-6b17caa0";
+const __vue_scope_id__$5 = "data-v-70dbca58";
 /* module identifier */
 
 const __vue_module_identifier__$5 = undefined;
