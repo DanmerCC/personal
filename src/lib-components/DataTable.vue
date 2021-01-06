@@ -75,7 +75,7 @@
           <td
             class="select-td"
             v-if="selectable"
-            @click.stop="$refs.rowselectbox[index].$el.click()"
+            
           >
             <checkable-item
               ref="rowselectbox"
@@ -224,7 +224,7 @@ export default {
       );
     },
     handleSelect($event, item) {
-      
+
       if ($event) {
         this.addSelectedList(item);
       } else {

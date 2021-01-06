@@ -1,15 +1,10 @@
 <template>
       <input class="form-control " type="checkbox" v-model="ischecked" @change="handleChange" ref="myinput">
-
 </template>
 
 <script>
 export default {
     props: {
-        defaultvalue: {
-            type: Boolean,
-            default: false
-        },
         checked:{default:false},
         value:{
             type:Object,
