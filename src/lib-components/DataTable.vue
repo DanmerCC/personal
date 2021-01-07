@@ -18,34 +18,12 @@
       <thead>
         <tr v-if="selectable">
           <th class="select-td " >
-              <drop-down>
-                  <template v-slot:primary>
-                      <div class="group-control">
-                          <div class="btn btn-sm" v-if="haveSomeUnselected" @click="selectAllPage()">
-                              <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
-                          </div >
-                          <div class="btn btn-sm btn-secondary" v-else @click="unSelectPage()">
-                          <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
-                          </div >
-                      </div>
-                  </template>
-                  <template>
-                      <drop-down-item v-if="haveSomeUnselected">
-                          <div
-                          class="btn btn-light"
-                          @click="selectAllPage()">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Seleccionar Pagina
-                          </div>
-                      </drop-down-item>
-                      <drop-down-item v-if="!haveSomeUnselected">
-                          <div
-                          class="btn btn-light"
-                          @click="unSelectPage()">
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i> Deseleccionar Pagina
-                          </div>
-                      </drop-down-item>
-                  </template>
-              </drop-down>
+            <button class="btn btn-sm" v-if="haveSomeUnselected" @click="selectAllPage()">
+                <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
+            </button >
+            <button class="btn btn-sm btn-secondary" v-else @click="unSelectPage()">
+              <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
+            </button >
           </th>
           <th :colspan="columnsSelectedsInOrder.length+(actioncolumn?2:1)">
               <slot name="top-options" :selecteds="selecteds">
@@ -160,11 +138,13 @@ import _ from 'lodash';
 import CheckableItem from '@/lib-components/CheckableItem'
 import DropDown from '@/lib-components/DropDown'
 import DropDownItem from '@/lib-components/DropDownItem'
+import DropDown2 from '@/lib-components/DropDown2'
 export default {
   components:{
     'checkable-item':CheckableItem,
     'drop-down':DropDown,
-    'drop-down-item':DropDownItem
+    'drop-down-item':DropDownItem,
+    'drop-down2':DropDown2
   },
   props: {
     columns: {
@@ -207,14 +187,16 @@ export default {
       this.pkeySelected = keyselected;
     },
     unSelectPage() {
+      alert("nadie")
       this.selecteds = this.selecteds.filter(
         (x) => !this.idsItems.includes(x[this.pkey])
       );
     },
     selectAllPage() {
+      alert("todos")
       this.selecteds.push(
         ...this.items.filter((x) => {
-          return !this.idsSelecteds.includes(x[this.pkey]) && x.selectable;
+          return !this.idsSelecteds.includes(x[this.pkey]) ;
         })
       );
     },
@@ -285,6 +267,7 @@ export default {
       return classbase;
     },
     haveSomeUnselected() {
+      if(this.selecteds.length==0)return true
       let count = 0;
       let count_selectables = this.items.filter((x) => x.selectable).length;
       this.items.forEach((i) => {
