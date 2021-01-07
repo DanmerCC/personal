@@ -187,13 +187,11 @@ export default {
       this.pkeySelected = keyselected;
     },
     unSelectPage() {
-      alert("nadie")
       this.selecteds = this.selecteds.filter(
         (x) => !this.idsItems.includes(x[this.pkey])
       );
     },
     selectAllPage() {
-      alert("todos")
       this.selecteds.push(
         ...this.items.filter((x) => {
           return !this.idsSelecteds.includes(x[this.pkey]) ;

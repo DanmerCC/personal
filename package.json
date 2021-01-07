@@ -1,6 +1,6 @@
 {
   "name": "@danmerccoscco/personal",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "",
   "main": "dist/personal.ssr.js",
   "browser": "dist/personal.esm.js",
