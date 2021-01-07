@@ -70,7 +70,7 @@
           :key="item.order"
           @mouseover="handle(item[pkey])"
           @mouseleave="pkeySelected = null"
-          @click.stop="handleRowClick(item)"
+          
         >
           <td
             class="select-td"
@@ -84,7 +84,7 @@
               @change="handleSelect"
             ></checkable-item>
           </td>
-          <td v-for="c in columnsSelectedsInOrder" :key="c.order">
+          <td v-for="c in columnsSelectedsInOrder" :key="c.order" @click="handleRowClick(item)">
             <slot
               :name="c.value"
               v-bind:item="interpret(item, c)"
