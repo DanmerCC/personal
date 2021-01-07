@@ -884,6 +884,10 @@ var script$5 = {
 
   },
   watch: {
+    items(value) {
+      this.selecteds = this.items.filter(x => this.idsSelecteds.includes(x[this.pkey]));
+    },
+
     page() {
       this.$emit("update:page", this.dpage);
     },
@@ -1033,10 +1037,6 @@ var __vue_render__$5 = function () {
         },
         "mouseleave": function ($event) {
           _vm.pkeySelected = null;
-        },
-        "click": function ($event) {
-          $event.stopPropagation();
-          return _vm.handleRowClick(item);
         }
       }
     }, [_vm.selectable ? _c('td', {
@@ -1053,7 +1053,12 @@ var __vue_render__$5 = function () {
       }
     })], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.columnsSelectedsInOrder, function (c) {
       return _c('td', {
-        key: c.order
+        key: c.order,
+        on: {
+          "click": function ($event) {
+            return _vm.handleRowClick(item);
+          }
+        }
       }, [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
         "row": item,
         "column": c,
@@ -1143,8 +1148,8 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-0f639250_0", {
-    source: "tbody[data-v-0f639250]{font-size:10px;font-weight:700}table[data-v-0f639250]{max-height:250px;overflow:scroll}input[data-v-0f639250]{height:17px}.scrollable-y[data-v-0f639250]{overflow-y:auto}.select-td[data-v-0f639250]{width:60px}.medium-td[data-v-0f639250]{max-width:120px}.no-space-left[data-v-0f639250]{padding-left:1px}.config-icon[data-v-0f639250]{padding-left:0}.config-icon>i[data-v-0f639250]{padding-top:10px}.col-1.config-icon.text-right[data-v-0f639250]{padding-right:0}tr[data-v-0f639250]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-3836596a_0", {
+    source: "tbody[data-v-3836596a]{font-size:10px;font-weight:700}table[data-v-3836596a]{max-height:250px;overflow:scroll}input[data-v-3836596a]{height:17px}.scrollable-y[data-v-3836596a]{overflow-y:auto}.select-td[data-v-3836596a]{width:60px}.medium-td[data-v-3836596a]{max-width:120px}.no-space-left[data-v-3836596a]{padding-left:1px}.config-icon[data-v-3836596a]{padding-left:0}.config-icon>i[data-v-3836596a]{padding-top:10px}.col-1.config-icon.text-right[data-v-3836596a]{padding-right:0}tr[data-v-3836596a]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1152,7 +1157,7 @@ const __vue_inject_styles__$5 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$5 = "data-v-0f639250";
+const __vue_scope_id__$5 = "data-v-3836596a";
 /* module identifier */
 
 const __vue_module_identifier__$5 = undefined;

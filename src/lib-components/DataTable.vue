@@ -66,7 +66,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="(item,index) in items"
+          v-for="item in items"
           :key="item.order"
           @mouseover="handle(item[pkey])"
           @mouseleave="pkeySelected = null"
@@ -302,6 +302,9 @@ export default {
     },
   },
   watch: {
+    items(value){
+      this.selecteds = this.items.filter(x=>this.idsSelecteds.includes(x[this.pkey]))
+    },
     page() {
       this.$emit("update:page", this.dpage);
     },
