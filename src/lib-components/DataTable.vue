@@ -18,7 +18,7 @@
       <thead>
         <tr v-if="selectable">
           <th class="select-td " >
-            <button class="btn btn-sm" v-if="haveSomeUnselected" @click="selectAllPage()">
+            <button class="btn btn-sm" v-if="haveSomeUnselected || selecteds.length==0" @click="selectAllPage()">
                 <i class="fa fa-check-square fa-2" aria-hidden="true"></i>
             </button >
             <button class="btn btn-sm btn-secondary" v-else @click="unSelectPage()">
@@ -265,7 +265,7 @@ export default {
       return classbase;
     },
     haveSomeUnselected() {
-      if(this.selecteds.length==0)return true
+      //if(this.selecteds.length==0)return true
       let count = 0;
       let count_selectables = this.items.filter((x) => x.selectable).length;
       this.items.forEach((i) => {
@@ -284,7 +284,9 @@ export default {
   },
   watch: {
     items(value){
+      let backlist = this.selecteds.filter(x=>!this.idsItems.includes(x[this.pkey]))
       this.selecteds = this.items.filter(x=>this.idsSelecteds.includes(x[this.pkey]))
+      this.selecteds.push(...backlist)
     },
     page() {
       this.$emit("update:page", this.dpage);

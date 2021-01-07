@@ -23,11 +23,20 @@ export default Vue.extend({
         {id:5,name:"Claudio",edad:14},
         {id:6,name:"Micky",edad:15},
       ],
+       data2:[
+        {id:7,name:"aaaaaa",edad:10},
+        {id:8,name:"bbbbbb",edad:11},
+        {id:9,name:"cccccccccc",edad:12},
+        {id:10,name:"dddddd",edad:13},
+        {id:11,name:"eeeeeeee",edad:14},
+        {id:12,name:"ffffffff",edad:15},
+      ],
       headers:[
         {name:'Key',value:'id'},
         {name:'Names',value:'name'},
         {name:'Edad',value:'edad'},
-      ]
+      ],
+      mpage:1
     }
   }
 });
@@ -54,10 +63,12 @@ export default Vue.extend({
       </template>
     </modal-component>
 
-    <data-table :items="data" :columns="headers" :select="true">
-
+    <data-table :items="mpage==1?data:data2" :columns="headers" :select="true">
     </data-table>
-    
+    <select v-model="mpage">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
     <checkable-item></checkable-item>
   </div>
 </template>
