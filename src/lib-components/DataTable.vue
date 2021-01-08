@@ -174,6 +174,11 @@ export default {
     };
   },
   methods: {
+    updateSelectedForce(){
+      let backlist = this.selecteds.filter(x=>!this.idsItems.includes(x[this.pkey]))
+      this.selecteds = this.items.filter(x=>this.idsSelecteds.includes(x[this.pkey]))
+      this.selecteds.push(...backlist)
+    },
     handleRowClick(item) {
       if (this.rowclickeable) this.$emit("rowclick", item);
     },
@@ -283,11 +288,6 @@ export default {
     },
   },
   watch: {
-    items(value){
-      let backlist = this.selecteds.filter(x=>!this.idsItems.includes(x[this.pkey]))
-      this.selecteds = this.items.filter(x=>this.idsSelecteds.includes(x[this.pkey]))
-      this.selecteds.push(...backlist)
-    },
     page() {
       this.$emit("update:page", this.dpage);
     },

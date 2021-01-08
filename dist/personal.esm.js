@@ -842,6 +842,12 @@ var script$6 = {
   },
 
   methods: {
+    updateSelectedForce() {
+      let backlist = this.selecteds.filter(x => !this.idsItems.includes(x[this.pkey]));
+      this.selecteds = this.items.filter(x => this.idsSelecteds.includes(x[this.pkey]));
+      this.selecteds.push(...backlist);
+    },
+
     handleRowClick(item) {
       if (this.rowclickeable) this.$emit("rowclick", item);
     },
@@ -962,12 +968,6 @@ var script$6 = {
 
   },
   watch: {
-    items(value) {
-      let backlist = this.selecteds.filter(x => !this.idsItems.includes(x[this.pkey]));
-      this.selecteds = this.items.filter(x => this.idsSelecteds.includes(x[this.pkey]));
-      this.selecteds.push(...backlist);
-    },
-
     page() {
       this.$emit("update:page", this.dpage);
     },
@@ -1194,8 +1194,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-ef4293c2_0", {
-    source: "tbody[data-v-ef4293c2]{font-size:10px;font-weight:700}table[data-v-ef4293c2]{max-height:250px;overflow:scroll}input[data-v-ef4293c2]{height:17px}.scrollable-y[data-v-ef4293c2]{overflow-y:auto}.select-td[data-v-ef4293c2]{width:60px}.medium-td[data-v-ef4293c2]{max-width:120px}.no-space-left[data-v-ef4293c2]{padding-left:1px}.config-icon[data-v-ef4293c2]{padding-left:0}.config-icon>i[data-v-ef4293c2]{padding-top:10px}.col-1.config-icon.text-right[data-v-ef4293c2]{padding-right:0}tr[data-v-ef4293c2]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-26fd6f91_0", {
+    source: "tbody[data-v-26fd6f91]{font-size:10px;font-weight:700}table[data-v-26fd6f91]{max-height:250px;overflow:scroll}input[data-v-26fd6f91]{height:17px}.scrollable-y[data-v-26fd6f91]{overflow-y:auto}.select-td[data-v-26fd6f91]{width:60px}.medium-td[data-v-26fd6f91]{max-width:120px}.no-space-left[data-v-26fd6f91]{padding-left:1px}.config-icon[data-v-26fd6f91]{padding-left:0}.config-icon>i[data-v-26fd6f91]{padding-top:10px}.col-1.config-icon.text-right[data-v-26fd6f91]{padding-right:0}tr[data-v-26fd6f91]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1203,7 +1203,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-ef4293c2";
+const __vue_scope_id__$6 = "data-v-26fd6f91";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;
