@@ -1954,6 +1954,210 @@ const __vue_component__$a = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$a
 }, __vue_inject_styles__$a, __vue_script__$a, __vue_scope_id__$a, __vue_is_functional_template__$a, __vue_module_identifier__$a, false, createInjector, undefined, undefined);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$b = {
+  props: {
+    tabs: {
+      default: () => []
+    },
+    value: null,
+    noborder: {
+      default: false
+    }
+  },
+
+  data() {
+    return {
+      selected: this.value
+    };
+  },
+
+  methods: {
+    handleClickTab($event, tab) {
+      this.$emit('input', tab);
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$b = script$b;
+/* template */
+
+var __vue_render__$b = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    staticClass: "card card-primary card-outline card-tabs"
+  }, [_c('div', {
+    staticClass: "card-header p-0 pt-1 border-bottom-0"
+  }, [_c('ul', {
+    staticClass: "nav nav-tabs",
+    attrs: {
+      "id": "custom-tabs-three-tab",
+      "role": "tablist"
+    }
+  }, _vm._l(_vm.tabs, function (tab, index) {
+    return _c('li', {
+      key: index,
+      staticClass: "nav-item noselect",
+      on: {
+        "click": function ($event) {
+          return _vm.handleClickTab($event, tab);
+        }
+      }
+    }, [_vm.value == tab ? _c('div', {
+      staticClass: "nav-link active",
+      attrs: {
+        "id": "custom-tabs-three-home-tab",
+        "data-toggle": "pill",
+        "href": "#custom-tabs-three-home",
+        "role": "tab",
+        "aria-controls": "custom-tabs-three-home",
+        "aria-selected": "true"
+      }
+    }, [_vm._t("label", [_vm._t("label_" + tab, [_vm._v("\n                            " + _vm._s(tab) + "\n                        ")], {
+      "label": tab
+    })], {
+      "label": tab
+    })], 2) : _c('div', {
+      staticClass: "nav-link",
+      attrs: {
+        "id": "custom-tabs-three-home-tab",
+        "data-toggle": "pill",
+        "href": "#custom-tabs-three-home",
+        "role": "tab",
+        "aria-controls": "custom-tabs-three-home",
+        "aria-selected": "true"
+      }
+    }, [_vm._t("label", [_vm._t("label_" + tab, [_vm._v("\n                            " + _vm._s(tab) + "\n                        ")], {
+      "label": tab
+    })], {
+      "label": tab
+    })], 2)]);
+  }), 0)]), _vm._v(" "), _c('div', {
+    class: _vm.noborder ? '' : 'card-body'
+  }, [_c('div', {
+    staticClass: "tab-content",
+    attrs: {
+      "id": "custom-tabs-three-tabContent"
+    }
+  }, _vm._l(_vm.tabs, function (tab, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "tab-pane fade active show",
+      attrs: {
+        "id": "custom-tabs-three-home",
+        "role": "tabpanel",
+        "aria-labelledby": "custom-tabs-three-home-tab"
+      }
+    }, [_c('div', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: _vm.value == tab,
+        expression: "value==tab"
+      }]
+    }, [_vm._t(tab, null, {
+      "selected": _vm.selected
+    })], 2)]);
+  }), 0)]), _vm._v(" "), _c('div', {
+    staticClass: "card-footer d-flex justify-content-end"
+  }, [_vm._t("footer")], 2)]);
+};
+
+var __vue_staticRenderFns__$b = [];
+/* style */
+
+const __vue_inject_styles__$b = function (inject) {
+  if (!inject) return;
+  inject("data-v-46941cb2_0", {
+    source: ".noselect[data-v-46941cb2]{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.nav-item[data-v-46941cb2]{cursor:pointer}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$b = "data-v-46941cb2";
+/* module identifier */
+
+const __vue_module_identifier__$b = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$b = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$b = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$b,
+  staticRenderFns: __vue_staticRenderFns__$b
+}, __vue_inject_styles__$b, __vue_script__$b, __vue_scope_id__$b, __vue_is_functional_template__$b, __vue_module_identifier__$b, false, createInjector, undefined, undefined);
+
 /* eslint-disable import/prefer-default-export */
 
 var components = /*#__PURE__*/Object.freeze({
@@ -1967,7 +2171,8 @@ var components = /*#__PURE__*/Object.freeze({
     DropDown: __vue_component__$3,
     DropDownItem: __vue_component__$4,
     DataTable2: __vue_component__$a,
-    ConfigColumns: __vue_component__$a
+    ConfigColumns: __vue_component__$a,
+    Tab: __vue_component__$b
 });
 
 // Import vue components
@@ -1986,4 +2191,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile };
+export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };

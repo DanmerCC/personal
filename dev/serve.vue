@@ -1,6 +1,6 @@
 <script>
 import Vue from 'vue';
-import { PersonalSample,PreviewFile,ModalComponent,DataTable,CheckableItem,DataTable2 } from '@/entry';
+import { PersonalSample,PreviewFile,ModalComponent,DataTable,CheckableItem,DataTable2,Tab } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
@@ -10,7 +10,8 @@ export default Vue.extend({
     ModalComponent,
     DataTable,
     'checkable-item':CheckableItem,
-    'data-table2':DataTable2
+    'data-table2':DataTable2,
+    Tab
   },
   data(){
     return {
@@ -36,7 +37,8 @@ export default Vue.extend({
         {name:'Names',value:'name'},
         {name:'Edad',value:'edad'},
       ],
-      mpage:1
+      mpage:1,
+      tab:'init'
     }
   }
 });
@@ -70,5 +72,16 @@ export default Vue.extend({
       <option value="2">2</option>
     </select>
     <checkable-item></checkable-item>
+    <Tab v-model="tab" :tabs="['init','othertab']">
+      <template #init>
+          This is a init tab 
+      </template>
+      <template #label_init>
+        INIT TAB  
+      </template>
+      <template #othertab>
+          This is a  othertab
+      </template>
+    </Tab>
   </div>
 </template>

@@ -1605,7 +1605,146 @@ var __vue_is_functional_template__$a = false;
 var __vue_component__$a = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$a,
   staticRenderFns: __vue_staticRenderFns__$a
-}, __vue_inject_styles__$a, __vue_script__$a, __vue_scope_id__$a, __vue_is_functional_template__$a, __vue_module_identifier__$a, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$6,ModalComponent: __vue_component__$7,Paginate: __vue_component__$8,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4,DataTable2: __vue_component__$a,ConfigColumns: __vue_component__$a});var install = function installPersonal(Vue) {
+}, __vue_inject_styles__$a, __vue_script__$a, __vue_scope_id__$a, __vue_is_functional_template__$a, __vue_module_identifier__$a, false, undefined, createInjectorSSR, undefined);//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$b = {
+  props: {
+    tabs: {
+      default: function _default() {
+        return [];
+      }
+    },
+    value: null,
+    noborder: {
+      default: false
+    }
+  },
+  data: function data() {
+    return {
+      selected: this.value
+    };
+  },
+  methods: {
+    handleClickTab: function handleClickTab($event, tab) {
+      this.$emit('input', tab);
+    }
+  }
+};/* script */
+var __vue_script__$b = script$b;
+/* template */
+
+var __vue_render__$b = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    staticClass: "card card-primary card-outline card-tabs"
+  }, [_vm._ssrNode("<div class=\"card-header p-0 pt-1 border-bottom-0\" data-v-46941cb2>", "</div>", [_vm._ssrNode("<ul id=\"custom-tabs-three-tab\" role=\"tablist\" class=\"nav nav-tabs\" data-v-46941cb2>", "</ul>", _vm._l(_vm.tabs, function (tab, index) {
+    return _vm._ssrNode("<li class=\"nav-item noselect\" data-v-46941cb2>", "</li>", [_vm.value == tab ? _vm._ssrNode("<div id=\"custom-tabs-three-home-tab\" data-toggle=\"pill\" href=\"#custom-tabs-three-home\" role=\"tab\" aria-controls=\"custom-tabs-three-home\" aria-selected=\"true\" class=\"nav-link active\" data-v-46941cb2>", "</div>", [_vm._t("label", [_vm._t("label_" + tab, [_vm._v("\n                            " + _vm._s(tab) + "\n                        ")], {
+      "label": tab
+    })], {
+      "label": tab
+    })], 2) : _vm._ssrNode("<div id=\"custom-tabs-three-home-tab\" data-toggle=\"pill\" href=\"#custom-tabs-three-home\" role=\"tab\" aria-controls=\"custom-tabs-three-home\" aria-selected=\"true\" class=\"nav-link\" data-v-46941cb2>", "</div>", [_vm._t("label", [_vm._t("label_" + tab, [_vm._v("\n                            " + _vm._s(tab) + "\n                        ")], {
+      "label": tab
+    })], {
+      "label": tab
+    })], 2)]);
+  }), 0)]), _vm._ssrNode(" "), _vm._ssrNode("<div" + _vm._ssrClass(null, _vm.noborder ? '' : 'card-body') + " data-v-46941cb2>", "</div>", [_vm._ssrNode("<div id=\"custom-tabs-three-tabContent\" class=\"tab-content\" data-v-46941cb2>", "</div>", _vm._l(_vm.tabs, function (tab, index) {
+    return _vm._ssrNode("<div id=\"custom-tabs-three-home\" role=\"tabpanel\" aria-labelledby=\"custom-tabs-three-home-tab\" class=\"tab-pane fade active show\" data-v-46941cb2>", "</div>", [_vm._ssrNode("<div" + _vm._ssrStyle(null, null, {
+      display: _vm.value == tab ? '' : 'none'
+    }) + " data-v-46941cb2>", "</div>", [_vm._t(tab, null, {
+      "selected": _vm.selected
+    })], 2)]);
+  }), 0)]), _vm._ssrNode(" "), _vm._ssrNode("<div class=\"card-footer d-flex justify-content-end\" data-v-46941cb2>", "</div>", [_vm._t("footer")], 2)], 2);
+};
+
+var __vue_staticRenderFns__$b = [];
+/* style */
+
+var __vue_inject_styles__$b = function __vue_inject_styles__(inject) {
+  if (!inject) return;
+  inject("data-v-46941cb2_0", {
+    source: ".noselect[data-v-46941cb2]{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.nav-item[data-v-46941cb2]{cursor:pointer}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+var __vue_scope_id__$b = "data-v-46941cb2";
+/* module identifier */
+
+var __vue_module_identifier__$b = "data-v-46941cb2";
+/* functional template */
+
+var __vue_is_functional_template__$b = false;
+/* style inject shadow dom */
+
+var __vue_component__$b = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$b,
+  staticRenderFns: __vue_staticRenderFns__$b
+}, __vue_inject_styles__$b, __vue_script__$b, __vue_scope_id__$b, __vue_is_functional_template__$b, __vue_module_identifier__$b, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$6,ModalComponent: __vue_component__$7,Paginate: __vue_component__$8,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4,DataTable2: __vue_component__$a,ConfigColumns: __vue_component__$a,Tab: __vue_component__$b});var install = function installPersonal(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -1638,4 +1777,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.CheckableItem=__vue_component__$2;exports.ConfigColumns=__vue_component__$a;exports.DataTable=__vue_component__$6;exports.DataTable2=__vue_component__$a;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.ModalComponent=__vue_component__$7;exports.Paginate=__vue_component__$8;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.default=plugin;
+exports.CheckableItem=__vue_component__$2;exports.ConfigColumns=__vue_component__$a;exports.DataTable=__vue_component__$6;exports.DataTable2=__vue_component__$a;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.ModalComponent=__vue_component__$7;exports.Paginate=__vue_component__$8;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.Tab=__vue_component__$b;exports.default=plugin;
