@@ -1119,11 +1119,11 @@ var __vue_render__$6 = function () {
       "row": item,
       "hover": _vm.isHover(item[_vm.pkey])
     })], 2) : _vm._e()], 2);
-  }), _vm._v(" "), _vm.items.lenght == 0 ? _c('tr', {
+  }), _vm._v(" "), _vm.items.length == 0 ? _c('tr', {
     staticClass: "select-td text-center"
   }, [_c('td', {
     attrs: {
-      "colspan": _vm.items.lenght
+      "colspan": _vm.items.length
     }
   }, [_vm._v("No hay datos")])]) : _vm._e()], 2)]), _vm._v(" "), _vm._t("paginate", null, {
     "perpage": _vm.limit
@@ -1194,8 +1194,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-12e3651f_0", {
-    source: "tbody[data-v-12e3651f]{font-size:10px;font-weight:700}table[data-v-12e3651f]{max-height:250px;overflow:scroll}input[data-v-12e3651f]{height:17px}.scrollable-y[data-v-12e3651f]{overflow-y:auto}.select-td[data-v-12e3651f]{width:60px}.medium-td[data-v-12e3651f]{max-width:120px}.no-space-left[data-v-12e3651f]{padding-left:1px}.config-icon[data-v-12e3651f]{padding-left:0}.config-icon>i[data-v-12e3651f]{padding-top:10px}.col-1.config-icon.text-right[data-v-12e3651f]{padding-right:0}tr[data-v-12e3651f]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-ef4293c2_0", {
+    source: "tbody[data-v-ef4293c2]{font-size:10px;font-weight:700}table[data-v-ef4293c2]{max-height:250px;overflow:scroll}input[data-v-ef4293c2]{height:17px}.scrollable-y[data-v-ef4293c2]{overflow-y:auto}.select-td[data-v-ef4293c2]{width:60px}.medium-td[data-v-ef4293c2]{max-width:120px}.no-space-left[data-v-ef4293c2]{padding-left:1px}.config-icon[data-v-ef4293c2]{padding-left:0}.config-icon>i[data-v-ef4293c2]{padding-top:10px}.col-1.config-icon.text-right[data-v-ef4293c2]{padding-right:0}tr[data-v-ef4293c2]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1203,7 +1203,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-12e3651f";
+const __vue_scope_id__$6 = "data-v-ef4293c2";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

@@ -92,8 +92,8 @@
             </slot>
           </td>
         </tr>
-        <tr v-if="items.lenght == 0" class="select-td text-center">
-          <td :colspan="items.lenght">No hay datos</td>
+        <tr v-if="items.length == 0" class="select-td text-center">
+          <td :colspan="items.length">No hay datos</td>
         </tr>
       </tbody>
     </table>
