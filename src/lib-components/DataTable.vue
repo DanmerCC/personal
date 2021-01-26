@@ -174,6 +174,9 @@ export default {
     };
   },
   methods: {
+    cleanSelecteds(){
+      this.selecteds = []
+    },
     updateSelectedForce(){
       let backlist = this.selecteds.filter(x=>!this.idsItems.includes(x[this.pkey]))
       this.selecteds = this.items.filter(x=>this.idsSelecteds.includes(x[this.pkey]))
