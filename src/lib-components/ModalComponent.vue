@@ -15,7 +15,7 @@
           @click.stop
         >
         <slot name='everybody'>
-          <div class="modal-content" :style="{'max-height':windowHeight+'px'}">
+          <div class="modal-content" :style="{'max-height':(windowHeight*height_proportion)+'px'}">
             <slot name="precontent"> </slot>
             <div class="modal-header" v-if="hasHeader">
               <slot name="prepend-head"> </slot>
@@ -64,7 +64,7 @@ export default {
     backdropCloseConfirm: { default: false },
     backdropCloseConfirmText: { default: "Are you sure?" },
     labelCancel: { default: "Cancel" },
-
+    height_proportion:{default:0.75}
   },
   data() {
     return {
