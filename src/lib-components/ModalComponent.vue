@@ -15,7 +15,7 @@
           @click.stop
         >
         <slot name='everybody'>
-          <div class="modal-content">
+          <div class="modal-content" :style="{'max-height':windowHeight+'px'}">
             <slot name="precontent"> </slot>
             <div class="modal-header" v-if="hasHeader">
               <slot name="prepend-head"> </slot>
@@ -66,6 +66,11 @@ export default {
     labelCancel: { default: "Cancel" },
 
   },
+  data() {
+    return {
+      windowHeight: window.innerHeight
+    }
+  },
   methods: {
     close() {
       this.$emit("close");
@@ -102,7 +107,6 @@ export default {
 
 <style scoped>
 .modal-content{
-    max-height: 400px;
     overflow:scroll;
 }
 .modal-xl {
