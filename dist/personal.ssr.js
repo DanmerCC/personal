@@ -455,7 +455,8 @@ var __vue_render__$2 = function __vue_render__() {
     ref: "myinput",
     staticClass: "form-control ",
     attrs: {
-      "type": "checkbox"
+      "type": "checkbox",
+      "disabled": !_vm.value.selectable
     },
     domProps: {
       "checked": Array.isArray(_vm.ischecked) ? _vm._i(_vm.ischecked, null) > -1 : _vm.ischecked
@@ -488,8 +489,8 @@ var __vue_staticRenderFns__$2 = [];
 
 var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-7cd43298_0", {
-    source: "input[data-v-7cd43298]{max-width:60px}",
+  inject("data-v-5f942041_0", {
+    source: "input[data-v-5f942041]{max-width:60px}",
     map: undefined,
     media: undefined
   });
@@ -497,10 +498,10 @@ var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$2 = "data-v-7cd43298";
+var __vue_scope_id__$2 = "data-v-5f942041";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-7cd43298";
+var __vue_module_identifier__$2 = "data-v-5f942041";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;

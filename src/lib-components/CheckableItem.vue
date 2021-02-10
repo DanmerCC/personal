@@ -1,5 +1,5 @@
 <template>
-      <input class="form-control " type="checkbox" v-model="ischecked" @change="handleChange" ref="myinput">
+      <input class="form-control " type="checkbox" v-model="ischecked" @change="handleChange" ref="myinput" :disabled="!value.selectable">
 </template>
 
 <script>
