@@ -202,7 +202,7 @@ export default {
     selectAllPage() {
       this.selecteds.push(
         ...this.items.filter((x) => {
-          return !this.idsSelecteds.includes(x[this.pkey]) ;
+          return !this.idsSelecteds.includes(x[this.pkey]) && !!x.selectable  ;
         })
       );
     },
