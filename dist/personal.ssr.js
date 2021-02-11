@@ -1759,7 +1759,92 @@ var __vue_is_functional_template__$b = false;
 var __vue_component__$b = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$b,
   staticRenderFns: __vue_staticRenderFns__$b
-}, __vue_inject_styles__$b, __vue_script__$b, __vue_scope_id__$b, __vue_is_functional_template__$b, __vue_module_identifier__$b, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$6,ModalComponent: __vue_component__$7,Paginate: __vue_component__$8,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4,DataTable2: __vue_component__$a,ConfigColumns: __vue_component__$a,Tab: __vue_component__$b});var install = function installPersonal(Vue) {
+}, __vue_inject_styles__$b, __vue_script__$b, __vue_scope_id__$b, __vue_is_functional_template__$b, __vue_module_identifier__$b, false, undefined, createInjectorSSR, undefined);//
+//
+//
+//
+//
+//
+//
+var script$c = {
+  props: {
+    value: {
+      type: Number,
+      default: 0
+    }
+  },
+  data: function data() {
+    return {
+      show_value: this.value,
+      intervaler: null,
+      milseconds: 1000,
+      steps: 10
+    };
+  },
+  methods: {
+    runIncreaser: function runIncreaser() {
+      this.show_value = 0;
+      clearInterval(this.intervaler);
+      this.intervaler = setInterval(this.increment, this.milseconds / this.steps);
+    },
+    increment: function increment(args) {
+      if (this.show_value + 1 >= this.value) {
+        clearInterval(this.intervaler);
+      } else {
+        var current_step = Math.abs(Math.round(this.value / this.steps));
+
+        if (this.show_value + current_step > this.value) {
+          this.show_value = this.value;
+        } else {
+          this.show_value += current_step;
+        }
+      }
+    }
+  },
+  watch: {
+    value: function value(_value) {
+      this.runIncreaser();
+    }
+  }
+};/* script */
+var __vue_script__$c = script$c;
+/* template */
+
+var __vue_render__$c = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('span', [_vm._t("default", [_vm._v(_vm._s(_vm.show_value) + "\n")], {
+    "show_value": _vm.show_value
+  })], 2);
+};
+
+var __vue_staticRenderFns__$c = [];
+/* style */
+
+var __vue_inject_styles__$c = undefined;
+/* scoped */
+
+var __vue_scope_id__$c = undefined;
+/* module identifier */
+
+var __vue_module_identifier__$c = "data-v-6f45d4c2";
+/* functional template */
+
+var __vue_is_functional_template__$c = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+var __vue_component__$c = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$c,
+  staticRenderFns: __vue_staticRenderFns__$c
+}, __vue_inject_styles__$c, __vue_script__$c, __vue_scope_id__$c, __vue_is_functional_template__$c, __vue_module_identifier__$c, false, undefined, undefined, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$6,ModalComponent: __vue_component__$7,Paginate: __vue_component__$8,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4,DataTable2: __vue_component__$a,ConfigColumns: __vue_component__$a,Tab: __vue_component__$b,Increaser: __vue_component__$c});var install = function installPersonal(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -1792,4 +1877,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.CheckableItem=__vue_component__$2;exports.ConfigColumns=__vue_component__$a;exports.DataTable=__vue_component__$6;exports.DataTable2=__vue_component__$a;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.ModalComponent=__vue_component__$7;exports.Paginate=__vue_component__$8;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.Tab=__vue_component__$b;exports.default=plugin;
+exports.CheckableItem=__vue_component__$2;exports.ConfigColumns=__vue_component__$a;exports.DataTable=__vue_component__$6;exports.DataTable2=__vue_component__$a;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.Increaser=__vue_component__$c;exports.ModalComponent=__vue_component__$7;exports.Paginate=__vue_component__$8;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.Tab=__vue_component__$b;exports.default=plugin;

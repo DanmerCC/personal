@@ -11,4 +11,5 @@ export { default as DropDownItem } from './DropDownItem.vue'
 export { default as DataTable2 } from './DataTable2.vue'
 export { default as ConfigColumns } from './DataTable2.vue'
 export { default as Tab } from './Tab.vue'
+export { default as Increaser } from './Increaser.vue'
 

@@ -1,5 +1,8 @@
 <template>
-  <span>{{ show_value }}</span>
+  <span> 
+      <slot :show_value="show_value">{{ show_value }}
+  </slot>
+  </span>
 </template>
 
 <script>

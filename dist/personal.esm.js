@@ -2176,6 +2176,100 @@ const __vue_component__$b = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$b
 }, __vue_inject_styles__$b, __vue_script__$b, __vue_scope_id__$b, __vue_is_functional_template__$b, __vue_module_identifier__$b, false, createInjector, undefined, undefined);
 
+//
+//
+//
+//
+//
+//
+//
+var script$c = {
+  props: {
+    value: {
+      type: Number,
+      default: 0
+    }
+  },
+
+  data() {
+    return {
+      show_value: this.value,
+      intervaler: null,
+      milseconds: 1000,
+      steps: 10
+    };
+  },
+
+  methods: {
+    runIncreaser() {
+      this.show_value = 0;
+      clearInterval(this.intervaler);
+      this.intervaler = setInterval(this.increment, this.milseconds / this.steps);
+    },
+
+    increment(args) {
+      if (this.show_value + 1 >= this.value) {
+        clearInterval(this.intervaler);
+      } else {
+        var current_step = Math.abs(Math.round(this.value / this.steps));
+
+        if (this.show_value + current_step > this.value) {
+          this.show_value = this.value;
+        } else {
+          this.show_value += current_step;
+        }
+      }
+    }
+
+  },
+  watch: {
+    value(value) {
+      this.runIncreaser();
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$c = script$c;
+/* template */
+
+var __vue_render__$c = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('span', [_vm._t("default", [_vm._v(_vm._s(_vm.show_value) + "\n")], {
+    "show_value": _vm.show_value
+  })], 2);
+};
+
+var __vue_staticRenderFns__$c = [];
+/* style */
+
+const __vue_inject_styles__$c = undefined;
+/* scoped */
+
+const __vue_scope_id__$c = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$c = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$c = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$c = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$c,
+  staticRenderFns: __vue_staticRenderFns__$c
+}, __vue_inject_styles__$c, __vue_script__$c, __vue_scope_id__$c, __vue_is_functional_template__$c, __vue_module_identifier__$c, false, undefined, undefined, undefined);
+
 /* eslint-disable import/prefer-default-export */
 
 var components = /*#__PURE__*/Object.freeze({
@@ -2190,7 +2284,8 @@ var components = /*#__PURE__*/Object.freeze({
     DropDownItem: __vue_component__$4,
     DataTable2: __vue_component__$a,
     ConfigColumns: __vue_component__$a,
-    Tab: __vue_component__$b
+    Tab: __vue_component__$b,
+    Increaser: __vue_component__$c
 });
 
 // Import vue components
@@ -2209,4 +2304,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };
+export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$c as Increaser, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };
