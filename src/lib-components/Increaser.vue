@@ -1,7 +1,6 @@
 <template>
   <span> 
-      <slot :show_value="show_value">{{ show_value }}
-  </slot>
+      <slot :show_value="show_value">{{ show_value }}</slot>
   </span>
 </template>
 
@@ -28,23 +27,22 @@ export default {
         this.intervaler = setInterval(this.increment,this.milseconds/this.steps)
       },
       increment(args){
-          if(this.show_value+1>=this.value){
-              clearInterval(this.intervaler)
-          }else{
-              var current_step = Math.abs(Math.round(this.value/this.steps))
-
-              if((this.show_value+current_step)>this.value){
-                  this.show_value = this.value
-              }else{
-                  this.show_value+=current_step
-              }
-              
-          }
+           var current_step = Math.abs(Math.ceil(this.value/this.steps))
+            if(current_step<=0){
+                current_step = 1
+            }
+             
+            if((this.show_value+current_step)>=this.value){
+                this.show_value = this.value
+            }else{
+                this.show_value+=current_step
+            }
           
       }
     },
     watch: {
         value(value){
+            console.log("hey!")
             this.runIncreaser()
         }
     }

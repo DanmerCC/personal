@@ -2182,7 +2182,6 @@ const __vue_component__$b = /*#__PURE__*/normalizeComponent({
 //
 //
 //
-//
 var script$c = {
   props: {
     value: {
@@ -2208,22 +2207,23 @@ var script$c = {
     },
 
     increment(args) {
-      if (this.show_value + 1 >= this.value) {
-        clearInterval(this.intervaler);
-      } else {
-        var current_step = Math.abs(Math.round(this.value / this.steps));
+      var current_step = Math.abs(Math.ceil(this.value / this.steps));
 
-        if (this.show_value + current_step > this.value) {
-          this.show_value = this.value;
-        } else {
-          this.show_value += current_step;
-        }
+      if (current_step <= 0) {
+        current_step = 1;
+      }
+
+      if (this.show_value + current_step >= this.value) {
+        this.show_value = this.value;
+      } else {
+        this.show_value += current_step;
       }
     }
 
   },
   watch: {
     value(value) {
+      console.log("hey!");
       this.runIncreaser();
     }
 
@@ -2241,7 +2241,7 @@ var __vue_render__$c = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('span', [_vm._t("default", [_vm._v(_vm._s(_vm.show_value) + "\n")], {
+  return _c('span', [_vm._t("default", [_vm._v(_vm._s(_vm.show_value))], {
     "show_value": _vm.show_value
   })], 2);
 };

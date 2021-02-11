@@ -1,6 +1,15 @@
 <script>
 import Vue from 'vue';
-import { PersonalSample,PreviewFile,ModalComponent,DataTable,CheckableItem,DataTable2,Tab } from '@/entry';
+import { 
+  PersonalSample,
+  PreviewFile,
+  ModalComponent,
+  DataTable,
+  CheckableItem,
+  DataTable2,
+  Tab,
+  Increaser
+   } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
@@ -11,7 +20,8 @@ export default Vue.extend({
     DataTable,
     'checkable-item':CheckableItem,
     'data-table2':DataTable2,
-    Tab
+    Tab,
+    Increaser
   },
   data(){
     return {
@@ -38,9 +48,29 @@ export default Vue.extend({
         {name:'Edad',value:'edad'},
       ],
       mpage:1,
-      tab:'init'
+      tab:'init',
+      numbers:[0,0,0,0,0],
+      mynumber:0
     }
-  }
+  },
+  methods: {
+    getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    },
+    randommize(){
+      let arrayNumbers = []
+      for (let index = 0; index < this.numbers.length; index++) {
+        
+        arrayNumbers.push(this.getRandomInt((index+1)*2,(index+1)*100));
+      }
+
+      this.numbers = arrayNumbers
+    }
+  },
+  mounted () {
+    this.randommize()
+
+  },
 });
 </script>
 
@@ -56,6 +86,11 @@ export default Vue.extend({
     <button class="btn btn-primary" @click="modal=!modal">Modal</button>
     {{ modal }}
     <personal-sample />
+    <Increaser v-model="mynumber"></Increaser>
+    <input type="number" v-model="mynumber"></input>
+    <Increaser class="bordered" v-for="(n,key) in numbers" :key="key" v-model="numbers[key]"></Increaser>
+    
+    <button @click="randommize()">Cambiar</button>
     <PreviewFile></PreviewFile>
     <modal-component v-if="modal" @close="modal=false">
       <template #body>
@@ -85,3 +120,8 @@ export default Vue.extend({
     </Tab>
   </div>
 </template>
+<style>
+  .bordered {
+    border: solid 1px black;
+  }
+</style>

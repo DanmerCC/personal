@@ -1765,7 +1765,6 @@ var __vue_component__$b = /*#__PURE__*/normalizeComponent({
 //
 //
 //
-//
 var script$c = {
   props: {
     value: {
@@ -1788,21 +1787,22 @@ var script$c = {
       this.intervaler = setInterval(this.increment, this.milseconds / this.steps);
     },
     increment: function increment(args) {
-      if (this.show_value + 1 >= this.value) {
-        clearInterval(this.intervaler);
-      } else {
-        var current_step = Math.abs(Math.round(this.value / this.steps));
+      var current_step = Math.abs(Math.ceil(this.value / this.steps));
 
-        if (this.show_value + current_step > this.value) {
-          this.show_value = this.value;
-        } else {
-          this.show_value += current_step;
-        }
+      if (current_step <= 0) {
+        current_step = 1;
+      }
+
+      if (this.show_value + current_step >= this.value) {
+        this.show_value = this.value;
+      } else {
+        this.show_value += current_step;
       }
     }
   },
   watch: {
     value: function value(_value) {
+      console.log("hey!");
       this.runIncreaser();
     }
   }
@@ -1817,7 +1817,7 @@ var __vue_render__$c = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('span', [_vm._t("default", [_vm._v(_vm._s(_vm.show_value) + "\n")], {
+  return _c('span', [_vm._t("default", [_vm._v(_vm._s(_vm.show_value))], {
     "show_value": _vm.show_value
   })], 2);
 };
@@ -1831,7 +1831,7 @@ var __vue_inject_styles__$c = undefined;
 var __vue_scope_id__$c = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$c = "data-v-6f45d4c2";
+var __vue_module_identifier__$c = "data-v-3dacd4a2";
 /* functional template */
 
 var __vue_is_functional_template__$c = false;
