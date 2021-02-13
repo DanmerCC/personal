@@ -28,6 +28,9 @@
           <th :colspan="columnsSelectedsInOrder.length+(actioncolumn?2:1)">
               <slot name="top-options" :selecteds="selecteds">
               </slot>
+              <a v-if="selecteds.length>0" href="#" @click.prevent="csv(selecteds)" width="30px">
+                csv
+              </a>
           </th>
       </tr>
       <tr>
@@ -174,6 +177,28 @@ export default {
     };
   },
   methods: {
+    csv(tabledata){
+
+        let csvContent = "data:text/csv;charset=utf-8,";
+        let data = tabledata.slice()
+        data.forEach(function(rowArray) {
+            let havecant = rowArray.tickets.length>=1
+                rowArray.tickets1 = havecant?rowArray.tickets[0].join_url:'null'
+                rowArray.tickets2 = havecant?rowArray.tickets[1].join_url:'null'
+                rowArray.tickets = null
+            let row = Object.values(rowArray).join(";")
+            csvContent += row + "\r\n";
+        });
+
+        var encodedUri = encodeURI(csvContent);
+
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "ddata.csv");
+        document.body.appendChild(link);
+        link.click();
+
+    },
     cleanSelecteds(){
       this.selecteds = []
     },
