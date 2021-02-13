@@ -31,6 +31,9 @@
               <a v-if="selecteds.length>0" href="#" @click.prevent="csv(selecteds)" width="30px">
                 csv
               </a>
+              <a v-if="selecteds.length>0" href="#" @click.prevent="excelformat(selecteds)" width="30px">
+                xls
+              </a>
           </th>
       </tr>
       <tr>
@@ -177,6 +180,20 @@ export default {
     };
   },
   methods: {
+    excelformat(result_table) {
+        var lineArray = []
+        result_table.forEach(function(infoArray, index) {
+            var line = Object.values(infoArray).join(" \t")
+            lineArray.push(index == 0 ? line : line)
+        });
+        var csvContent = lineArray.join("\r\n");
+        var excel_file = document.createElement('a');
+        excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
+        excel_file.setAttribute('download', 'dccexcel.xls');
+        document.body.appendChild(excel_file);
+        excel_file.click();
+        document.body.removeChild(excel_file);
+    },
     csv(tabledata){
 
         let csvContent = "data:text/csv;charset=utf-8,";
@@ -227,7 +244,7 @@ export default {
     selectAllPage() {
       this.selecteds.push(
         ...this.items.filter((x) => {
-          return !this.idsSelecteds.includes(x[this.pkey]) && !!x.selectable  ;
+          return !this.idsSelecteds.includes(x[this.pkey]) && !x.noselect  ;
         })
       );
     },
@@ -300,10 +317,10 @@ export default {
     haveSomeUnselected() {
       //if(this.selecteds.length==0)return true
       let count = 0;
-      let count_selectables = this.items.filter((x) => x.selectable).length;
+      let count_selectables = this.items.filter((x) => !x.noselect).length;
       this.items.forEach((i) => {
         if (this.selectable) {
-          if (this.idsSelecteds.includes(i[this.pkey]) && i.selectable) {
+          if (this.idsSelecteds.includes(i[this.pkey]) && !i.noselect) {
             count++;
           }
         } else {

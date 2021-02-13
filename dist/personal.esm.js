@@ -501,7 +501,7 @@ var __vue_render__$2 = function () {
     staticClass: "form-control ",
     attrs: {
       "type": "checkbox",
-      "disabled": !_vm.value.selectable
+      "disabled": _vm.value.noselect
     },
     domProps: {
       "checked": Array.isArray(_vm.ischecked) ? _vm._i(_vm.ischecked, null) > -1 : _vm.ischecked
@@ -534,8 +534,8 @@ var __vue_staticRenderFns__$2 = [];
 
 const __vue_inject_styles__$2 = function (inject) {
   if (!inject) return;
-  inject("data-v-5f942041_0", {
-    source: "input[data-v-5f942041]{max-width:60px}",
+  inject("data-v-2c95c235_0", {
+    source: "input[data-v-2c95c235]{max-width:60px}",
     map: undefined,
     media: undefined
   });
@@ -543,7 +543,7 @@ const __vue_inject_styles__$2 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$2 = "data-v-5f942041";
+const __vue_scope_id__$2 = "data-v-2c95c235";
 /* module identifier */
 
 const __vue_module_identifier__$2 = undefined;
@@ -843,6 +843,21 @@ var script$6 = {
   },
 
   methods: {
+    excelformat(result_table) {
+      var lineArray = [];
+      result_table.forEach(function (infoArray, index) {
+        var line = Object.values(infoArray).join(" \t");
+        lineArray.push(index == 0 ? line : line);
+      });
+      var csvContent = lineArray.join("\r\n");
+      var excel_file = document.createElement('a');
+      excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
+      excel_file.setAttribute('download', 'dccexcel.xls');
+      document.body.appendChild(excel_file);
+      excel_file.click();
+      document.body.removeChild(excel_file);
+    },
+
     csv(tabledata) {
       let csvContent = "data:text/csv;charset=utf-8,";
       let data = tabledata.slice();
@@ -894,7 +909,7 @@ var script$6 = {
 
     selectAllPage() {
       this.selecteds.push(...this.items.filter(x => {
-        return !this.idsSelecteds.includes(x[this.pkey]) && !!x.selectable;
+        return !this.idsSelecteds.includes(x[this.pkey]) && !x.noselect;
       }));
     },
 
@@ -975,10 +990,10 @@ var script$6 = {
     haveSomeUnselected() {
       //if(this.selecteds.length==0)return true
       let count = 0;
-      let count_selectables = this.items.filter(x => x.selectable).length;
+      let count_selectables = this.items.filter(x => !x.noselect).length;
       this.items.forEach(i => {
         if (this.selectable) {
-          if (this.idsSelecteds.includes(i[this.pkey]) && i.selectable) {
+          if (this.idsSelecteds.includes(i[this.pkey]) && !i.noselect) {
             count++;
           }
         } else {
@@ -1099,7 +1114,18 @@ var __vue_render__$6 = function () {
         return _vm.csv(_vm.selecteds);
       }
     }
-  }, [_vm._v("\n              csv\n            ")]) : _vm._e()], 2)]) : _vm._e(), _vm._v(" "), _c('tr', [_vm.selectable ? _c('th', {
+  }, [_vm._v("\n              csv\n            ")]) : _vm._e(), _vm._v(" "), _vm.selecteds.length > 0 ? _c('a', {
+    attrs: {
+      "href": "#",
+      "width": "30px"
+    },
+    on: {
+      "click": function ($event) {
+        $event.preventDefault();
+        return _vm.excelformat(_vm.selecteds);
+      }
+    }
+  }, [_vm._v("\n              xls\n            ")]) : _vm._e()], 2)]) : _vm._e(), _vm._v(" "), _c('tr', [_vm.selectable ? _c('th', {
     staticClass: "select-td"
   }, [_vm._v("Seleccion")]) : _vm._e(), _vm._v(" "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
     return _c('th', {
@@ -1229,8 +1255,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-406ff86c_0", {
-    source: "tbody[data-v-406ff86c]{font-size:10px;font-weight:700}table[data-v-406ff86c]{max-height:250px;overflow:scroll}input[data-v-406ff86c]{height:17px}.scrollable-y[data-v-406ff86c]{overflow-y:auto}.select-td[data-v-406ff86c]{width:60px}.medium-td[data-v-406ff86c]{max-width:120px}.no-space-left[data-v-406ff86c]{padding-left:1px}.config-icon[data-v-406ff86c]{padding-left:0}.config-icon>i[data-v-406ff86c]{padding-top:10px}.col-1.config-icon.text-right[data-v-406ff86c]{padding-right:0}tr[data-v-406ff86c]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-139c3b9c_0", {
+    source: "tbody[data-v-139c3b9c]{font-size:10px;font-weight:700}table[data-v-139c3b9c]{max-height:250px;overflow:scroll}input[data-v-139c3b9c]{height:17px}.scrollable-y[data-v-139c3b9c]{overflow-y:auto}.select-td[data-v-139c3b9c]{width:60px}.medium-td[data-v-139c3b9c]{max-width:120px}.no-space-left[data-v-139c3b9c]{padding-left:1px}.config-icon[data-v-139c3b9c]{padding-left:0}.config-icon>i[data-v-139c3b9c]{padding-top:10px}.col-1.config-icon.text-right[data-v-139c3b9c]{padding-right:0}tr[data-v-139c3b9c]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1238,7 +1264,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-406ff86c";
+const __vue_scope_id__$6 = "data-v-139c3b9c";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

@@ -27,7 +27,7 @@ export default Vue.extend({
     return {
       modal:false,
       data:[
-        {id:1,name:"Juan",edad:10},
+        {id:1,name:"Juan",edad:10,noselect:true},
         {id:2,name:"Carlos",edad:11},
         {id:3,name:"Silvestre",edad:12},
         {id:4,name:"Donald",edad:13},
