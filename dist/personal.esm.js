@@ -1061,7 +1061,7 @@ var __vue_render__$6 = function () {
     style: {
       '--loadingtext': _vm.loadingtext
     }
-  }, [_vm._v("\n  ::before\n  "), _c('div', {
+  }, [_c('div', {
     staticClass: "container-fluid"
   }, [_c('div', {
     staticClass: "row align-items-center head-options"
@@ -1272,8 +1272,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-16fffde8_0", {
-    source: ".loading[data-v-16fffde8]{overflow:hidden}.loading[data-v-16fffde8]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-16fffde8]{font-size:10px;font-weight:700}table[data-v-16fffde8]{max-height:250px;overflow:scroll}input[data-v-16fffde8]{height:17px}.scrollable-y[data-v-16fffde8]{overflow-y:auto}.select-td[data-v-16fffde8]{width:60px}.medium-td[data-v-16fffde8]{max-width:120px}.no-space-left[data-v-16fffde8]{padding-left:1px}.config-icon[data-v-16fffde8]{padding-left:0}.config-icon>i[data-v-16fffde8]{padding-top:10px}.col-1.config-icon.text-right[data-v-16fffde8]{padding-right:0}tr[data-v-16fffde8]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-3736ae4c_0", {
+    source: ".loading[data-v-3736ae4c]{overflow:hidden}.loading[data-v-3736ae4c]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-3736ae4c]{font-size:10px;font-weight:700}table[data-v-3736ae4c]{max-height:250px;overflow:scroll}input[data-v-3736ae4c]{height:17px}.scrollable-y[data-v-3736ae4c]{overflow-y:auto}.select-td[data-v-3736ae4c]{width:60px}.medium-td[data-v-3736ae4c]{max-width:120px}.no-space-left[data-v-3736ae4c]{padding-left:1px}.config-icon[data-v-3736ae4c]{padding-left:0}.config-icon>i[data-v-3736ae4c]{padding-top:10px}.col-1.config-icon.text-right[data-v-3736ae4c]{padding-right:0}tr[data-v-3736ae4c]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1281,7 +1281,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-16fffde8";
+const __vue_scope_id__$6 = "data-v-3736ae4c";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

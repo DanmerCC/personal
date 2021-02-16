@@ -1,6 +1,5 @@
 <template>
   <div :class="'card ' + responsiveclass+' '+(inload?'loading':'')" :style="{'--loadingtext':loadingtext}">
-    ::before
     <div class="container-fluid">
       <div class="row align-items-center head-options">
         <div class="col-11 text-center">
