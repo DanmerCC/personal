@@ -943,16 +943,16 @@ var __vue_render__$6 = function __vue_render__() {
 
   return _c('div', {
     class: 'card ' + _vm.responsiveclass
-  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-139c3b9c><div class=\"row align-items-center head-options\" data-v-139c3b9c><div class=\"col-11 text-center\" data-v-139c3b9c><span" + _vm._ssrStyle(null, null, {
+  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-ed9cf228><div class=\"row align-items-center head-options\" data-v-ed9cf228><div class=\"col-11 text-center\" data-v-ed9cf228><span" + _vm._ssrStyle(null, null, {
     display: _vm.selectable ? '' : 'none'
-  }) + " data-v-139c3b9c>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-139c3b9c><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-139c3b9c></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-139c3b9c>", "</table>", [_vm._ssrNode("<thead data-v-139c3b9c>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-139c3b9c>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-139c3b9c>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-139c3b9c><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-139c3b9c></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-139c3b9c><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-139c3b9c></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-139c3b9c>", "</th>", [_vm._t("top-options", null, {
+  }) + " data-v-ed9cf228>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-ed9cf228><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-ed9cf228></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-ed9cf228>", "</table>", [_vm._ssrNode("<thead data-v-ed9cf228>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-ed9cf228>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-ed9cf228>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-ed9cf228><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-ed9cf228></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-ed9cf228><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-ed9cf228></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-ed9cf228>", "</th>", [_vm._t("top-options", null, {
     "selecteds": _vm.selecteds
-  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-139c3b9c>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-139c3b9c>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-139c3b9c>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-139c3b9c>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
-    return _vm._ssrNode("<th data-v-139c3b9c>", "</th>", [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
+  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-ed9cf228>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-ed9cf228>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-ed9cf228>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-ed9cf228>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
+    return _vm._ssrNode("<th data-v-ed9cf228>", "</th>", [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
       "column": column
     })], 2);
-  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-139c3b9c>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-139c3b9c>", "</tbody>", [_vm._l(_vm.items, function (item) {
-    return _vm._ssrNode("<tr data-v-139c3b9c>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-139c3b9c>", "</td>", [_c('checkable-item', {
+  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-ed9cf228>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-ed9cf228>", "</tbody>", [_vm._l(_vm.items, function (item) {
+    return _vm._ssrNode("<tr data-v-ed9cf228>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-ed9cf228>", "</td>", [_c('checkable-item', {
       ref: "rowselectbox",
       refInFor: true,
       attrs: {
@@ -963,7 +963,7 @@ var __vue_render__$6 = function __vue_render__() {
         "change": _vm.handleSelect
       }
     })], 1) : _vm._e(), _vm._ssrNode(" "), _vm._l(_vm.columnsSelectedsInOrder, function (c) {
-      return _vm._ssrNode("<td data-v-139c3b9c>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
+      return _vm._ssrNode("<td data-v-ed9cf228>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
         "row": item,
         "column": c,
         "item": _vm.interpret(item, c)
@@ -972,12 +972,12 @@ var __vue_render__$6 = function __vue_render__() {
         "row": item,
         "hover": _vm.isHover(item[_vm.pkey])
       })], 2);
-    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-139c3b9c>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
+    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-ed9cf228>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
       "item": item,
       "row": item,
       "hover": _vm.isHover(item[_vm.pkey])
     })], 2) : _vm._e()], 2);
-  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-139c3b9c><td" + _vm._ssrAttr("colspan", _vm.items.length) + " data-v-139c3b9c>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
+  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-ed9cf228>" + (_vm.selectable ? "<td data-v-ed9cf228></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-ed9cf228>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
     "perpage": _vm.limit
   }), _vm._ssrNode(" "), _vm.showConfigTable ? _c('modal-component', {
     attrs: {
@@ -1046,8 +1046,8 @@ var __vue_staticRenderFns__$6 = [];
 
 var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-139c3b9c_0", {
-    source: "tbody[data-v-139c3b9c]{font-size:10px;font-weight:700}table[data-v-139c3b9c]{max-height:250px;overflow:scroll}input[data-v-139c3b9c]{height:17px}.scrollable-y[data-v-139c3b9c]{overflow-y:auto}.select-td[data-v-139c3b9c]{width:60px}.medium-td[data-v-139c3b9c]{max-width:120px}.no-space-left[data-v-139c3b9c]{padding-left:1px}.config-icon[data-v-139c3b9c]{padding-left:0}.config-icon>i[data-v-139c3b9c]{padding-top:10px}.col-1.config-icon.text-right[data-v-139c3b9c]{padding-right:0}tr[data-v-139c3b9c]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-ed9cf228_0", {
+    source: "tbody[data-v-ed9cf228]{font-size:10px;font-weight:700}table[data-v-ed9cf228]{max-height:250px;overflow:scroll}input[data-v-ed9cf228]{height:17px}.scrollable-y[data-v-ed9cf228]{overflow-y:auto}.select-td[data-v-ed9cf228]{width:60px}.medium-td[data-v-ed9cf228]{max-width:120px}.no-space-left[data-v-ed9cf228]{padding-left:1px}.config-icon[data-v-ed9cf228]{padding-left:0}.config-icon>i[data-v-ed9cf228]{padding-top:10px}.col-1.config-icon.text-right[data-v-ed9cf228]{padding-right:0}tr[data-v-ed9cf228]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1055,10 +1055,10 @@ var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$6 = "data-v-139c3b9c";
+var __vue_scope_id__$6 = "data-v-ed9cf228";
 /* module identifier */
 
-var __vue_module_identifier__$6 = "data-v-139c3b9c";
+var __vue_module_identifier__$6 = "data-v-ed9cf228";
 /* functional template */
 
 var __vue_is_functional_template__$6 = false;

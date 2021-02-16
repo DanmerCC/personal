@@ -47,6 +47,7 @@ export default Vue.extend({
         {name:'Names',value:'name'},
         {name:'Edad',value:'edad'},
       ],
+      voidarray:[],
       mpage:1,
       tab:'init',
       numbers:[0,0,0,0,0],
@@ -82,6 +83,9 @@ export default Vue.extend({
       <data-table2 :items="data" :columns="headers" :select="true">
 
       </data-table2>
+      <data-table :items="voidarray" :columns="headers" :select="true">
+
+      </data-table>
     </div>
     <button class="btn btn-primary" @click="modal=!modal">Modal</button>
     {{ modal }}

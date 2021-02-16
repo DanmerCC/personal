@@ -99,7 +99,8 @@
           </td>
         </tr>
         <tr v-if="items.length == 0" class="select-td text-center">
-          <td :colspan="items.length">No hay datos</td>
+          <td v-if="selectable"></td>
+          <td :colspan="columnsSelecteds.length">No hay datos</td>
         </tr>
       </tbody>
     </table>
