@@ -799,6 +799,9 @@ var script$6 = {
     columns: {
       default: () => []
     },
+    inload: {
+      default: false
+    },
     items: {
       default: () => []
     },
@@ -838,7 +841,9 @@ var script$6 = {
       selecteds: [],
       pkeySelected: null,
       columnsSelecteds: this.addOrderIndexColumns(this.columns),
-      showConfigTable: false
+      showConfigTable: false,
+      loading: this.inload,
+      loadingtext: 'Cargando ...'
     };
   },
 
@@ -965,6 +970,10 @@ var script$6 = {
 
   },
   computed: {
+    classIsLoad() {
+      return this.inload ? 'loading' : '';
+    },
+
     columnsSelectedsInOrder() {
       return _.orderBy(this.columnsSelecteds, "order");
     },
@@ -1007,6 +1016,11 @@ var script$6 = {
 
   },
   watch: {
+    inload(value) {
+      console.log(value);
+      this.loading = value;
+    },
+
     page() {
       this.$emit("update:page", this.dpage);
     },
@@ -1043,8 +1057,11 @@ var __vue_render__$6 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    class: 'card ' + _vm.responsiveclass
-  }, [_c('div', {
+    class: 'card ' + _vm.responsiveclass + ' ' + (_vm.inload ? 'loading' : ''),
+    style: {
+      '--loadingtext': _vm.loadingtext
+    }
+  }, [_vm._v("\n  ::before\n  "), _c('div', {
     staticClass: "container-fluid"
   }, [_c('div', {
     staticClass: "row align-items-center head-options"
@@ -1255,8 +1272,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-ed9cf228_0", {
-    source: "tbody[data-v-ed9cf228]{font-size:10px;font-weight:700}table[data-v-ed9cf228]{max-height:250px;overflow:scroll}input[data-v-ed9cf228]{height:17px}.scrollable-y[data-v-ed9cf228]{overflow-y:auto}.select-td[data-v-ed9cf228]{width:60px}.medium-td[data-v-ed9cf228]{max-width:120px}.no-space-left[data-v-ed9cf228]{padding-left:1px}.config-icon[data-v-ed9cf228]{padding-left:0}.config-icon>i[data-v-ed9cf228]{padding-top:10px}.col-1.config-icon.text-right[data-v-ed9cf228]{padding-right:0}tr[data-v-ed9cf228]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-16fffde8_0", {
+    source: ".loading[data-v-16fffde8]{overflow:hidden}.loading[data-v-16fffde8]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-16fffde8]{font-size:10px;font-weight:700}table[data-v-16fffde8]{max-height:250px;overflow:scroll}input[data-v-16fffde8]{height:17px}.scrollable-y[data-v-16fffde8]{overflow-y:auto}.select-td[data-v-16fffde8]{width:60px}.medium-td[data-v-16fffde8]{max-width:120px}.no-space-left[data-v-16fffde8]{padding-left:1px}.config-icon[data-v-16fffde8]{padding-left:0}.config-icon>i[data-v-16fffde8]{padding-top:10px}.col-1.config-icon.text-right[data-v-16fffde8]{padding-right:0}tr[data-v-16fffde8]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1264,7 +1281,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-ed9cf228";
+const __vue_scope_id__$6 = "data-v-16fffde8";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;
