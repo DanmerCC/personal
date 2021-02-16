@@ -51,7 +51,8 @@ export default Vue.extend({
       mpage:1,
       tab:'init',
       numbers:[0,0,0,0,0],
-      mynumber:0
+      mynumber:0,
+      loading:false
     }
   },
   methods: {
@@ -80,14 +81,15 @@ export default Vue.extend({
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" integrity="sha512-rVZC4rf0Piwtw/LsgwXxKXzWq3L0P6atiQKBNuXYRbg2FoRbSTIY0k2DxuJcs7dk4e/ShtMzglHKBOJxW8EQyQ==" crossorigin="anonymous" />
     <div class='container'>
-      <data-table2 :items="data" :columns="headers" :select="true">
+      <data-table2 :items="data" :columns="headers" :select="true" >
 
       </data-table2>
-      <data-table :items="voidarray" :columns="headers" :select="true">
+      <data-table :items="voidarray" :columns="headers" :select="true" :inload="loading">
 
       </data-table>
     </div>
     <button class="btn btn-primary" @click="modal=!modal">Modal</button>
+    <button class="btn btn-primary" @click="loading=!loading">Cargando</button> {{ loading }}
     {{ modal }}
     <personal-sample />
     <Increaser v-model="mynumber"></Increaser>
@@ -104,7 +106,7 @@ export default Vue.extend({
       </template>
     </modal-component>
 
-    <data-table :items="mpage==1?data:data2" :columns="headers" :select="true">
+    <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading">
     </data-table>
     <select v-model="mpage">
       <option value="1">1</option>

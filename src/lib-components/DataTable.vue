@@ -1,5 +1,6 @@
 <template>
-  <div :class="'card ' + responsiveclass">
+  <div :class="'card ' + responsiveclass+' '+(inload?'loading':'')" :style="{'--loadingtext':loadingtext}">
+    ::before
     <div class="container-fluid">
       <div class="row align-items-center head-options">
         <div class="col-11 text-center">
@@ -157,6 +158,9 @@ export default {
     columns: {
       default: () => [],
     },
+    inload: {
+      default: false,
+    },
     items: {
       default: () => [],
     },
@@ -168,6 +172,7 @@ export default {
     columselecteds: { default: null },
     select: { default: false },
     rowclickeable: { default: false },
+    
   },
   data() {
     return {
@@ -178,6 +183,8 @@ export default {
       pkeySelected: null,
       columnsSelecteds: this.addOrderIndexColumns(this.columns),
       showConfigTable: false,
+      loading:this.inload,
+      loadingtext:'Cargando ...'
     };
   },
   methods: {
@@ -299,6 +306,9 @@ export default {
     },
   },
   computed: {
+    classIsLoad(){
+      return this.inload?'loading':''
+    },
     columnsSelectedsInOrder() {
       return _.orderBy(this.columnsSelecteds, "order");
     },
@@ -334,6 +344,10 @@ export default {
     },
   },
   watch: {
+    inload(value){
+      console.log(value)
+      this.loading = value
+    },
     page() {
       this.$emit("update:page", this.dpage);
     },
@@ -354,6 +368,32 @@ export default {
 </script>
 
 <style scoped>
+.loading {
+  overflow: hidden;
+}
+
+.loading::before{
+  content: 'Cargando ..';
+  display: block;
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  font-size: 24px;
+  color: #eee;
+  
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  
+  top: 50%;
+  transform: translateY(-50%);
+     height:20000px;
+   line-height:20000px;
+
+}
+
 tbody {
   font-size: 10px;
   font-weight: bold;
