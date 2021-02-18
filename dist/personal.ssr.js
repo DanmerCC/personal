@@ -726,6 +726,12 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
     },
     rowclickeable: {
       default: false
+    },
+    rowClassRender: {
+      type: Function,
+      default: function _default(row, inhover) {
+        return '';
+      }
     }
   },
   data: function data() {
@@ -734,7 +740,7 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
       dlimit: this.limit,
       selectable: this.select,
       selecteds: [],
-      pkeySelected: null,
+      pkeyRowHover: null,
       columnsSelecteds: this.addOrderIndexColumns(this.columns),
       showConfigTable: false,
       loading: this.inload,
@@ -797,10 +803,10 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
       console.log($event, columna);
     },
     isHover: function isHover(pkey) {
-      return this.pkeySelected == pkey;
+      return this.pkeyRowHover == pkey;
     },
     handle: function handle(keyselected) {
-      this.pkeySelected = keyselected;
+      this.pkeyRowHover = keyselected;
     },
     unSelectPage: function unSelectPage() {
       var _this2 = this;
@@ -958,16 +964,16 @@ var __vue_render__$6 = function __vue_render__() {
     style: {
       '--loadingtext': _vm.loadingtext
     }
-  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-3736ae4c><div class=\"row align-items-center head-options\" data-v-3736ae4c><div class=\"col-11 text-center\" data-v-3736ae4c><span" + _vm._ssrStyle(null, null, {
+  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-92fc64cc><div class=\"row align-items-center head-options\" data-v-92fc64cc><div class=\"col-11 text-center\" data-v-92fc64cc><span" + _vm._ssrStyle(null, null, {
     display: _vm.selectable ? '' : 'none'
-  }) + " data-v-3736ae4c>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-3736ae4c><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-3736ae4c></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-3736ae4c>", "</table>", [_vm._ssrNode("<thead data-v-3736ae4c>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-3736ae4c>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-3736ae4c>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-3736ae4c><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-3736ae4c></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-3736ae4c><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-3736ae4c></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-3736ae4c>", "</th>", [_vm._t("top-options", null, {
+  }) + " data-v-92fc64cc>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-92fc64cc><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-92fc64cc></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-92fc64cc>", "</table>", [_vm._ssrNode("<thead data-v-92fc64cc>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-92fc64cc>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-92fc64cc>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-92fc64cc><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-92fc64cc></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-92fc64cc><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-92fc64cc></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-92fc64cc>", "</th>", [_vm._t("top-options", null, {
     "selecteds": _vm.selecteds
-  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-3736ae4c>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-3736ae4c>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-3736ae4c>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-3736ae4c>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
-    return _vm._ssrNode("<th data-v-3736ae4c>", "</th>", [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
+  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-92fc64cc>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-92fc64cc>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-92fc64cc>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-92fc64cc>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
+    return _vm._ssrNode("<th data-v-92fc64cc>", "</th>", [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
       "column": column
     })], 2);
-  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-3736ae4c>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-3736ae4c>", "</tbody>", [_vm._l(_vm.items, function (item) {
-    return _vm._ssrNode("<tr data-v-3736ae4c>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-3736ae4c>", "</td>", [_c('checkable-item', {
+  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-92fc64cc>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-92fc64cc>", "</tbody>", [_vm._l(_vm.items, function (item) {
+    return _vm._ssrNode("<tr" + _vm._ssrClass(null, _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover)) + " data-v-92fc64cc>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-92fc64cc>", "</td>", [_c('checkable-item', {
       ref: "rowselectbox",
       refInFor: true,
       attrs: {
@@ -978,7 +984,7 @@ var __vue_render__$6 = function __vue_render__() {
         "change": _vm.handleSelect
       }
     })], 1) : _vm._e(), _vm._ssrNode(" "), _vm._l(_vm.columnsSelectedsInOrder, function (c) {
-      return _vm._ssrNode("<td data-v-3736ae4c>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
+      return _vm._ssrNode("<td data-v-92fc64cc>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
         "row": item,
         "column": c,
         "item": _vm.interpret(item, c)
@@ -987,12 +993,12 @@ var __vue_render__$6 = function __vue_render__() {
         "row": item,
         "hover": _vm.isHover(item[_vm.pkey])
       })], 2);
-    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-3736ae4c>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
+    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-92fc64cc>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
       "item": item,
       "row": item,
       "hover": _vm.isHover(item[_vm.pkey])
     })], 2) : _vm._e()], 2);
-  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-3736ae4c>" + (_vm.selectable ? "<td data-v-3736ae4c></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-3736ae4c>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
+  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-92fc64cc>" + (_vm.selectable ? "<td data-v-92fc64cc></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-92fc64cc>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
     "perpage": _vm.limit
   }), _vm._ssrNode(" "), _vm.showConfigTable ? _c('modal-component', {
     attrs: {
@@ -1061,8 +1067,8 @@ var __vue_staticRenderFns__$6 = [];
 
 var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-3736ae4c_0", {
-    source: ".loading[data-v-3736ae4c]{overflow:hidden}.loading[data-v-3736ae4c]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-3736ae4c]{font-size:10px;font-weight:700}table[data-v-3736ae4c]{max-height:250px;overflow:scroll}input[data-v-3736ae4c]{height:17px}.scrollable-y[data-v-3736ae4c]{overflow-y:auto}.select-td[data-v-3736ae4c]{width:60px}.medium-td[data-v-3736ae4c]{max-width:120px}.no-space-left[data-v-3736ae4c]{padding-left:1px}.config-icon[data-v-3736ae4c]{padding-left:0}.config-icon>i[data-v-3736ae4c]{padding-top:10px}.col-1.config-icon.text-right[data-v-3736ae4c]{padding-right:0}tr[data-v-3736ae4c]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-92fc64cc_0", {
+    source: ".loading[data-v-92fc64cc]{overflow:hidden}.loading[data-v-92fc64cc]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-92fc64cc]{font-size:10px;font-weight:700}table[data-v-92fc64cc]{max-height:250px;overflow:scroll}input[data-v-92fc64cc]{height:17px}.scrollable-y[data-v-92fc64cc]{overflow-y:auto}.select-td[data-v-92fc64cc]{width:60px}.medium-td[data-v-92fc64cc]{max-width:120px}.no-space-left[data-v-92fc64cc]{padding-left:1px}.config-icon[data-v-92fc64cc]{padding-left:0}.config-icon>i[data-v-92fc64cc]{padding-top:10px}.col-1.config-icon.text-right[data-v-92fc64cc]{padding-right:0}tr[data-v-92fc64cc]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1070,10 +1076,10 @@ var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$6 = "data-v-3736ae4c";
+var __vue_scope_id__$6 = "data-v-92fc64cc";
 /* module identifier */
 
-var __vue_module_identifier__$6 = "data-v-3736ae4c";
+var __vue_module_identifier__$6 = "data-v-92fc64cc";
 /* functional template */
 
 var __vue_is_functional_template__$6 = false;

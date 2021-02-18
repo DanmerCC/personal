@@ -53,8 +53,8 @@
           v-for="item in items"
           :key="item.order"
           @mouseover="handle(item[pkey])"
-          @mouseleave="pkeySelected = null"
-          
+          @mouseleave="pkeyRowHover = null"
+          :class="rowClassRender(item,item[pkey] == pkeyRowHover)"
         >
           <td
             class="select-td"
@@ -171,7 +171,7 @@ export default {
     columselecteds: { default: null },
     select: { default: false },
     rowclickeable: { default: false },
-    
+    rowClassRender:{type:Function,default:(row,inhover)=>''}
   },
   data() {
     return {
@@ -179,7 +179,7 @@ export default {
       dlimit: this.limit,
       selectable: this.select,
       selecteds: [],
-      pkeySelected: null,
+      pkeyRowHover: null,
       columnsSelecteds: this.addOrderIndexColumns(this.columns),
       showConfigTable: false,
       loading:this.inload,
@@ -238,10 +238,10 @@ export default {
       console.log($event, columna);
     },
     isHover(pkey) {
-      return this.pkeySelected == pkey;
+      return this.pkeyRowHover == pkey;
     },
     handle(keyselected) {
-      this.pkeySelected = keyselected;
+      this.pkeyRowHover = keyselected;
     },
     unSelectPage() {
       this.selecteds = this.selecteds.filter(
@@ -367,6 +367,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .loading {
   overflow: hidden;
 }

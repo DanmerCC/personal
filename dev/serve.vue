@@ -56,6 +56,16 @@ export default Vue.extend({
     }
   },
   methods: {
+    classRender(row,inhover){
+      if(row.id % 2 == 0){
+        if(row.edad<14 && inhover){
+          return 'hard-green'
+        }
+        return 'red'
+      }else{
+        return 'grey'
+      }
+    },
     getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
     },
@@ -84,7 +94,7 @@ export default Vue.extend({
       <data-table2 :items="data" :columns="headers" :select="true" >
 
       </data-table2>
-      <data-table :items="voidarray" :columns="headers" :select="true" :inload="loading">
+      <data-table :items="voidarray" :columns="headers" :select="true" :inload="loading" :rowClass="classRender">
 
       </data-table>
     </div>
@@ -106,7 +116,11 @@ export default Vue.extend({
       </template>
     </modal-component>
 
-    <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading">
+    <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading" :rowClassRender="classRender">
+      <template #edad="{item}">
+        <span  class="hard-green" v-if="item>=14">{{ item }}</span>
+        <span v-else>{{ item }}</span>
+      </template>
     </data-table>
     <select v-model="mpage">
       <option value="1">1</option>
@@ -130,4 +144,16 @@ export default Vue.extend({
   .bordered {
     border: solid 1px black;
   }
+
+  .red{
+  background: rgb(255, 155, 155);
+}
+
+.grey{
+  background: gray;
+}
+
+.hard-green{
+  background: greenyellow!important;
+}
 </style>

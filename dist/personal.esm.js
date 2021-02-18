@@ -830,6 +830,10 @@ var script$6 = {
     },
     rowclickeable: {
       default: false
+    },
+    rowClassRender: {
+      type: Function,
+      default: (row, inhover) => ''
     }
   },
 
@@ -839,7 +843,7 @@ var script$6 = {
       dlimit: this.limit,
       selectable: this.select,
       selecteds: [],
-      pkeySelected: null,
+      pkeyRowHover: null,
       columnsSelecteds: this.addOrderIndexColumns(this.columns),
       showConfigTable: false,
       loading: this.inload,
@@ -901,11 +905,11 @@ var script$6 = {
     },
 
     isHover(pkey) {
-      return this.pkeySelected == pkey;
+      return this.pkeyRowHover == pkey;
     },
 
     handle(keyselected) {
-      this.pkeySelected = keyselected;
+      this.pkeyRowHover = keyselected;
     },
 
     unSelectPage() {
@@ -1155,12 +1159,13 @@ var __vue_render__$6 = function () {
   }, [_vm._v("Mas")]) : _vm._e()], 2)]), _vm._v(" "), _c('tbody', [_vm._l(_vm.items, function (item) {
     return _c('tr', {
       key: item.order,
+      class: _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover),
       on: {
         "mouseover": function ($event) {
           return _vm.handle(item[_vm.pkey]);
         },
         "mouseleave": function ($event) {
-          _vm.pkeySelected = null;
+          _vm.pkeyRowHover = null;
         }
       }
     }, [_vm.selectable ? _c('td', {
@@ -1272,8 +1277,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-3736ae4c_0", {
-    source: ".loading[data-v-3736ae4c]{overflow:hidden}.loading[data-v-3736ae4c]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-3736ae4c]{font-size:10px;font-weight:700}table[data-v-3736ae4c]{max-height:250px;overflow:scroll}input[data-v-3736ae4c]{height:17px}.scrollable-y[data-v-3736ae4c]{overflow-y:auto}.select-td[data-v-3736ae4c]{width:60px}.medium-td[data-v-3736ae4c]{max-width:120px}.no-space-left[data-v-3736ae4c]{padding-left:1px}.config-icon[data-v-3736ae4c]{padding-left:0}.config-icon>i[data-v-3736ae4c]{padding-top:10px}.col-1.config-icon.text-right[data-v-3736ae4c]{padding-right:0}tr[data-v-3736ae4c]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-92fc64cc_0", {
+    source: ".loading[data-v-92fc64cc]{overflow:hidden}.loading[data-v-92fc64cc]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-92fc64cc]{font-size:10px;font-weight:700}table[data-v-92fc64cc]{max-height:250px;overflow:scroll}input[data-v-92fc64cc]{height:17px}.scrollable-y[data-v-92fc64cc]{overflow-y:auto}.select-td[data-v-92fc64cc]{width:60px}.medium-td[data-v-92fc64cc]{max-width:120px}.no-space-left[data-v-92fc64cc]{padding-left:1px}.config-icon[data-v-92fc64cc]{padding-left:0}.config-icon>i[data-v-92fc64cc]{padding-top:10px}.col-1.config-icon.text-right[data-v-92fc64cc]{padding-right:0}tr[data-v-92fc64cc]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1281,7 +1286,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-3736ae4c";
+const __vue_scope_id__$6 = "data-v-92fc64cc";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;
