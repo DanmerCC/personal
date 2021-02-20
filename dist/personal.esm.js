@@ -852,13 +852,41 @@ var script$6 = {
   },
 
   methods: {
-    excelformat(result_table) {
+    getDataFromTable() {
+      var header = this.$refs.domref.querySelectorAll('thead tr');
+      var last_tr = header[header.length - 1];
+      var th_headers = last_tr.querySelectorAll('th');
+      var text_headers = [];
+      th_headers.forEach(x => text_headers.push(x.innerHTML)); //now get text in cells
+
+      var tr_ows = this.$refs.domref.querySelectorAll('tbody tr');
+      var data_array = [];
+      tr_ows.forEach(z => {
+        var temp_row = [];
+        var row_tds = z.querySelectorAll('td');
+        row_tds.forEach(z => {
+          var childtype = z.childNodes.length;
+          console.log(z.childNodes.length);
+
+          if (z.innerHTML.indexOf("word") != -1) {
+            temp_row.push('node');
+          } else {
+            temp_row.push(z.innerHTML.replace(/<[^>]*>?/gm, ''));
+          }
+        });
+        data_array.push(temp_row);
+      });
+      return [text_headers, ...data_array];
+    },
+
+    excelformat(result_table, isobject = true) {
       var lineArray = [];
       result_table.forEach(function (infoArray, index) {
-        var line = Object.values(infoArray).join(" \t");
+        var line = (isobject ? Object.values(infoArray) : infoArray).join(" \t");
         lineArray.push(index == 0 ? line : line);
       });
       var csvContent = lineArray.join("\r\n");
+      console.log(csvContent);
       var excel_file = document.createElement('a');
       excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
       excel_file.setAttribute('download', 'dccexcel.xls');
@@ -871,10 +899,6 @@ var script$6 = {
       let csvContent = "data:text/csv;charset=utf-8,";
       let data = tabledata.slice();
       data.forEach(function (rowArray) {
-        let havecant = rowArray.tickets.length >= 1;
-        rowArray.tickets1 = havecant ? rowArray.tickets[0].join_url : 'null';
-        rowArray.tickets2 = havecant ? rowArray.tickets[1].join_url : 'null';
-        rowArray.tickets = null;
         let row = Object.values(rowArray).join(";");
         csvContent += row + "\r\n";
       });
@@ -1091,6 +1115,7 @@ var __vue_render__$6 = function () {
       }
     }
   })])])]), _vm._v(" "), _c('table', {
+    ref: "domref",
     staticClass: "table table-responsive-sm table-sm"
   }, [_c('thead', [_vm.selectable ? _c('tr', [_c('th', {
     staticClass: "select-td "
@@ -1132,7 +1157,8 @@ var __vue_render__$6 = function () {
     on: {
       "click": function ($event) {
         $event.preventDefault();
-        return _vm.csv(_vm.selecteds);
+
+        _vm.csv(_vm.getDataFromTable());
       }
     }
   }, [_vm._v("\n              csv\n            ")]) : _vm._e(), _vm._v(" "), _vm.selecteds.length > 0 ? _c('a', {
@@ -1143,7 +1169,8 @@ var __vue_render__$6 = function () {
     on: {
       "click": function ($event) {
         $event.preventDefault();
-        return _vm.excelformat(_vm.selecteds);
+
+        _vm.excelformat(_vm.getDataFromTable(), false);
       }
     }
   }, [_vm._v("\n              xls\n            ")]) : _vm._e()], 2)]) : _vm._e(), _vm._v(" "), _c('tr', [_vm.selectable ? _c('th', {
@@ -1269,7 +1296,13 @@ var __vue_render__$6 = function () {
       },
       proxy: true
     }], null, false, 1350803417)
-  }) : _vm._e(), _vm._v(" "), _vm._t("append")], 2);
+  }) : _vm._e(), _vm._v(" "), _vm._t("append"), _vm._v(" "), _c('button', {
+    on: {
+      "click": function ($event) {
+        return _vm.getDataFromTable();
+      }
+    }
+  }, [_vm._v("getDATA")])], 2);
 };
 
 var __vue_staticRenderFns__$6 = [];
@@ -1277,8 +1310,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-92fc64cc_0", {
-    source: ".loading[data-v-92fc64cc]{overflow:hidden}.loading[data-v-92fc64cc]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-92fc64cc]{font-size:10px;font-weight:700}table[data-v-92fc64cc]{max-height:250px;overflow:scroll}input[data-v-92fc64cc]{height:17px}.scrollable-y[data-v-92fc64cc]{overflow-y:auto}.select-td[data-v-92fc64cc]{width:60px}.medium-td[data-v-92fc64cc]{max-width:120px}.no-space-left[data-v-92fc64cc]{padding-left:1px}.config-icon[data-v-92fc64cc]{padding-left:0}.config-icon>i[data-v-92fc64cc]{padding-top:10px}.col-1.config-icon.text-right[data-v-92fc64cc]{padding-right:0}tr[data-v-92fc64cc]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-6136fa8f_0", {
+    source: ".loading[data-v-6136fa8f]{overflow:hidden}.loading[data-v-6136fa8f]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-6136fa8f]{font-size:10px;font-weight:700}table[data-v-6136fa8f]{max-height:250px;overflow:scroll}input[data-v-6136fa8f]{height:17px}.scrollable-y[data-v-6136fa8f]{overflow-y:auto}.select-td[data-v-6136fa8f]{width:60px}.medium-td[data-v-6136fa8f]{max-width:120px}.no-space-left[data-v-6136fa8f]{padding-left:1px}.config-icon[data-v-6136fa8f]{padding-left:0}.config-icon>i[data-v-6136fa8f]{padding-top:10px}.col-1.config-icon.text-right[data-v-6136fa8f]{padding-right:0}tr[data-v-6136fa8f]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1286,7 +1319,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-92fc64cc";
+const __vue_scope_id__$6 = "data-v-6136fa8f";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

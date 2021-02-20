@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <table class="table table-responsive-sm table-sm">
+    <table class="table table-responsive-sm table-sm" ref='domref'>
       <thead>
         <tr v-if="selectable">
           <th class="select-td " >
@@ -28,10 +28,10 @@
           <th :colspan="columnsSelectedsInOrder.length+(actioncolumn?2:1)">
               <slot name="top-options" :selecteds="selecteds">
               </slot>
-              <a v-if="selecteds.length>0" href="#" @click.prevent="csv(selecteds)" width="30px">
+              <a v-if="selecteds.length>0" href="#" @click.prevent="csv(getDataFromTable())" width="30px">
                 csv
               </a>
-              <a v-if="selecteds.length>0" href="#" @click.prevent="excelformat(selecteds)" width="30px">
+              <a v-if="selecteds.length>0" href="#" @click.prevent="excelformat(getDataFromTable(),false)" width="30px">
                 xls
               </a>
           </th>
@@ -137,6 +137,7 @@
     </modal-component>
     <slot name='append'>
     </slot>
+    <button @click="getDataFromTable()">getDATA</button>
   </div>
 </template>
 
@@ -187,13 +188,40 @@ export default {
     };
   },
   methods: {
-    excelformat(result_table) {
+    getDataFromTable(){
+      var header = this.$refs.domref.querySelectorAll('thead tr')
+      var last_tr = header[header.length-1]
+      var th_headers = last_tr.querySelectorAll('th')
+      var text_headers = []
+      th_headers.forEach(x=>text_headers.push(x.innerHTML))
+
+      //now get text in cells
+      var tr_ows = this.$refs.domref.querySelectorAll('tbody tr')
+      var data_array = []
+      tr_ows.forEach(z=>{
+        var temp_row = []
+        var row_tds = z.querySelectorAll('td')
+        row_tds.forEach(z=>{
+          var childtype = z.childNodes.length
+          console.log(z.childNodes.length)
+          if(z.innerHTML.indexOf("word") != -1){
+            temp_row.push('node')
+          }else{
+            temp_row.push(z.innerHTML.replace(/<[^>]*>?/gm, ''))
+          }
+        })
+        data_array.push(temp_row)
+      })
+      return [text_headers,...data_array]
+    },
+    excelformat(result_table,isobject = true) {
         var lineArray = []
         result_table.forEach(function(infoArray, index) {
-            var line = Object.values(infoArray).join(" \t")
+            var line = (isobject?Object.values(infoArray):infoArray).join(" \t")
             lineArray.push(index == 0 ? line : line)
         });
-        var csvContent = lineArray.join("\r\n");
+        var csvContent = lineArray.join("\r\n")
+        console.log(csvContent)
         var excel_file = document.createElement('a');
         excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
         excel_file.setAttribute('download', 'dccexcel.xls');
@@ -206,10 +234,7 @@ export default {
         let csvContent = "data:text/csv;charset=utf-8,";
         let data = tabledata.slice()
         data.forEach(function(rowArray) {
-            let havecant = rowArray.tickets.length>=1
-                rowArray.tickets1 = havecant?rowArray.tickets[0].join_url:'null'
-                rowArray.tickets2 = havecant?rowArray.tickets[1].join_url:'null'
-                rowArray.tickets = null
+            
             let row = Object.values(rowArray).join(";")
             csvContent += row + "\r\n";
         });
