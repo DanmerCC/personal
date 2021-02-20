@@ -80,7 +80,7 @@ export default {
                 })
             },
             set(value){
-                console.log(value)
+                
                 this.internal_columns = value.map(x=>{
                     x.hidden = !x.visible
                     return x

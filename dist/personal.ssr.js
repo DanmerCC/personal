@@ -140,7 +140,6 @@ var script = {
       }));
     },
     completeUrl: function completeUrl(e) {
-      console.log(e);
       this.b64src = e.target.result;
     }
   },
@@ -278,7 +277,7 @@ var __vue_render__ = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', [_vm._ssrNode("<input type=\"file\" hidden=\"hidden\" data-v-51e2b6a2> " + (_vm.b64src != null ? "<div class=\"btn btn-primary close-button\" data-v-51e2b6a2><i class=\"fas fa-window-close\" data-v-51e2b6a2></i></div>" : "<!---->") + " " + (_vm.b64src == null ? "<div" + _vm._ssrClass(null, _vm.classzone + ' dropzone') + " data-v-51e2b6a2>\n        Arrastre aqui el documento digital\n    </div>" : "<embed" + _vm._ssrAttr("src", _vm.b64src) + " type width=\"100%\" data-v-51e2b6a2>"))]);
+  return _c('div', [_vm._ssrNode("<input type=\"file\" hidden=\"hidden\" data-v-1d9f241e> " + (_vm.b64src != null ? "<div class=\"btn btn-primary close-button\" data-v-1d9f241e><i class=\"fas fa-window-close\" data-v-1d9f241e></i></div>" : "<!---->") + " " + (_vm.b64src == null ? "<div" + _vm._ssrClass(null, _vm.classzone + ' dropzone') + " data-v-1d9f241e>\n        Arrastre aqui el documento digital\n    </div>" : "<embed" + _vm._ssrAttr("src", _vm.b64src) + " type width=\"100%\" data-v-1d9f241e>"))]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -286,8 +285,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-51e2b6a2_0", {
-    source: ".dropzone[data-v-51e2b6a2]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-51e2b6a2]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-1d9f241e_0", {
+    source: ".dropzone[data-v-1d9f241e]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-1d9f241e]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -295,10 +294,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-51e2b6a2";
+var __vue_scope_id__ = "data-v-1d9f241e";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-51e2b6a2";
+var __vue_module_identifier__ = "data-v-1d9f241e";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -431,9 +430,7 @@ var script$2 = {
       }
     }
   },
-  mounted: function mounted() {
-    console.log(this.$refs.myinput.clientHeight);
-  }
+  mounted: function mounted() {}
 };/* script */
 var __vue_script__$2 = script$2;
 /* template */
@@ -489,8 +486,8 @@ var __vue_staticRenderFns__$2 = [];
 
 var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-2c95c235_0", {
-    source: "input[data-v-2c95c235]{max-width:60px}",
+  inject("data-v-313bc5bd_0", {
+    source: "input[data-v-313bc5bd]{max-width:60px}",
     map: undefined,
     media: undefined
   });
@@ -498,10 +495,10 @@ var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$2 = "data-v-2c95c235";
+var __vue_scope_id__$2 = "data-v-313bc5bd";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-2c95c235";
+var __vue_module_identifier__$2 = "data-v-313bc5bd";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -764,7 +761,6 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
         var row_tds = z.querySelectorAll('td');
         row_tds.forEach(function (z) {
           var childtype = z.childNodes.length;
-          console.log(z.childNodes.length);
 
           if (z.innerHTML.indexOf("word") != -1) {
             temp_row.push('node');
@@ -784,7 +780,6 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
         lineArray.push(index == 0 ? line : line);
       });
       var csvContent = lineArray.join("\r\n");
-      console.log(csvContent);
       var excel_file = document.createElement('a');
       excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
       excel_file.setAttribute('download', 'dccexcel.xls');
@@ -825,9 +820,7 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
     handleRowClick: function handleRowClick(item) {
       if (this.rowclickeable) this.$emit("rowclick", item);
     },
-    handleCheck: function handleCheck($event, columna) {
-      console.log($event, columna);
-    },
+    handleCheck: function handleCheck($event, columna) {},
     isHover: function isHover(pkey) {
       return this.pkeyRowHover == pkey;
     },
@@ -955,7 +948,6 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
   },
   watch: {
     inload: function inload(value) {
-      console.log(value);
       this.loading = value;
     },
     page: function page() {
@@ -990,16 +982,16 @@ var __vue_render__$6 = function __vue_render__() {
     style: {
       '--loadingtext': _vm.loadingtext
     }
-  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-6136fa8f><div class=\"row align-items-center head-options\" data-v-6136fa8f><div class=\"col-11 text-center\" data-v-6136fa8f><span" + _vm._ssrStyle(null, null, {
+  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-56adc176><div class=\"row align-items-center head-options\" data-v-56adc176><div class=\"col-11 text-center\" data-v-56adc176><span" + _vm._ssrStyle(null, null, {
     display: _vm.selectable ? '' : 'none'
-  }) + " data-v-6136fa8f>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-6136fa8f><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-6136fa8f></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-6136fa8f>", "</table>", [_vm._ssrNode("<thead data-v-6136fa8f>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-6136fa8f>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-6136fa8f>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-6136fa8f><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-6136fa8f></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-6136fa8f><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-6136fa8f></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-6136fa8f>", "</th>", [_vm._t("top-options", null, {
+  }) + " data-v-56adc176>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-56adc176><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-56adc176></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-56adc176>", "</table>", [_vm._ssrNode("<thead data-v-56adc176>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-56adc176>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-56adc176>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-56adc176><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-56adc176></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-56adc176><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-56adc176></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-56adc176>", "</th>", [_vm._t("top-options", null, {
     "selecteds": _vm.selecteds
-  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-6136fa8f>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-6136fa8f>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-6136fa8f>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-6136fa8f>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
-    return _vm._ssrNode("<th data-v-6136fa8f>", "</th>", [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
+  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-56adc176>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-56adc176>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-56adc176>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-56adc176>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
+    return _vm._ssrNode("<th data-v-56adc176>", "</th>", [_vm._t("column", [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
       "column": column
     })], 2);
-  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-6136fa8f>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-6136fa8f>", "</tbody>", [_vm._l(_vm.items, function (item) {
-    return _vm._ssrNode("<tr" + _vm._ssrClass(null, _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover)) + " data-v-6136fa8f>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-6136fa8f>", "</td>", [_c('checkable-item', {
+  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-56adc176>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-56adc176>", "</tbody>", [_vm._l(_vm.items, function (item) {
+    return _vm._ssrNode("<tr" + _vm._ssrClass(null, _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover)) + " data-v-56adc176>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-56adc176>", "</td>", [_c('checkable-item', {
       ref: "rowselectbox",
       refInFor: true,
       attrs: {
@@ -1010,7 +1002,7 @@ var __vue_render__$6 = function __vue_render__() {
         "change": _vm.handleSelect
       }
     })], 1) : _vm._e(), _vm._ssrNode(" "), _vm._l(_vm.columnsSelectedsInOrder, function (c) {
-      return _vm._ssrNode("<td data-v-6136fa8f>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
+      return _vm._ssrNode("<td data-v-56adc176>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
         "row": item,
         "column": c,
         "item": _vm.interpret(item, c)
@@ -1019,12 +1011,12 @@ var __vue_render__$6 = function __vue_render__() {
         "row": item,
         "hover": _vm.isHover(item[_vm.pkey])
       })], 2);
-    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-6136fa8f>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
+    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-56adc176>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
       "item": item,
       "row": item,
       "hover": _vm.isHover(item[_vm.pkey])
     })], 2) : _vm._e()], 2);
-  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-6136fa8f>" + (_vm.selectable ? "<td data-v-6136fa8f></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-6136fa8f>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
+  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-56adc176>" + (_vm.selectable ? "<td data-v-56adc176></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-56adc176>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
     "perpage": _vm.limit
   }), _vm._ssrNode(" "), _vm.showConfigTable ? _c('modal-component', {
     attrs: {
@@ -1085,7 +1077,7 @@ var __vue_render__$6 = function __vue_render__() {
       },
       proxy: true
     }], null, false, 1350803417)
-  }) : _vm._e(), _vm._ssrNode(" "), _vm._t("append"), _vm._ssrNode(" <button data-v-6136fa8f>getDATA</button>")], 2);
+  }) : _vm._e(), _vm._ssrNode(" "), _vm._t("append"), _vm._ssrNode(" <button data-v-56adc176>getDATA</button>")], 2);
 };
 
 var __vue_staticRenderFns__$6 = [];
@@ -1093,8 +1085,8 @@ var __vue_staticRenderFns__$6 = [];
 
 var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-6136fa8f_0", {
-    source: ".loading[data-v-6136fa8f]{overflow:hidden}.loading[data-v-6136fa8f]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-6136fa8f]{font-size:10px;font-weight:700}table[data-v-6136fa8f]{max-height:250px;overflow:scroll}input[data-v-6136fa8f]{height:17px}.scrollable-y[data-v-6136fa8f]{overflow-y:auto}.select-td[data-v-6136fa8f]{width:60px}.medium-td[data-v-6136fa8f]{max-width:120px}.no-space-left[data-v-6136fa8f]{padding-left:1px}.config-icon[data-v-6136fa8f]{padding-left:0}.config-icon>i[data-v-6136fa8f]{padding-top:10px}.col-1.config-icon.text-right[data-v-6136fa8f]{padding-right:0}tr[data-v-6136fa8f]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-56adc176_0", {
+    source: ".loading[data-v-56adc176]{overflow:hidden}.loading[data-v-56adc176]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-56adc176]{font-size:10px;font-weight:700}table[data-v-56adc176]{max-height:250px;overflow:scroll}input[data-v-56adc176]{height:17px}.scrollable-y[data-v-56adc176]{overflow-y:auto}.select-td[data-v-56adc176]{width:60px}.medium-td[data-v-56adc176]{max-width:120px}.no-space-left[data-v-56adc176]{padding-left:1px}.config-icon[data-v-56adc176]{padding-left:0}.config-icon>i[data-v-56adc176]{padding-top:10px}.col-1.config-icon.text-right[data-v-56adc176]{padding-right:0}tr[data-v-56adc176]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1102,10 +1094,10 @@ var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$6 = "data-v-6136fa8f";
+var __vue_scope_id__$6 = "data-v-56adc176";
 /* module identifier */
 
-var __vue_module_identifier__$6 = "data-v-6136fa8f";
+var __vue_module_identifier__$6 = "data-v-56adc176";
 /* functional template */
 
 var __vue_is_functional_template__$6 = false;
@@ -1600,7 +1592,6 @@ var script$a = {
         });
       },
       set: function set(value) {
-        console.log(value);
         this.internal_columns = value.map(function (x) {
           x.hidden = !x.visible;
           return x;
@@ -1653,11 +1644,11 @@ var __vue_render__$a = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('span', [_vm._ssrNode("<table data-v-539ba14a>", "</table>", [_vm._ssrNode("<thead data-v-539ba14a><tr data-v-539ba14a><th" + _vm._ssrAttr("colspan", _vm.columns.length + 1) + " data-v-539ba14a><button class=\"btn btn-primary\" data-v-539ba14a>Opcion</button></th></tr> <tr data-v-539ba14a>" + (_vm.select ? "<th data-v-539ba14a><input type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(_vm.allselected) ? _vm._i(_vm.allselected, null) > -1 : _vm.allselected) + " data-v-539ba14a></th>" : "<!---->") + " " + _vm._ssrList(_vm.visibleColumns, function (column, index) {
-    return "<th data-v-539ba14a>" + _vm._ssrEscape("\n                    " + _vm._s(column.name) + "\n                ") + "</th>";
-  }) + "</tr></thead> "), _vm._ssrNode("<tbody data-v-539ba14a>", "</tbody>", _vm._l(_vm.internal_items, function (item, index) {
-    return _vm._ssrNode("<tr data-v-539ba14a>", "</tr>", [_vm._ssrNode((_vm.select ? "<td data-v-539ba14a><input type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(item.select) ? _vm._i(item.select, null) > -1 : item.select) + " data-v-539ba14a></td>" : "<!---->") + " "), _vm._l(_vm.visibleColumns, function (col, index) {
-      return _vm._ssrNode("<td data-v-539ba14a>", "</td>", [_vm._t(col.value, [_vm._v("\n                        " + _vm._s(_vm.interpret(item, col)) + "\n                    ")], {
+  return _c('span', [_vm._ssrNode("<table data-v-573ae1a4>", "</table>", [_vm._ssrNode("<thead data-v-573ae1a4><tr data-v-573ae1a4><th" + _vm._ssrAttr("colspan", _vm.columns.length + 1) + " data-v-573ae1a4><button class=\"btn btn-primary\" data-v-573ae1a4>Opcion</button></th></tr> <tr data-v-573ae1a4>" + (_vm.select ? "<th data-v-573ae1a4><input type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(_vm.allselected) ? _vm._i(_vm.allselected, null) > -1 : _vm.allselected) + " data-v-573ae1a4></th>" : "<!---->") + " " + _vm._ssrList(_vm.visibleColumns, function (column, index) {
+    return "<th data-v-573ae1a4>" + _vm._ssrEscape("\n                    " + _vm._s(column.name) + "\n                ") + "</th>";
+  }) + "</tr></thead> "), _vm._ssrNode("<tbody data-v-573ae1a4>", "</tbody>", _vm._l(_vm.internal_items, function (item, index) {
+    return _vm._ssrNode("<tr data-v-573ae1a4>", "</tr>", [_vm._ssrNode((_vm.select ? "<td data-v-573ae1a4><input type=\"checkbox\"" + _vm._ssrAttr("checked", Array.isArray(item.select) ? _vm._i(item.select, null) > -1 : item.select) + " data-v-573ae1a4></td>" : "<!---->") + " "), _vm._l(_vm.visibleColumns, function (col, index) {
+      return _vm._ssrNode("<td data-v-573ae1a4>", "</td>", [_vm._t(col.value, [_vm._v("\n                        " + _vm._s(_vm.interpret(item, col)) + "\n                    ")], {
         "cel": _vm.interpret(item, col),
         "row": item
       })], 2);
@@ -1678,8 +1669,8 @@ var __vue_staticRenderFns__$a = [];
 
 var __vue_inject_styles__$a = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-539ba14a_0", {
-    source: "table[data-v-539ba14a],td[data-v-539ba14a],th[data-v-539ba14a],tr[data-v-539ba14a]{border:solid #000 1px}",
+  inject("data-v-573ae1a4_0", {
+    source: "table[data-v-573ae1a4],td[data-v-573ae1a4],th[data-v-573ae1a4],tr[data-v-573ae1a4]{border:solid #000 1px}",
     map: undefined,
     media: undefined
   });
@@ -1687,10 +1678,10 @@ var __vue_inject_styles__$a = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$a = "data-v-539ba14a";
+var __vue_scope_id__$a = "data-v-573ae1a4";
 /* module identifier */
 
-var __vue_module_identifier__$a = "data-v-539ba14a";
+var __vue_module_identifier__$a = "data-v-573ae1a4";
 /* functional template */
 
 var __vue_is_functional_template__$a = false;
@@ -1881,7 +1872,6 @@ var script$c = {
   },
   watch: {
     value: function value(_value) {
-      console.log("hey!");
       this.runIncreaser();
     }
   }
@@ -1910,7 +1900,7 @@ var __vue_inject_styles__$c = undefined;
 var __vue_scope_id__$c = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$c = "data-v-3dacd4a2";
+var __vue_module_identifier__$c = "data-v-b04cc604";
 /* functional template */
 
 var __vue_is_functional_template__$c = false;

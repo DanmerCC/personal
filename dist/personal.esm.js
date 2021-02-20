@@ -74,7 +74,6 @@ var script = {
     },
 
     completeUrl(e) {
-      console.log(e);
       this.b64src = e.target.result;
     }
 
@@ -280,8 +279,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-51e2b6a2_0", {
-    source: ".dropzone[data-v-51e2b6a2]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-51e2b6a2]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-1d9f241e_0", {
+    source: ".dropzone[data-v-1d9f241e]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-1d9f241e]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -289,7 +288,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-51e2b6a2";
+const __vue_scope_id__ = "data-v-1d9f241e";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
@@ -473,9 +472,7 @@ var script$2 = {
 
   },
 
-  mounted() {
-    console.log(this.$refs.myinput.clientHeight);
-  }
+  mounted() {}
 
 };
 
@@ -534,8 +531,8 @@ var __vue_staticRenderFns__$2 = [];
 
 const __vue_inject_styles__$2 = function (inject) {
   if (!inject) return;
-  inject("data-v-2c95c235_0", {
-    source: "input[data-v-2c95c235]{max-width:60px}",
+  inject("data-v-313bc5bd_0", {
+    source: "input[data-v-313bc5bd]{max-width:60px}",
     map: undefined,
     media: undefined
   });
@@ -543,7 +540,7 @@ const __vue_inject_styles__$2 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$2 = "data-v-2c95c235";
+const __vue_scope_id__$2 = "data-v-313bc5bd";
 /* module identifier */
 
 const __vue_module_identifier__$2 = undefined;
@@ -866,7 +863,6 @@ var script$6 = {
         var row_tds = z.querySelectorAll('td');
         row_tds.forEach(z => {
           var childtype = z.childNodes.length;
-          console.log(z.childNodes.length);
 
           if (z.innerHTML.indexOf("word") != -1) {
             temp_row.push('node');
@@ -886,7 +882,6 @@ var script$6 = {
         lineArray.push(index == 0 ? line : line);
       });
       var csvContent = lineArray.join("\r\n");
-      console.log(csvContent);
       var excel_file = document.createElement('a');
       excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
       excel_file.setAttribute('download', 'dccexcel.xls');
@@ -924,9 +919,7 @@ var script$6 = {
       if (this.rowclickeable) this.$emit("rowclick", item);
     },
 
-    handleCheck($event, columna) {
-      console.log($event, columna);
-    },
+    handleCheck($event, columna) {},
 
     isHover(pkey) {
       return this.pkeyRowHover == pkey;
@@ -1045,7 +1038,6 @@ var script$6 = {
   },
   watch: {
     inload(value) {
-      console.log(value);
       this.loading = value;
     },
 
@@ -1310,8 +1302,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-6136fa8f_0", {
-    source: ".loading[data-v-6136fa8f]{overflow:hidden}.loading[data-v-6136fa8f]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-6136fa8f]{font-size:10px;font-weight:700}table[data-v-6136fa8f]{max-height:250px;overflow:scroll}input[data-v-6136fa8f]{height:17px}.scrollable-y[data-v-6136fa8f]{overflow-y:auto}.select-td[data-v-6136fa8f]{width:60px}.medium-td[data-v-6136fa8f]{max-width:120px}.no-space-left[data-v-6136fa8f]{padding-left:1px}.config-icon[data-v-6136fa8f]{padding-left:0}.config-icon>i[data-v-6136fa8f]{padding-top:10px}.col-1.config-icon.text-right[data-v-6136fa8f]{padding-right:0}tr[data-v-6136fa8f]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-56adc176_0", {
+    source: ".loading[data-v-56adc176]{overflow:hidden}.loading[data-v-56adc176]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-56adc176]{font-size:10px;font-weight:700}table[data-v-56adc176]{max-height:250px;overflow:scroll}input[data-v-56adc176]{height:17px}.scrollable-y[data-v-56adc176]{overflow-y:auto}.select-td[data-v-56adc176]{width:60px}.medium-td[data-v-56adc176]{max-width:120px}.no-space-left[data-v-56adc176]{padding-left:1px}.config-icon[data-v-56adc176]{padding-left:0}.config-icon>i[data-v-56adc176]{padding-top:10px}.col-1.config-icon.text-right[data-v-56adc176]{padding-right:0}tr[data-v-56adc176]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1319,7 +1311,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-6136fa8f";
+const __vue_scope_id__$6 = "data-v-56adc176";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;
@@ -1897,7 +1889,6 @@ var script$a = {
       },
 
       set(value) {
-        console.log(value);
         this.internal_columns = value.map(x => {
           x.hidden = !x.visible;
           return x;
@@ -2058,8 +2049,8 @@ var __vue_staticRenderFns__$a = [];
 
 const __vue_inject_styles__$a = function (inject) {
   if (!inject) return;
-  inject("data-v-539ba14a_0", {
-    source: "table[data-v-539ba14a],td[data-v-539ba14a],th[data-v-539ba14a],tr[data-v-539ba14a]{border:solid #000 1px}",
+  inject("data-v-573ae1a4_0", {
+    source: "table[data-v-573ae1a4],td[data-v-573ae1a4],th[data-v-573ae1a4],tr[data-v-573ae1a4]{border:solid #000 1px}",
     map: undefined,
     media: undefined
   });
@@ -2067,7 +2058,7 @@ const __vue_inject_styles__$a = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$a = "data-v-539ba14a";
+const __vue_scope_id__$a = "data-v-573ae1a4";
 /* module identifier */
 
 const __vue_module_identifier__$a = undefined;
@@ -2334,7 +2325,6 @@ var script$c = {
   },
   watch: {
     value(value) {
-      console.log("hey!");
       this.runIncreaser();
     }
 

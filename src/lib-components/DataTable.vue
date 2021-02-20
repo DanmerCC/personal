@@ -203,7 +203,6 @@ export default {
         var row_tds = z.querySelectorAll('td')
         row_tds.forEach(z=>{
           var childtype = z.childNodes.length
-          console.log(z.childNodes.length)
           if(z.innerHTML.indexOf("word") != -1){
             temp_row.push('node')
           }else{
@@ -221,7 +220,6 @@ export default {
             lineArray.push(index == 0 ? line : line)
         });
         var csvContent = lineArray.join("\r\n")
-        console.log(csvContent)
         var excel_file = document.createElement('a');
         excel_file.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(csvContent));
         excel_file.setAttribute('download', 'dccexcel.xls');
@@ -260,7 +258,7 @@ export default {
       if (this.rowclickeable) this.$emit("rowclick", item);
     },
     handleCheck($event, columna) {
-      console.log($event, columna);
+      
     },
     isHover(pkey) {
       return this.pkeyRowHover == pkey;
@@ -369,7 +367,6 @@ export default {
   },
   watch: {
     inload(value){
-      console.log(value)
       this.loading = value
     },
     page() {

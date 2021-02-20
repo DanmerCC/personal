@@ -42,7 +42,7 @@ export default {
     },
     watch: {
         value(value){
-            console.log("hey!")
+            
             this.runIncreaser()
         }
     }

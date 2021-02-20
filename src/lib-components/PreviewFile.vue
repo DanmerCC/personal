@@ -63,7 +63,7 @@ methods: {
         reader.readAsDataURL(new Blob(fs,{type:'application/pdf'}))
     },
      completeUrl(e){
-        console.log(e);
+        
         this.b64src= e.target.result
     }
 },
