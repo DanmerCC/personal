@@ -856,7 +856,7 @@ var script$6 = {
       var text_headers = [];
       th_headers.forEach(x => text_headers.push(x.innerHTML.trim())); //now get text in cells
 
-      var tr_ows = this.$refs.domref.querySelectorAll('tbody tr');
+      var tr_ows = this.$refs.domref.querySelectorAll('tbody tr.row-selected');
       var data_array = [];
       tr_ows.forEach(z => {
         var temp_row = [];
@@ -1178,7 +1178,7 @@ var __vue_render__$6 = function () {
   }, [_vm._v("Mas")]) : _vm._e()], 2)]), _vm._v(" "), _c('tbody', [_vm._l(_vm.items, function (item) {
     return _c('tr', {
       key: item.order,
-      class: _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover),
+      class: (_vm.isSelected(item) ? 'row-selected ' : '') + _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover),
       on: {
         "mouseover": function ($event) {
           return _vm.handle(item[_vm.pkey]);
@@ -1296,8 +1296,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-93e34ada_0", {
-    source: ".loading[data-v-93e34ada]{overflow:hidden}.loading[data-v-93e34ada]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-93e34ada]{font-size:10px;font-weight:700}table[data-v-93e34ada]{max-height:250px;overflow:scroll}input[data-v-93e34ada]{height:17px}.scrollable-y[data-v-93e34ada]{overflow-y:auto}.select-td[data-v-93e34ada]{width:60px}.medium-td[data-v-93e34ada]{max-width:120px}.no-space-left[data-v-93e34ada]{padding-left:1px}.config-icon[data-v-93e34ada]{padding-left:0}.config-icon>i[data-v-93e34ada]{padding-top:10px}.col-1.config-icon.text-right[data-v-93e34ada]{padding-right:0}tr[data-v-93e34ada]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-58da5ebe_0", {
+    source: ".loading[data-v-58da5ebe]{overflow:hidden}.loading[data-v-58da5ebe]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-58da5ebe]{font-size:10px;font-weight:700}table[data-v-58da5ebe]{max-height:250px;overflow:scroll}input[data-v-58da5ebe]{height:17px}.scrollable-y[data-v-58da5ebe]{overflow-y:auto}.select-td[data-v-58da5ebe]{width:60px}.medium-td[data-v-58da5ebe]{max-width:120px}.no-space-left[data-v-58da5ebe]{padding-left:1px}.config-icon[data-v-58da5ebe]{padding-left:0}.config-icon>i[data-v-58da5ebe]{padding-top:10px}.col-1.config-icon.text-right[data-v-58da5ebe]{padding-right:0}tr[data-v-58da5ebe]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1305,7 +1305,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-93e34ada";
+const __vue_scope_id__$6 = "data-v-58da5ebe";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

@@ -54,7 +54,7 @@
           :key="item.order"
           @mouseover="handle(item[pkey])"
           @mouseleave="pkeyRowHover = null"
-          :class="rowClassRender(item,item[pkey] == pkeyRowHover)"
+          :class="(isSelected(item)?'row-selected ':'')+rowClassRender(item,item[pkey] == pkeyRowHover)"
         >
           <td
             class="select-td"
@@ -195,7 +195,7 @@ export default {
       th_headers.forEach(x=>text_headers.push(x.innerHTML.trim()))
 
       //now get text in cells
-      var tr_ows = this.$refs.domref.querySelectorAll('tbody tr')
+      var tr_ows = this.$refs.domref.querySelectorAll('tbody tr.row-selected')
       var data_array = []
       tr_ows.forEach(z=>{
         var temp_row = []
