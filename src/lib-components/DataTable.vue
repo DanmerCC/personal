@@ -137,7 +137,6 @@
     </modal-component>
     <slot name='append'>
     </slot>
-    <button @click="getDataFromTable()">getDATA</button>
   </div>
 </template>
 
