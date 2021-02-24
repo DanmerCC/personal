@@ -36,9 +36,9 @@ export default Vue.extend({
       ],
        data2:[
         {id:7,name:"aaaaaa",edad:10},
-        {id:8,name:"bbbbbb",edad:11},
+        {id:8,name:"tbbbbbb",edad:11},
         {id:9,name:"cccccccccc",edad:12},
-        {id:10,name:"dddddd",edad:13},
+        {id:10,name:"dddddd\t",edad:13},
         {id:11,name:"eeeeeeee",edad:14},
         {id:12,name:"ffffffff",edad:15},
       ],
@@ -95,7 +95,9 @@ export default Vue.extend({
 
       </data-table2>
       <data-table :items="voidarray" :columns="headers" :select="true" :inload="loading" :rowClass="classRender">
-
+        <template #edad="{item}">
+          {{ item }} :)
+        </template>
       </data-table>
     </div>
     <button class="btn btn-primary" @click="modal=!modal">Modal</button>
@@ -118,8 +120,10 @@ export default Vue.extend({
 
     <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading" :rowClassRender="classRender">
       <template #edad="{item}">
+
         <span  class="hard-green" v-if="item>=14">{{ item }}</span>
         <span v-else>{{ item }}</span>
+        asdasd
       </template>
     </data-table>
     <select v-model="mpage">

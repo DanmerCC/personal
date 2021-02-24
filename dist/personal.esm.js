@@ -854,7 +854,7 @@ var script$6 = {
       var last_tr = header[header.length - 1];
       var th_headers = last_tr.querySelectorAll('th');
       var text_headers = [];
-      th_headers.forEach(x => text_headers.push(x.innerHTML)); //now get text in cells
+      th_headers.forEach(x => text_headers.push(x.innerHTML.trim())); //now get text in cells
 
       var tr_ows = this.$refs.domref.querySelectorAll('tbody tr');
       var data_array = [];
@@ -867,7 +867,7 @@ var script$6 = {
           if (z.innerHTML.indexOf("word") != -1) {
             temp_row.push('node');
           } else {
-            temp_row.push(z.innerHTML.replace(/<[^>]*>?/gm, ''));
+            temp_row.push(z.innerHTML.replace(/<[^>]*>?/gm, '').trim());
           }
         });
         data_array.push(temp_row);
@@ -1296,8 +1296,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-62888e8a_0", {
-    source: ".loading[data-v-62888e8a]{overflow:hidden}.loading[data-v-62888e8a]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-62888e8a]{font-size:10px;font-weight:700}table[data-v-62888e8a]{max-height:250px;overflow:scroll}input[data-v-62888e8a]{height:17px}.scrollable-y[data-v-62888e8a]{overflow-y:auto}.select-td[data-v-62888e8a]{width:60px}.medium-td[data-v-62888e8a]{max-width:120px}.no-space-left[data-v-62888e8a]{padding-left:1px}.config-icon[data-v-62888e8a]{padding-left:0}.config-icon>i[data-v-62888e8a]{padding-top:10px}.col-1.config-icon.text-right[data-v-62888e8a]{padding-right:0}tr[data-v-62888e8a]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-93e34ada_0", {
+    source: ".loading[data-v-93e34ada]{overflow:hidden}.loading[data-v-93e34ada]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-93e34ada]{font-size:10px;font-weight:700}table[data-v-93e34ada]{max-height:250px;overflow:scroll}input[data-v-93e34ada]{height:17px}.scrollable-y[data-v-93e34ada]{overflow-y:auto}.select-td[data-v-93e34ada]{width:60px}.medium-td[data-v-93e34ada]{max-width:120px}.no-space-left[data-v-93e34ada]{padding-left:1px}.config-icon[data-v-93e34ada]{padding-left:0}.config-icon>i[data-v-93e34ada]{padding-top:10px}.col-1.config-icon.text-right[data-v-93e34ada]{padding-right:0}tr[data-v-93e34ada]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1305,7 +1305,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-62888e8a";
+const __vue_scope_id__$6 = "data-v-93e34ada";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

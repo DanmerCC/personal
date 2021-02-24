@@ -192,7 +192,7 @@ export default {
       var last_tr = header[header.length-1]
       var th_headers = last_tr.querySelectorAll('th')
       var text_headers = []
-      th_headers.forEach(x=>text_headers.push(x.innerHTML))
+      th_headers.forEach(x=>text_headers.push(x.innerHTML.trim()))
 
       //now get text in cells
       var tr_ows = this.$refs.domref.querySelectorAll('tbody tr')
@@ -205,7 +205,7 @@ export default {
           if(z.innerHTML.indexOf("word") != -1){
             temp_row.push('node')
           }else{
-            temp_row.push(z.innerHTML.replace(/<[^>]*>?/gm, ''))
+            temp_row.push(z.innerHTML.replace(/<[^>]*>?/gm, '').trim())
           }
         })
         data_array.push(temp_row)
