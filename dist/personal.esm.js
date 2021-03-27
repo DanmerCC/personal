@@ -2380,6 +2380,7 @@ const __vue_component__$c = /*#__PURE__*/normalizeComponent({
 //
 //
 var script$d = {
+  inheritAttrs: false,
   props: {
     value: {
       type: Array,
@@ -2413,7 +2414,12 @@ var script$d = {
       this.$emit('input', this.internal_selecteds);
     }
 
+  },
+
+  mounted() {
+    console.log(this.$attrs);
   }
+
 };
 
 /* script */
@@ -2428,9 +2434,9 @@ var __vue_render__$d = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', _vm._l(_vm.internal_items, function (value, index) {
-    return _c('div', {
+    return _c('div', _vm._b({
       key: index
-    }, [_c('label', {
+    }, 'div', _vm.$attrs, false), [_c('label', {
       attrs: {
         "for": _vm.random_id + index + 'chbx'
       }

@@ -23,7 +23,7 @@ export default Vue.extend({
     'data-table2':DataTable2,
     Tab,
     Increaser,
-    GroupCheckBox
+    'group-checkbox':GroupCheckBox
   },
   data(){
     return {
@@ -96,7 +96,7 @@ export default Vue.extend({
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" integrity="sha512-rVZC4rf0Piwtw/LsgwXxKXzWq3L0P6atiQKBNuXYRbg2FoRbSTIY0k2DxuJcs7dk4e/ShtMzglHKBOJxW8EQyQ==" crossorigin="anonymous" />
     <div class='container'>
 
-      <GroupCheckBox v-model="checkselecteds" :items="checkboxvalues"></GroupCheckBox>
+      <group-checkbox child_class="gray" v-model="checkselecteds" :items="checkboxvalues" ></group-checkbox>
 
       <data-table2 :items="data" :columns="headers" :select="true" >
 
@@ -151,7 +151,7 @@ export default Vue.extend({
     </Tab>
   </div>
 </template>
-<style>
+<style scoped>
   .bordered {
     border: solid 1px black;
   }
@@ -166,5 +166,9 @@ export default Vue.extend({
 
 .hard-green{
   background: greenyellow!important;
+}
+/deep/  .gray{
+  color: blue;
+  font-size: 30pt;
 }
 </style>

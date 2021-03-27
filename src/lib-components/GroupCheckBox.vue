@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="(value,index) in internal_items" :key="index">
+        <div v-for="(value,index) in internal_items" :key="index" v-bind="$attrs" :class="child_class">
             <label :for="random_id+index+'chbx'">
                 <slot :name="'label_'+value" :value="value">
                     {{ value }}
@@ -14,6 +14,7 @@
 
 <script>
 export default {
+    inheritAttrs: false,
     props: {
         value: {
             type: Array,
@@ -22,7 +23,8 @@ export default {
         items: {
             type: Array,
             default: ()=>[]
-        }
+        },
+        child_class:''
     },
     data() {
         return {
@@ -45,7 +47,10 @@ export default {
 
             this.$emit('input',this.internal_selecteds)
         }
-    }
+    },
+    mounted () {
+        console.log(this.$attrs);
+    },
 }
 </script>
 
