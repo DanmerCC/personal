@@ -8,7 +8,8 @@ import {
   CheckableItem,
   DataTable2,
   Tab,
-  Increaser
+  Increaser,
+  GroupCheckBox
    } from '@/entry';
 
 export default Vue.extend({
@@ -21,11 +22,14 @@ export default Vue.extend({
     'checkable-item':CheckableItem,
     'data-table2':DataTable2,
     Tab,
-    Increaser
+    Increaser,
+    GroupCheckBox
   },
   data(){
     return {
       modal:false,
+      checkboxvalues:['valor1','valor2','valor3'],
+      checkselecteds:['valor3'],
       data:[
         {id:1,name:"Juan",edad:10,noselect:true},
         {id:2,name:"Carlos",edad:11},
@@ -91,6 +95,9 @@ export default Vue.extend({
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" integrity="sha512-rVZC4rf0Piwtw/LsgwXxKXzWq3L0P6atiQKBNuXYRbg2FoRbSTIY0k2DxuJcs7dk4e/ShtMzglHKBOJxW8EQyQ==" crossorigin="anonymous" />
     <div class='container'>
+
+      <GroupCheckBox v-model="checkselecteds" :items="checkboxvalues"></GroupCheckBox>
+
       <data-table2 :items="data" :columns="headers" :select="true" >
 
       </data-table2>

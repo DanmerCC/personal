@@ -2365,6 +2365,122 @@ const __vue_component__$c = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$c
 }, __vue_inject_styles__$c, __vue_script__$c, __vue_scope_id__$c, __vue_is_functional_template__$c, __vue_module_identifier__$c, false, undefined, undefined, undefined);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$d = {
+  props: {
+    value: {
+      type: Array,
+      default: () => []
+    },
+    items: {
+      type: Array,
+      default: () => []
+    }
+  },
+
+  data() {
+    return {
+      random_id: Math.floor(Math.random() * 100),
+      internal_items: this.items,
+      internal_selecteds: this.value
+    };
+  },
+
+  methods: {
+    handleChange($event) {
+      console.log($event);
+      var acumulator = [];
+
+      for (let index = 0; index < this.$refs.inputs.length; index++) {
+        if (this.$refs.inputs[index].checked) {
+          acumulator.push(this.$refs.inputs[index].value);
+        }
+      }
+
+      this.$emit('input', this.internal_selecteds);
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$d = script$d;
+/* template */
+
+var __vue_render__$d = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', _vm._l(_vm.internal_items, function (value, index) {
+    return _c('div', {
+      key: index
+    }, [_c('label', {
+      attrs: {
+        "for": _vm.random_id + index + 'chbx'
+      }
+    }, [_vm._t('label_' + value, [_vm._v("\n                " + _vm._s(value) + "\n            ")], {
+      "value": value
+    })], 2), _vm._v(" "), _c('input', {
+      ref: "inputs",
+      refInFor: true,
+      attrs: {
+        "type": "checkbox",
+        "name": "",
+        "id": _vm.random_id + index + 'chbx'
+      },
+      domProps: {
+        "value": value,
+        "checked": _vm.internal_selecteds.includes(value)
+      },
+      on: {
+        "change": function ($event) {
+          return _vm.handleChange($event);
+        }
+      }
+    })]);
+  }), 0);
+};
+
+var __vue_staticRenderFns__$d = [];
+/* style */
+
+const __vue_inject_styles__$d = undefined;
+/* scoped */
+
+const __vue_scope_id__$d = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$d = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$d = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$d = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$d,
+  staticRenderFns: __vue_staticRenderFns__$d
+}, __vue_inject_styles__$d, __vue_script__$d, __vue_scope_id__$d, __vue_is_functional_template__$d, __vue_module_identifier__$d, false, undefined, undefined, undefined);
+
 /* eslint-disable import/prefer-default-export */
 
 var components = /*#__PURE__*/Object.freeze({
@@ -2380,7 +2496,8 @@ var components = /*#__PURE__*/Object.freeze({
     DataTable2: __vue_component__$a,
     ConfigColumns: __vue_component__$a,
     Tab: __vue_component__$b,
-    Increaser: __vue_component__$c
+    Increaser: __vue_component__$c,
+    GroupCheckBox: __vue_component__$d
 });
 
 // Import vue components
@@ -2399,4 +2516,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$c as Increaser, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };
+export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$d as GroupCheckBox, __vue_component__$c as Increaser, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };

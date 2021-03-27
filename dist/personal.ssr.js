@@ -1913,7 +1913,97 @@ var __vue_is_functional_template__$c = false;
 var __vue_component__$c = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$c,
   staticRenderFns: __vue_staticRenderFns__$c
-}, __vue_inject_styles__$c, __vue_script__$c, __vue_scope_id__$c, __vue_is_functional_template__$c, __vue_module_identifier__$c, false, undefined, undefined, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$6,ModalComponent: __vue_component__$7,Paginate: __vue_component__$8,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4,DataTable2: __vue_component__$a,ConfigColumns: __vue_component__$a,Tab: __vue_component__$b,Increaser: __vue_component__$c});var install = function installPersonal(Vue) {
+}, __vue_inject_styles__$c, __vue_script__$c, __vue_scope_id__$c, __vue_is_functional_template__$c, __vue_module_identifier__$c, false, undefined, undefined, undefined);//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$d = {
+  props: {
+    value: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    items: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  data: function data() {
+    return {
+      random_id: Math.floor(Math.random() * 100),
+      internal_items: this.items,
+      internal_selecteds: this.value
+    };
+  },
+  methods: {
+    handleChange: function handleChange($event) {
+      console.log($event);
+      var acumulator = [];
+
+      for (var index = 0; index < this.$refs.inputs.length; index++) {
+        if (this.$refs.inputs[index].checked) {
+          acumulator.push(this.$refs.inputs[index].value);
+        }
+      }
+
+      this.$emit('input', this.internal_selecteds);
+    }
+  }
+};/* script */
+var __vue_script__$d = script$d;
+/* template */
+
+var __vue_render__$d = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', _vm._l(_vm.internal_items, function (value, index) {
+    return _vm._ssrNode("<div>", "</div>", [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.random_id + index + 'chbx') + ">", "</label>", [_vm._t('label_' + value, [_vm._v("\n                " + _vm._s(value) + "\n            ")], {
+      "value": value
+    })], 2), _vm._ssrNode(" <input type=\"checkbox\" name" + _vm._ssrAttr("id", _vm.random_id + index + 'chbx') + _vm._ssrAttr("value", value) + _vm._ssrAttr("checked", _vm.internal_selecteds.includes(value)) + ">")], 2);
+  }), 0);
+};
+
+var __vue_staticRenderFns__$d = [];
+/* style */
+
+var __vue_inject_styles__$d = undefined;
+/* scoped */
+
+var __vue_scope_id__$d = undefined;
+/* module identifier */
+
+var __vue_module_identifier__$d = "data-v-5667cba0";
+/* functional template */
+
+var __vue_is_functional_template__$d = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+var __vue_component__$d = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$d,
+  staticRenderFns: __vue_staticRenderFns__$d
+}, __vue_inject_styles__$d, __vue_script__$d, __vue_scope_id__$d, __vue_is_functional_template__$d, __vue_module_identifier__$d, false, undefined, undefined, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,PreviewFile: __vue_component__,PersonalSample: __vue_component__$1,DataTable: __vue_component__$6,ModalComponent: __vue_component__$7,Paginate: __vue_component__$8,CheckableItem: __vue_component__$2,DropDown: __vue_component__$3,DropDownItem: __vue_component__$4,DataTable2: __vue_component__$a,ConfigColumns: __vue_component__$a,Tab: __vue_component__$b,Increaser: __vue_component__$c,GroupCheckBox: __vue_component__$d});var install = function installPersonal(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -1946,4 +2036,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.CheckableItem=__vue_component__$2;exports.ConfigColumns=__vue_component__$a;exports.DataTable=__vue_component__$6;exports.DataTable2=__vue_component__$a;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.Increaser=__vue_component__$c;exports.ModalComponent=__vue_component__$7;exports.Paginate=__vue_component__$8;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.Tab=__vue_component__$b;exports.default=plugin;
+exports.CheckableItem=__vue_component__$2;exports.ConfigColumns=__vue_component__$a;exports.DataTable=__vue_component__$6;exports.DataTable2=__vue_component__$a;exports.DropDown=__vue_component__$3;exports.DropDownItem=__vue_component__$4;exports.GroupCheckBox=__vue_component__$d;exports.Increaser=__vue_component__$c;exports.ModalComponent=__vue_component__$7;exports.Paginate=__vue_component__$8;exports.PersonalSample=__vue_component__$1;exports.PreviewFile=__vue_component__;exports.Tab=__vue_component__$b;exports.default=plugin;
