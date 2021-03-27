@@ -2389,7 +2389,8 @@ var script$d = {
     items: {
       type: Array,
       default: () => []
-    }
+    },
+    child_class: ''
   },
 
   data() {
@@ -2435,7 +2436,8 @@ var __vue_render__$d = function () {
 
   return _c('div', _vm._l(_vm.internal_items, function (value, index) {
     return _c('div', _vm._b({
-      key: index
+      key: index,
+      class: _vm.child_class
     }, 'div', _vm.$attrs, false), [_c('label', {
       attrs: {
         "for": _vm.random_id + index + 'chbx'

@@ -1941,7 +1941,8 @@ var script$d = {
       default: function _default() {
         return [];
       }
-    }
+    },
+    child_class: ''
   },
   data: function data() {
     return {
@@ -1979,7 +1980,7 @@ var __vue_render__$d = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _c('div', _vm._l(_vm.internal_items, function (value, index) {
-    return _vm._ssrNode("<div" + _vm._ssrAttrs(_vm.$attrs) + ">", "</div>", [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.random_id + index + 'chbx') + ">", "</label>", [_vm._t('label_' + value, [_vm._v("\n                " + _vm._s(value) + "\n            ")], {
+    return _vm._ssrNode("<div" + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.child_class) + ">", "</div>", [_vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.random_id + index + 'chbx') + ">", "</label>", [_vm._t('label_' + value, [_vm._v("\n                " + _vm._s(value) + "\n            ")], {
       "value": value
     })], 2), _vm._ssrNode(" <input type=\"checkbox\" name" + _vm._ssrAttr("id", _vm.random_id + index + 'chbx') + _vm._ssrAttr("value", value) + _vm._ssrAttr("checked", _vm.internal_selecteds.includes(value)) + ">")], 2);
   }), 0);
@@ -1994,7 +1995,7 @@ var __vue_inject_styles__$d = undefined;
 var __vue_scope_id__$d = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$d = "data-v-226c0fc1";
+var __vue_module_identifier__$d = "data-v-6b8ed465";
 /* functional template */
 
 var __vue_is_functional_template__$d = false;
