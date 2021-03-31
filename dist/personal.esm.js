@@ -2403,7 +2403,6 @@ var script$d = {
 
   methods: {
     handleChange($event) {
-      console.log($event);
       var acumulator = [];
 
       for (let index = 0; index < this.$refs.inputs.length; index++) {
@@ -2412,15 +2411,10 @@ var script$d = {
         }
       }
 
-      this.$emit('input', this.internal_selecteds);
+      this.$emit('input', acumulator);
     }
 
-  },
-
-  mounted() {
-    console.log(this.$attrs);
   }
-
 };
 
 /* script */

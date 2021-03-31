@@ -1953,7 +1953,6 @@ var script$d = {
   },
   methods: {
     handleChange: function handleChange($event) {
-      console.log($event);
       var acumulator = [];
 
       for (var index = 0; index < this.$refs.inputs.length; index++) {
@@ -1962,11 +1961,8 @@ var script$d = {
         }
       }
 
-      this.$emit('input', this.internal_selecteds);
+      this.$emit('input', acumulator);
     }
-  },
-  mounted: function mounted() {
-    console.log(this.$attrs);
   }
 };/* script */
 var __vue_script__$d = script$d;
@@ -1995,7 +1991,7 @@ var __vue_inject_styles__$d = undefined;
 var __vue_scope_id__$d = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$d = "data-v-6b8ed465";
+var __vue_module_identifier__$d = "data-v-4b9a7726";
 /* functional template */
 
 var __vue_is_functional_template__$d = false;
