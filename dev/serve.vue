@@ -126,6 +126,11 @@ export default Vue.extend({
     </modal-component>
 
     <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading" :rowClassRender="classRender">
+      <template #column_edad="{column}">
+        <span>
+          <abbr :title="JSON.stringify(column)">Edad</abbr>
+        </span>
+      </template>
       <template #edad="{item}">
 
         <span  class="hard-green" v-if="item>=14">{{ item }}</span>

@@ -39,7 +39,7 @@
       <tr>
         <th v-if="selectable" class="select-td">Seleccion</th>
         <th v-for="column in columnsSelectedsInOrder" :key="column.order">
-          <slot name="column" :column="column">
+          <slot :name="'column_'+column.value" :column="column">
             <template>
               {{ column.name }}
             </template>
