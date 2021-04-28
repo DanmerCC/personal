@@ -117,6 +117,7 @@ ul{
   max-width: 300px;
   -webkit-box-shadow: 4px 7px 18px -2px rgba(0,0,0,0.5); 
 box-shadow: 4px 7px 18px -2px rgba(0,0,0,0.5);
+z-index:99
 }
 li:hover{
   background-color:rgb(252, 250, 250);
