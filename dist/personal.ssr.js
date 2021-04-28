@@ -2054,6 +2054,8 @@ var script$e = {
     clearBefore: function clearBefore() {
       var _this = this;
 
+      /*this.$emit('input',null)
+      this.text = null*/
       this.$nextTick(function () {
         _this.$emit('input', null);
       });
@@ -2105,8 +2107,10 @@ var __vue_render__$e = function __vue_render__() {
         return _vm.clearVirtualInput();
       }
     }
-  }, [_vm._ssrNode("<span" + _vm._ssrAttrs(_vm.$attrs) + " data-v-4e114f42>", "</span>", [_vm.value != null ? _vm._ssrNode("<span class=\"select_value\" data-v-4e114f42>", "</span>", [_vm._ssrNode("<span data-v-4e114f42>", "</span>", [_vm._t("option", [_vm._v("\n          " + _vm._s(_vm.value) + " \n        ")])], 2)]) : _vm._ssrNode("<input" + _vm._ssrAttr("value", _vm.text) + " data-v-4e114f42>")]), _vm._ssrNode(" "), _vm.text != null && _vm.text != '' ? _vm._ssrNode("<div top=\"0\" class=\"listcontainer card\"" + _vm._ssrStyle(null, _vm.styleList, null) + " data-v-4e114f42>", "</div>", [_vm._ssrNode("<ul data-v-4e114f42>", "</ul>", _vm._l(_vm.options, function (o, key) {
-    return _vm._ssrNode("<li data-v-4e114f42>", "</li>", [_vm._t("option", [_vm._v("\n            " + _vm._s(o) + "\n          ")], {
+  }, [_vm._ssrNode("<span" + _vm._ssrAttrs(_vm.$attrs) + " data-v-68c2f8da>", "</span>", [_vm.value != null ? _vm._ssrNode("<span class=\"select_value\" data-v-68c2f8da>", "</span>", [_vm._ssrNode("<span data-v-68c2f8da>", "</span>", [_vm._t("option", [_vm._v("\n          " + _vm._s(_vm.value) + " \n        ")], {
+    "option": _vm.value
+  })], 2)]) : _vm._ssrNode("<input" + _vm._ssrAttr("value", _vm.text) + " data-v-68c2f8da>")]), _vm._ssrNode(" "), _vm.text != null && _vm.text != '' ? _vm._ssrNode("<div top=\"0\" class=\"listcontainer card\"" + _vm._ssrStyle(null, _vm.styleList, null) + " data-v-68c2f8da>", "</div>", [_vm._ssrNode("<ul data-v-68c2f8da>", "</ul>", _vm._l(_vm.options, function (o, key) {
+    return _vm._ssrNode("<li data-v-68c2f8da>", "</li>", [_vm._t("option", [_vm._v("\n            " + _vm._s(o) + "\n          ")], {
       "option": o
     })], 2);
   }), 0)]) : _vm._e()], 2);
@@ -2117,8 +2121,8 @@ var __vue_staticRenderFns__$e = [];
 
 var __vue_inject_styles__$e = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-4e114f42_0", {
-    source: ".select_value[data-v-4e114f42]{min-width:174px;min-height:30px;box-sizing:border-box;-webkit-writing-mode:horizontal-tb!important;text-rendering:auto;color:-internal-light-dark(black,#fff);letter-spacing:normal;word-spacing:normal;text-transform:none;text-indent:0;text-shadow:none;display:inline-block;text-align:start;appearance:auto;background-color:-internal-light-dark(#fff,#3b3b3b);-webkit-rtl-ordering:logical;cursor:text;margin:0;font:400 18.3333px Arial;padding:1px 2px;border-width:1px;border-style:inset;border-color:#000;border-image:initial;border-radius:5%}ul[data-v-4e114f42]{padding:0 0;margin:0}.listcontainer[data-v-4e114f42]{background-color:#fff;max-width:300px;-webkit-box-shadow:4px 7px 18px -2px rgba(0,0,0,.5);box-shadow:4px 7px 18px -2px rgba(0,0,0,.5)}li[data-v-4e114f42]:hover{background-color:#fcfafa}li[data-v-4e114f42]{list-style-type:none;padding:4px}",
+  inject("data-v-68c2f8da_0", {
+    source: ".select_value[data-v-68c2f8da]{min-width:174px;min-height:30px;box-sizing:border-box;-webkit-writing-mode:horizontal-tb!important;text-rendering:auto;color:-internal-light-dark(black,#fff);letter-spacing:normal;word-spacing:normal;text-transform:none;text-indent:0;text-shadow:none;display:inline-block;text-align:start;appearance:auto;background-color:-internal-light-dark(#fff,#3b3b3b);-webkit-rtl-ordering:logical;cursor:text;margin:0;font:400 18.3333px Arial;padding:1px 2px;border-width:1px;border-style:inset;border-color:#000;border-image:initial;border-radius:5%}ul[data-v-68c2f8da]{padding:0 0;margin:0}.listcontainer[data-v-68c2f8da]{background-color:#fff;max-width:300px;-webkit-box-shadow:4px 7px 18px -2px rgba(0,0,0,.5);box-shadow:4px 7px 18px -2px rgba(0,0,0,.5)}li[data-v-68c2f8da]:hover{background-color:#fcfafa}li[data-v-68c2f8da]{list-style-type:none;padding:4px}",
     map: undefined,
     media: undefined
   });
@@ -2126,10 +2130,10 @@ var __vue_inject_styles__$e = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$e = "data-v-4e114f42";
+var __vue_scope_id__$e = "data-v-68c2f8da";
 /* module identifier */
 
-var __vue_module_identifier__$e = "data-v-4e114f42";
+var __vue_module_identifier__$e = "data-v-68c2f8da";
 /* functional template */
 
 var __vue_is_functional_template__$e = false;

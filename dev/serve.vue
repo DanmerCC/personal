@@ -100,7 +100,11 @@ export default Vue.extend({
     <div class='container'>
       <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
       <group-checkbox child_class="gray" v-model="checkselecteds" :items="checkboxvalues" ></group-checkbox>
-
+    <AutoComplete :options="checkboxvalues" v-model="valueselect">
+      <template #option="{option}">
+        asdasd {{ option }}
+      </template>
+    </AutoComplete>
       <data-table2 :items="data" :columns="headers" :select="true" >
 
       </data-table2>
@@ -145,7 +149,7 @@ export default Vue.extend({
       <option value="1">1</option>
       <option value="2">2</option>
     </select>
-    <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
+    
     <checkable-item></checkable-item>
     <Tab v-model="tab" :tabs="['init','othertab']">
       <template #init>

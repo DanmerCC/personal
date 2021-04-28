@@ -3,7 +3,7 @@
     <span v-bind="$attrs">
       <span class="select_value" v-if="value!=null" @click="clearVirtualInput()">
         <span class="">
-          <slot name='option'>
+          <slot name='option' :option="value">
             {{ value }} 
           </slot>
           </span> <!--<span @click="$emit('input',null)"> x</span>-->
@@ -47,6 +47,8 @@ export default {
   },
   methods: {
     clearBefore(){
+      /*this.$emit('input',null)
+      this.text = null*/
       this.$nextTick(()=>{
         this.$emit('input',null)
       })
