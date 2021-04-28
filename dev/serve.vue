@@ -9,7 +9,8 @@ import {
   DataTable2,
   Tab,
   Increaser,
-  GroupCheckBox
+  GroupCheckBox,
+  AutoComplete
    } from '@/entry';
 
 export default Vue.extend({
@@ -23,11 +24,13 @@ export default Vue.extend({
     'data-table2':DataTable2,
     Tab,
     Increaser,
-    'group-checkbox':GroupCheckBox
+    'group-checkbox':GroupCheckBox,
+    AutoComplete
   },
   data(){
     return {
       modal:false,
+      valueselect:null,
       checkboxvalues:['valor1','valor2','valor3'],
       checkselecteds:['valor3'],
       data:[
@@ -95,7 +98,7 @@ export default Vue.extend({
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" integrity="sha512-rVZC4rf0Piwtw/LsgwXxKXzWq3L0P6atiQKBNuXYRbg2FoRbSTIY0k2DxuJcs7dk4e/ShtMzglHKBOJxW8EQyQ==" crossorigin="anonymous" />
     <div class='container'>
-
+      <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
       <group-checkbox child_class="gray" v-model="checkselecteds" :items="checkboxvalues" ></group-checkbox>
 
       <data-table2 :items="data" :columns="headers" :select="true" >
@@ -120,7 +123,7 @@ export default Vue.extend({
     <modal-component v-if="modal" @close="modal=false">
       <template #body>
         <div class="container">
-          Hola
+          <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
         </div>
       </template>
     </modal-component>
@@ -142,6 +145,7 @@ export default Vue.extend({
       <option value="1">1</option>
       <option value="2">2</option>
     </select>
+    <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
     <checkable-item></checkable-item>
     <Tab v-model="tab" :tabs="['init','othertab']">
       <template #init>
@@ -154,6 +158,7 @@ export default Vue.extend({
           This is a  othertab
       </template>
     </Tab>
+    <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
   </div>
 </template>
 <style scoped>

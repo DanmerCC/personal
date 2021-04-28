@@ -13,4 +13,5 @@ export { default as ConfigColumns } from './DataTable2.vue'
 export { default as Tab } from './Tab.vue'
 export { default as Increaser } from './Increaser.vue'
 export { default as GroupCheckBox} from './GroupCheckBox.vue'
+export { default as AutoComplete} from './AutoComplete.vue'
 

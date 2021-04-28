@@ -2483,6 +2483,196 @@ const __vue_component__$d = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__$d
 }, __vue_inject_styles__$d, __vue_script__$d, __vue_scope_id__$d, __vue_is_functional_template__$d, __vue_module_identifier__$d, false, undefined, undefined, undefined);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$e = {
+  inheritAttrs: false,
+  props: {
+    value: {
+      default: null
+    },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
+
+  data() {
+    return {
+      text: null
+    };
+  },
+
+  watch: {
+    value(value) {}
+
+  },
+  methods: {
+    clearBefore() {
+      this.$nextTick(() => {
+        this.$emit('input', null);
+      });
+    },
+
+    clearVirtualInput(value) {
+      this.text = null;
+      this.$emit('input', null);
+      this.$nextTick(() => {
+        this.$refs.myinput.select();
+      });
+    }
+
+  },
+  computed: {
+    top() {
+      const el = this.$el;
+      var rect;
+
+      if (!el) {
+        return 0;
+      }
+
+      rect = el.getBoundingClientRect();
+      return rect.top;
+    },
+
+    styleList() {
+      return "position:absolute;top:" + this.x + ";width:100%";
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$e = script$e;
+/* template */
+
+var __vue_render__$e = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    on: {
+      "keydown": function ($event) {
+        if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])) {
+          return null;
+        }
+
+        return _vm.clearVirtualInput();
+      }
+    }
+  }, [_c('span', _vm._b({}, 'span', _vm.$attrs, false), [_vm.value != null ? _c('span', {
+    staticClass: "select_value",
+    on: {
+      "click": function ($event) {
+        return _vm.clearVirtualInput();
+      }
+    }
+  }, [_c('span', {}, [_vm._t("option", [_vm._v("\n          " + _vm._s(_vm.value) + " \n        ")])], 2)]) : _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.text,
+      expression: "text"
+    }],
+    ref: "myinput",
+    domProps: {
+      "value": _vm.text
+    },
+    on: {
+      "input": [function ($event) {
+        if ($event.target.composing) {
+          return;
+        }
+
+        _vm.text = $event.target.value;
+      }, function ($event) {
+        return _vm.$emit('search', _vm.text);
+      }]
+    }
+  })]), _vm._v(" "), _vm.text != null && _vm.text != '' ? _c('div', {
+    staticClass: "listcontainer card",
+    style: _vm.styleList,
+    attrs: {
+      "top": "0"
+    },
+    on: {
+      "mouseleave": function ($event) {
+        return _vm.clearBefore();
+      }
+    }
+  }, [_c('ul', _vm._l(_vm.options, function (o, key) {
+    return _c('li', {
+      key: key,
+      on: {
+        "click": function ($event) {
+          _vm.$emit('input', o);
+
+          _vm.text = '';
+        }
+      }
+    }, [_vm._t("option", [_vm._v("\n            " + _vm._s(o) + "\n          ")], {
+      "option": o
+    })], 2);
+  }), 0)]) : _vm._e()]);
+};
+
+var __vue_staticRenderFns__$e = [];
+/* style */
+
+const __vue_inject_styles__$e = function (inject) {
+  if (!inject) return;
+  inject("data-v-4e114f42_0", {
+    source: ".select_value[data-v-4e114f42]{min-width:174px;min-height:30px;box-sizing:border-box;-webkit-writing-mode:horizontal-tb!important;text-rendering:auto;color:-internal-light-dark(black,#fff);letter-spacing:normal;word-spacing:normal;text-transform:none;text-indent:0;text-shadow:none;display:inline-block;text-align:start;appearance:auto;background-color:-internal-light-dark(#fff,#3b3b3b);-webkit-rtl-ordering:logical;cursor:text;margin:0;font:400 18.3333px Arial;padding:1px 2px;border-width:1px;border-style:inset;border-color:#000;border-image:initial;border-radius:5%}ul[data-v-4e114f42]{padding:0 0;margin:0}.listcontainer[data-v-4e114f42]{background-color:#fff;max-width:300px;-webkit-box-shadow:4px 7px 18px -2px rgba(0,0,0,.5);box-shadow:4px 7px 18px -2px rgba(0,0,0,.5)}li[data-v-4e114f42]:hover{background-color:#fcfafa}li[data-v-4e114f42]{list-style-type:none;padding:4px}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$e = "data-v-4e114f42";
+/* module identifier */
+
+const __vue_module_identifier__$e = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$e = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$e = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$e,
+  staticRenderFns: __vue_staticRenderFns__$e
+}, __vue_inject_styles__$e, __vue_script__$e, __vue_scope_id__$e, __vue_is_functional_template__$e, __vue_module_identifier__$e, false, createInjector, undefined, undefined);
+
 /* eslint-disable import/prefer-default-export */
 
 var components = /*#__PURE__*/Object.freeze({
@@ -2499,7 +2689,8 @@ var components = /*#__PURE__*/Object.freeze({
     ConfigColumns: __vue_component__$a,
     Tab: __vue_component__$b,
     Increaser: __vue_component__$c,
-    GroupCheckBox: __vue_component__$d
+    GroupCheckBox: __vue_component__$d,
+    AutoComplete: __vue_component__$e
 });
 
 // Import vue components
@@ -2518,4 +2709,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$d as GroupCheckBox, __vue_component__$c as Increaser, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };
+export { __vue_component__$e as AutoComplete, __vue_component__$2 as CheckableItem, __vue_component__$a as ConfigColumns, __vue_component__$6 as DataTable, __vue_component__$a as DataTable2, __vue_component__$3 as DropDown, __vue_component__$4 as DropDownItem, __vue_component__$d as GroupCheckBox, __vue_component__$c as Increaser, __vue_component__$7 as ModalComponent, __vue_component__$8 as Paginate, __vue_component__$1 as PersonalSample, __vue_component__ as PreviewFile, __vue_component__$b as Tab };
