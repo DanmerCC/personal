@@ -124,17 +124,25 @@ export default Vue.extend({
     
     <button @click="randommize()">Cambiar</button>
     <PreviewFile></PreviewFile>
+    <!--<modal-component v-if="modal" @close="modal=false">
+      <template #body>
+        <div class="container">
+          <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
+        </div>
+      </template>
+      <template #modal-footer >
+          <button class="btn btn-primary" >Guardar</button>
+          <button class="btn btn-primary">Cerrar</button>
+      </template>
+    </modal-component>-->
     <modal-component v-if="modal" @close="modal=false">
       <template #body>
         <div class="container">
           <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
         </div>
       </template>
-      <template #modal-footer class="modal-footer">
-        <div class="modal-footer" style="display:inline">
-          <button class="btn btn-primary" width="100%" style="width:100%">Guardar</button>
-          <button class="btn btn-primary">Cerrar</button>
-        </div>
+      <template #footer >
+          <button class="btn btn-primary" >Guardar</button>
       </template>
     </modal-component>
 

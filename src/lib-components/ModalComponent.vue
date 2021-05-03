@@ -31,18 +31,19 @@
               </button>
             </div>
             <div class="modal-body">
-              <slot name="body"></slot>
+            <slot name="body"></slot>
             </div>
+              <div v-if="$slots['modal-footer']" class="modal-footer">
+                <slot name="modal-footer">
 
-            
-              <slot name="modal-footer">
-                <div class="modal-footer">
-                  <slot name="footer"></slot>
-                  <button type="button" class="btn btn-secondary" @click="close()">
-                    {{ labelCancel }}
-                  </button>
-                  </div>
-              </slot>
+                </slot>
+              </div>
+              <div v-else class="modal-footer">
+                <slot name="footer"></slot>
+                <button type="button" class="btn btn-secondary" @click="close()">
+                  {{ labelCancel }}
+                </button>
+              </div>
           </div>
           </slot>
         </div>
