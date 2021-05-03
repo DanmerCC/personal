@@ -34,12 +34,15 @@
               <slot name="body"></slot>
             </div>
 
-            <div class="modal-footer">
-              <slot name="footer"></slot>
-              <button type="button" class="btn btn-secondary" @click="close()">
-                {{ labelCancel }}
-              </button>
-            </div>
+            
+              <slot name="modal-footer">
+                <div class="modal-footer">
+                  <slot name="footer"></slot>
+                  <button type="button" class="btn btn-secondary" @click="close()">
+                    {{ labelCancel }}
+                  </button>
+                  </div>
+              </slot>
           </div>
           </slot>
         </div>

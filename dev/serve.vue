@@ -130,6 +130,12 @@ export default Vue.extend({
           <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>
         </div>
       </template>
+      <template #modal-footer class="modal-footer">
+        <div class="modal-footer" style="display:inline">
+          <button class="btn btn-primary" width="100%" style="width:100%">Guardar</button>
+          <button class="btn btn-primary">Cerrar</button>
+        </div>
+      </template>
     </modal-component>
 
     <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading" :rowClassRender="classRender">
