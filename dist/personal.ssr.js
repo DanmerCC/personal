@@ -98,7 +98,8 @@ var script = {
     },
     value: {
       default: null
-    }
+    },
+    accept: null
   },
   data: function data() {
     return {
@@ -277,7 +278,7 @@ var __vue_render__ = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', [_vm._ssrNode("<input type=\"file\" hidden=\"hidden\" data-v-1d9f241e> " + (_vm.b64src != null ? "<div class=\"btn btn-primary close-button\" data-v-1d9f241e><i class=\"fas fa-window-close\" data-v-1d9f241e></i></div>" : "<!---->") + " " + (_vm.b64src == null ? "<div" + _vm._ssrClass(null, _vm.classzone + ' dropzone') + " data-v-1d9f241e>\n        Arrastre aqui el documento digital\n    </div>" : "<embed" + _vm._ssrAttr("src", _vm.b64src) + " type width=\"100%\" data-v-1d9f241e>"))]);
+  return _c('div', [_vm._ssrNode("<input type=\"file\" hidden=\"hidden\"" + _vm._ssrAttr("accept", _vm.accept) + " data-v-2a879ac8> " + (_vm.b64src != null ? "<div class=\"btn btn-primary close-button\" data-v-2a879ac8><i class=\"fas fa-window-close\" data-v-2a879ac8></i></div>" : "<!---->") + " " + (_vm.b64src == null ? "<div" + _vm._ssrClass(null, _vm.classzone + ' dropzone') + " data-v-2a879ac8>\n        Arrastre aqui el documento digital\n    </div>" : "<embed" + _vm._ssrAttr("src", _vm.b64src) + " type width=\"100%\" data-v-2a879ac8>"))]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -285,8 +286,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-1d9f241e_0", {
-    source: ".dropzone[data-v-1d9f241e]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-1d9f241e]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-2a879ac8_0", {
+    source: ".dropzone[data-v-2a879ac8]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-2a879ac8]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -294,10 +295,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-1d9f241e";
+var __vue_scope_id__ = "data-v-2a879ac8";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-1d9f241e";
+var __vue_module_identifier__ = "data-v-2a879ac8";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

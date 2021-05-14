@@ -124,6 +124,7 @@ export default Vue.extend({
     
     <button @click="randommize()">Cambiar</button>
     <PreviewFile></PreviewFile>
+    <PreviewFile accept="application/pdf"></PreviewFile>
     <!--<modal-component v-if="modal" @close="modal=false">
       <template #body>
         <div class="container">

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <input type="file" hidden ref='filecontent' @change="handleDrop">
+    <input type="file" hidden ref='filecontent' @change="handleDrop" :accept="accept">
     <div v-if="b64src!=null" @click="clear()" class="btn btn-primary close-button"><i class="fas fa-window-close"></i></div>
     <div
         v-if="b64src==null"
@@ -21,7 +21,8 @@ export default {
     props: {
         multiple:{default:false},
         types:{default:()=>['application/pdf']},
-        value:{default:null}
+        value:{default:null},
+        accept:null
     },
 data() {
     return {

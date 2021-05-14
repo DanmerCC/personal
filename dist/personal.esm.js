@@ -28,7 +28,8 @@ var script = {
     },
     value: {
       default: null
-    }
+    },
+    accept: null
   },
 
   data() {
@@ -235,7 +236,8 @@ var __vue_render__ = function () {
     ref: "filecontent",
     attrs: {
       "type": "file",
-      "hidden": ""
+      "hidden": "",
+      "accept": _vm.accept
     },
     on: {
       "change": _vm.handleDrop
@@ -279,8 +281,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-1d9f241e_0", {
-    source: ".dropzone[data-v-1d9f241e]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-1d9f241e]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-2a879ac8_0", {
+    source: ".dropzone[data-v-2a879ac8]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-2a879ac8]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -288,7 +290,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-1d9f241e";
+const __vue_scope_id__ = "data-v-2a879ac8";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
