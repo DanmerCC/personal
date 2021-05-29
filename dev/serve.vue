@@ -136,7 +136,7 @@ export default Vue.extend({
           <button class="btn btn-primary">Cerrar</button>
       </template>
     </modal-component>-->
-    <modal-component v-if="modal" @close="modal=false">
+    <modal-component v-if="modal" @close="modal=false" @outclick="modal=false">
       <template #body>
         <div class="container">
           <AutoComplete :options="checkboxvalues" v-model="valueselect"></AutoComplete>

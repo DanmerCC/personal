@@ -1270,6 +1270,7 @@ var __vue_render__$7 = function __vue_render__() {
     on: {
       "click": function click($event) {
         $event.stopPropagation();
+        return _vm.$emit('outclick');
       }
     }
   }, [_c('div', {
@@ -1330,8 +1331,8 @@ var __vue_staticRenderFns__$7 = [];
 
 var __vue_inject_styles__$7 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-0bc1a3b4_0", {
-    source: ".modal-content[data-v-0bc1a3b4]{overflow:scroll}.modal-xl[data-v-0bc1a3b4]{width:90%;max-width:1200px}.unspace[data-v-0bc1a3b4]{height:0}.breadcrumb-menu .btn[data-v-0bc1a3b4]{color:#fff}.breadcrumb-menu .btn[data-v-0bc1a3b4]:hover{color:#6c757d}.modal-title[data-v-0bc1a3b4]{color:#6c757d}",
+  inject("data-v-47906c2e_0", {
+    source: ".modal-content[data-v-47906c2e]{overflow:scroll}.modal-xl[data-v-47906c2e]{width:90%;max-width:1200px}.unspace[data-v-47906c2e]{height:0}.breadcrumb-menu .btn[data-v-47906c2e]{color:#fff}.breadcrumb-menu .btn[data-v-47906c2e]:hover{color:#6c757d}.modal-title[data-v-47906c2e]{color:#6c757d}",
     map: undefined,
     media: undefined
   });
@@ -1339,10 +1340,10 @@ var __vue_inject_styles__$7 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$7 = "data-v-0bc1a3b4";
+var __vue_scope_id__$7 = "data-v-47906c2e";
 /* module identifier */
 
-var __vue_module_identifier__$7 = "data-v-0bc1a3b4";
+var __vue_module_identifier__$7 = "data-v-47906c2e";
 /* functional template */
 
 var __vue_is_functional_template__$7 = false;

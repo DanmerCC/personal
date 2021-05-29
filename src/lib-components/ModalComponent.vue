@@ -7,7 +7,7 @@
         role="dialog"
         aria-labelledby="Modal"
         style="display: block"
-        @click.stop=""
+        @click.stop="$emit('outclick')"
       >
         <div
           :class="'modal-dialog ' + modalSizeClasses"
