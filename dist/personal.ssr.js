@@ -99,7 +99,10 @@ var script = {
     value: {
       default: null
     },
-    accept: null
+    accept: null,
+    cast: {
+      default: null
+    }
   },
   data: function data() {
     return {
@@ -143,6 +146,7 @@ var script = {
       }));
     },
     completeUrl: function completeUrl(e) {
+      this.b64src = null;
       this.b64src = e.target.result;
     }
   },
@@ -153,7 +157,14 @@ var script = {
   },
   watch: {
     file: function file(value) {
-      this.$emit('input', value);
+      if (this.cast == null) {
+        this.$emit('input', value);
+      }
+    },
+    b64src: function b64src(value) {
+      if (this.cast == 'b64') {
+        this.$emit('input', value);
+      }
     }
   },
   mounted: function mounted() {
@@ -284,7 +295,7 @@ var __vue_render__ = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', [_vm._ssrNode("<input type=\"file\" hidden=\"hidden\"" + _vm._ssrAttr("accept", _vm.types.join(',')) + " data-v-0dac5f3a> " + (_vm.b64src != null ? "<div class=\"btn btn-primary close-button\" data-v-0dac5f3a><i class=\"fas fa-window-close\" data-v-0dac5f3a></i></div>" : "<!---->") + " " + (_vm.b64src == null ? "<div" + _vm._ssrClass(null, _vm.classzone + ' dropzone') + " data-v-0dac5f3a>\n        Arrastre aqui el documento digital\n    </div>" : "<embed" + _vm._ssrAttr("src", _vm.b64src) + " type width=\"100%\" data-v-0dac5f3a>"))]);
+  return _c('div', [_vm._ssrNode("<input type=\"file\" hidden=\"hidden\"" + _vm._ssrAttr("accept", _vm.types.join(',')) + " data-v-6b3da70d> " + (_vm.b64src != null ? "<div class=\"btn btn-primary close-button\" data-v-6b3da70d><i class=\"fas fa-window-close\" data-v-6b3da70d></i></div>" : "<!---->") + " " + (_vm.b64src == null ? "<div" + _vm._ssrClass(null, _vm.classzone + ' dropzone') + " data-v-6b3da70d>\n        Arrastre aqui el documento digital\n    </div>" : "<embed" + _vm._ssrAttr("src", _vm.b64src) + " type width=\"100%\" data-v-6b3da70d>"))]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -292,8 +303,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-0dac5f3a_0", {
-    source: ".dropzone[data-v-0dac5f3a]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-0dac5f3a]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-6b3da70d_0", {
+    source: ".dropzone[data-v-6b3da70d]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-6b3da70d]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -301,10 +312,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-0dac5f3a";
+var __vue_scope_id__ = "data-v-6b3da70d";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-0dac5f3a";
+var __vue_module_identifier__ = "data-v-6b3da70d";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

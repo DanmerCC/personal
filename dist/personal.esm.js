@@ -29,7 +29,10 @@ var script = {
     value: {
       default: null
     },
-    accept: null
+    accept: null,
+    cast: {
+      default: null
+    }
   },
 
   data() {
@@ -76,6 +79,7 @@ var script = {
     },
 
     completeUrl(e) {
+      this.b64src = null;
       this.b64src = e.target.result;
     }
 
@@ -88,7 +92,15 @@ var script = {
   },
   watch: {
     file(value) {
-      this.$emit('input', value);
+      if (this.cast == null) {
+        this.$emit('input', value);
+      }
+    },
+
+    b64src(value) {
+      if (this.cast == 'b64') {
+        this.$emit('input', value);
+      }
     }
 
   },
@@ -288,8 +300,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-0dac5f3a_0", {
-    source: ".dropzone[data-v-0dac5f3a]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-0dac5f3a]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-6b3da70d_0", {
+    source: ".dropzone[data-v-6b3da70d]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-6b3da70d]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -297,7 +309,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-0dac5f3a";
+const __vue_scope_id__ = "data-v-6b3da70d";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;

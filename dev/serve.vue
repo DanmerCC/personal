@@ -59,7 +59,9 @@ export default Vue.extend({
       tab:'init',
       numbers:[0,0,0,0,0],
       mynumber:0,
-      loading:false
+      loading:false,
+      imagen:null,
+      imagenB64:null
     }
   },
   methods: {
@@ -123,7 +125,10 @@ export default Vue.extend({
     <Increaser class="bordered" v-for="(n,key) in numbers" :key="key" v-model="numbers[key]"></Increaser>
     
     <button @click="randommize()">Cambiar</button>
-    <PreviewFile :types="['image/jpeg']"></PreviewFile>
+    <PreviewFile :types="['image/jpeg']" v-model="imagen" :cast='"b64"'></PreviewFile>
+    {{ imagen }}
+    <PreviewFile :types="['image/jpeg']" v-model="imagenB64"></PreviewFile>
+    {{ imagenB64 }}
     <PreviewFile :types="['application/pdf']"></PreviewFile>
     <!--<modal-component v-if="modal" @close="modal=false">
       <template #body>

@@ -22,7 +22,10 @@ export default {
         multiple:{default:false},
         types:{default:()=>['application/pdf']},
         value:{default:null},
-        accept:null
+        accept:null,
+        cast:{
+            default:null
+        }
     },
 data() {
     return {
@@ -64,7 +67,7 @@ methods: {
         reader.readAsDataURL(new Blob(fs,{type:this.file.type}))
     },
      completeUrl(e){
-        
+        this.b64src = null
         this.b64src= e.target.result
     }
 },
@@ -75,7 +78,16 @@ methods: {
     },
     watch:{
         file(value){
-            this.$emit('input',value)
+            if(this.cast == null){
+
+                this.$emit('input',value)
+            }
+        },
+        b64src(value){
+             if(this.cast == 'b64'){
+
+                this.$emit('input',value)
+            }
         }
     },
     mounted() {
