@@ -1,6 +1,6 @@
 <template>
 <div>
-    <input type="file" hidden ref='filecontent' @change="handleDrop" :accept="accept">
+    <input type="file" hidden ref='filecontent' @change="handleDrop" :accept="types.join(',')">
     <div v-if="b64src!=null" @click="clear()" class="btn btn-primary close-button"><i class="fas fa-window-close"></i></div>
     <div
         v-if="b64src==null"
@@ -48,7 +48,7 @@ methods: {
         const { files } = event.dataTransfer
             ? event.dataTransfer
             : this.$refs.filecontent;
-
+        console.log(files)
         if (files.length > 1) {
             alert("Debes seleccionar solo un archivo");
             return;
@@ -61,7 +61,7 @@ methods: {
         const reader = new FileReader()
         reader.onload = this.completeUrl
 
-        reader.readAsDataURL(new Blob(fs,{type:'application/pdf'}))
+        reader.readAsDataURL(new Blob(fs,{type:this.file.type}))
     },
      completeUrl(e){
         
@@ -77,7 +77,11 @@ methods: {
         file(value){
             this.$emit('input',value)
         }
-    }
+    },
+    mounted() {
+        console.log("accept esta deprecado")
+        console.log("accept its deprecated")
+    },
 }
 </script>
 

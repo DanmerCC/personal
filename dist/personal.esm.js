@@ -58,6 +58,7 @@ var script = {
       const {
         files
       } = event.dataTransfer ? event.dataTransfer : this.$refs.filecontent;
+      console.log(files);
 
       if (files.length > 1) {
         alert("Debes seleccionar solo un archivo");
@@ -70,7 +71,7 @@ var script = {
       const reader = new FileReader();
       reader.onload = this.completeUrl;
       reader.readAsDataURL(new Blob(fs, {
-        type: 'application/pdf'
+        type: this.file.type
       }));
     },
 
@@ -90,7 +91,13 @@ var script = {
       this.$emit('input', value);
     }
 
+  },
+
+  mounted() {
+    console.log("accept esta deprecado");
+    console.log("accept its deprecated");
   }
+
 };
 
 function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -237,7 +244,7 @@ var __vue_render__ = function () {
     attrs: {
       "type": "file",
       "hidden": "",
-      "accept": _vm.accept
+      "accept": _vm.types.join(',')
     },
     on: {
       "change": _vm.handleDrop
@@ -281,8 +288,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-2a879ac8_0", {
-    source: ".dropzone[data-v-2a879ac8]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-2a879ac8]{position:absolute;left:100%;transform:translate(-170%)}",
+  inject("data-v-0dac5f3a_0", {
+    source: ".dropzone[data-v-0dac5f3a]{width:100%;height:150px;border:solid grey 1px;border-radius:10px;border-spacing:4px;display:flex;justify-content:center;align-items:center;cursor:pointer;border-style:dashed}.close-button[data-v-0dac5f3a]{position:absolute;left:100%;transform:translate(-170%)}",
     map: undefined,
     media: undefined
   });
@@ -290,7 +297,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-2a879ac8";
+const __vue_scope_id__ = "data-v-0dac5f3a";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;

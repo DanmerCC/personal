@@ -123,8 +123,8 @@ export default Vue.extend({
     <Increaser class="bordered" v-for="(n,key) in numbers" :key="key" v-model="numbers[key]"></Increaser>
     
     <button @click="randommize()">Cambiar</button>
-    <PreviewFile></PreviewFile>
-    <PreviewFile accept="application/pdf"></PreviewFile>
+    <PreviewFile :types="['image/jpeg']"></PreviewFile>
+    <PreviewFile :types="['application/pdf']"></PreviewFile>
     <!--<modal-component v-if="modal" @close="modal=false">
       <template #body>
         <div class="container">
