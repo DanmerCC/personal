@@ -1,5 +1,5 @@
 <template>
-      <input class="form-control " type="checkbox" v-model="ischecked" @change="handleChange" ref="myinput" :disabled="value.noselect">
+      <input :class="classInput" type="checkbox" v-model="ischecked" @change="handleChange" ref="myinput" :disabled="value.noselect">
 </template>
 
 <script>
@@ -9,6 +9,9 @@ export default {
         value:{
             type:Object,
             default:null
+        },
+        classInput:{
+            default:'form-control'
         }
     },
     methods: {

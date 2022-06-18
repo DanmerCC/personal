@@ -152,7 +152,7 @@ export default Vue.extend({
       </template>
     </modal-component>
 
-    <data-table :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading" :rowClassRender="classRender">
+    <data-table  :classInputs="''" :items="mpage==1?data:data2" :columns="headers" :select="true" :inload="loading" :rowClassRender="classRender">
       <template #column_edad="{column}">
         <span>
           <abbr :title="JSON.stringify(column)">Edad</abbr>

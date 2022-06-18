@@ -419,6 +419,9 @@ var script$2 = {
     value: {
       type: Object,
       default: null
+    },
+    classInput: {
+      default: 'form-control'
     }
   },
   methods: {
@@ -468,7 +471,7 @@ var __vue_render__$2 = function __vue_render__() {
       expression: "ischecked"
     }],
     ref: "myinput",
-    staticClass: "form-control ",
+    class: _vm.classInput,
     attrs: {
       "type": "checkbox",
       "disabled": _vm.value.noselect
@@ -504,8 +507,8 @@ var __vue_staticRenderFns__$2 = [];
 
 var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-313bc5bd_0", {
-    source: "input[data-v-313bc5bd]{max-width:60px}",
+  inject("data-v-e9f7338e_0", {
+    source: "input[data-v-e9f7338e]{max-width:60px}",
     map: undefined,
     media: undefined
   });
@@ -513,10 +516,10 @@ var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$2 = "data-v-313bc5bd";
+var __vue_scope_id__$2 = "data-v-e9f7338e";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-313bc5bd";
+var __vue_module_identifier__$2 = "data-v-e9f7338e";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -703,6 +706,9 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
     'drop-down2': __vue_component__$5
   },
   props: {
+    classInputs: {
+      default: 'form-control'
+    },
     columns: {
       default: function _default() {
         return [];
@@ -1000,19 +1006,20 @@ var __vue_render__$6 = function __vue_render__() {
     style: {
       '--loadingtext': _vm.loadingtext
     }
-  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-e71baba8><div class=\"row align-items-center head-options\" data-v-e71baba8><div class=\"col-11 text-center\" data-v-e71baba8><span" + _vm._ssrStyle(null, null, {
+  }, [_vm._ssrNode("<div class=\"container-fluid\" data-v-ae671ac2><div class=\"row align-items-center head-options\" data-v-ae671ac2><div class=\"col-11 text-center\" data-v-ae671ac2><span" + _vm._ssrStyle(null, null, {
     display: _vm.selectable ? '' : 'none'
-  }) + " data-v-e71baba8>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-e71baba8><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-e71baba8></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-e71baba8>", "</table>", [_vm._ssrNode("<thead data-v-e71baba8>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-e71baba8>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-e71baba8>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-e71baba8><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-e71baba8></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-e71baba8><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-e71baba8></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-e71baba8>", "</th>", [_vm._t("top-options", null, {
+  }) + " data-v-ae671ac2>" + _vm._ssrEscape(_vm._s(_vm.selecteds.length) + " Seleccionados") + "</span></div> <div class=\"col-1 config-icon text-right\" data-v-ae671ac2><i aria-hidden=\"true\" class=\"fa fa-cog\" data-v-ae671ac2></i></div></div></div> "), _vm._ssrNode("<table class=\"table table-responsive-sm table-sm\" data-v-ae671ac2>", "</table>", [_vm._ssrNode("<thead data-v-ae671ac2>", "</thead>", [_vm.selectable ? _vm._ssrNode("<tr data-v-ae671ac2>", "</tr>", [_vm._ssrNode("<th class=\"select-td \" data-v-ae671ac2>" + (_vm.haveSomeUnselected || _vm.selecteds.length == 0 ? "<button class=\"btn btn-sm\" data-v-ae671ac2><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-ae671ac2></i></button>" : "<button class=\"btn btn-sm btn-secondary\" data-v-ae671ac2><i aria-hidden=\"true\" class=\"fa fa-check-square fa-2\" data-v-ae671ac2></i></button>") + "</th> "), _vm._ssrNode("<th" + _vm._ssrAttr("colspan", _vm.columnsSelectedsInOrder.length + (_vm.actioncolumn ? 2 : 1)) + " data-v-ae671ac2>", "</th>", [_vm._t("top-options", null, {
     "selecteds": _vm.selecteds
-  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-e71baba8>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-e71baba8>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-e71baba8>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-e71baba8>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
-    return _vm._ssrNode("<th data-v-e71baba8>", "</th>", [_vm._t('column_' + column.value, [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
+  }), _vm._ssrNode(" " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-ae671ac2>\n              csv\n            </a>" : "<!---->") + " " + (_vm.selecteds.length > 0 ? "<a href=\"#\" width=\"30px\" data-v-ae671ac2>\n              xls\n            </a>" : "<!---->"))], 2)], 2) : _vm._e(), _vm._ssrNode(" "), _vm._ssrNode("<tr data-v-ae671ac2>", "</tr>", [_vm._ssrNode((_vm.selectable ? "<th class=\"select-td\" data-v-ae671ac2>Seleccion</th>" : "<!---->") + " "), _vm._l(_vm.columnsSelectedsInOrder, function (column) {
+    return _vm._ssrNode("<th data-v-ae671ac2>", "</th>", [_vm._t('column_' + column.value, [[_vm._v("\n            " + _vm._s(column.name) + "\n          ")]], {
       "column": column
     })], 2);
-  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-e71baba8>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-e71baba8>", "</tbody>", [_vm._l(_vm.items, function (item) {
-    return _vm._ssrNode("<tr" + _vm._ssrClass(null, (_vm.isSelected(item) ? 'row-selected ' : '') + _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover)) + " data-v-e71baba8>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-e71baba8>", "</td>", [_c('checkable-item', {
+  }), _vm._ssrNode(" " + (_vm.actioncolumn ? "<th class=\"medium-td\" data-v-ae671ac2>Mas</th>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._ssrNode("<tbody data-v-ae671ac2>", "</tbody>", [_vm._l(_vm.items, function (item) {
+    return _vm._ssrNode("<tr" + _vm._ssrClass(null, (_vm.isSelected(item) ? 'row-selected ' : '') + _vm.rowClassRender(item, item[_vm.pkey] == _vm.pkeyRowHover)) + " data-v-ae671ac2>", "</tr>", [_vm.selectable ? _vm._ssrNode("<td class=\"select-td\" data-v-ae671ac2>", "</td>", [_c('checkable-item', {
       ref: "rowselectbox",
       refInFor: true,
       attrs: {
+        "classInput": _vm.classInputs,
         "checked": _vm.isSelected(item),
         "value": item
       },
@@ -1020,7 +1027,7 @@ var __vue_render__$6 = function __vue_render__() {
         "change": _vm.handleSelect
       }
     })], 1) : _vm._e(), _vm._ssrNode(" "), _vm._l(_vm.columnsSelectedsInOrder, function (c) {
-      return _vm._ssrNode("<td data-v-e71baba8>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
+      return _vm._ssrNode("<td data-v-ae671ac2>", "</td>", [_vm._t(c.value, [_vm._t("cell", [[_vm._v("\n                " + _vm._s(_vm.interpret(item, c)) + "\n              ")]], {
         "row": item,
         "column": c,
         "item": _vm.interpret(item, c)
@@ -1029,12 +1036,12 @@ var __vue_render__$6 = function __vue_render__() {
         "row": item,
         "hover": _vm.isHover(item[_vm.pkey])
       })], 2);
-    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-e71baba8>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
+    }), _vm._ssrNode(" "), _vm.actioncolumn ? _vm._ssrNode("<td data-v-ae671ac2>", "</td>", [_vm._t("action", [_vm._v("\n            --\n          ")], {
       "item": item,
       "row": item,
       "hover": _vm.isHover(item[_vm.pkey])
     })], 2) : _vm._e()], 2);
-  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-e71baba8>" + (_vm.selectable ? "<td data-v-e71baba8></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-e71baba8>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
+  }), _vm._ssrNode(" " + (_vm.items.length == 0 ? "<tr class=\"select-td text-center\" data-v-ae671ac2>" + (_vm.selectable ? "<td data-v-ae671ac2></td>" : "<!---->") + " <td" + _vm._ssrAttr("colspan", _vm.columnsSelecteds.length) + " data-v-ae671ac2>No hay datos</td></tr>" : "<!---->"))], 2)], 2), _vm._ssrNode(" "), _vm._t("paginate", null, {
     "perpage": _vm.limit
   }), _vm._ssrNode(" "), _vm.showConfigTable ? _c('modal-component', {
     attrs: {
@@ -1060,7 +1067,7 @@ var __vue_render__$6 = function __vue_render__() {
               value: _vm.columnsSelecteds,
               expression: "columnsSelecteds"
             }],
-            staticClass: "form-control",
+            class: _vm.classInputs,
             attrs: {
               "type": "checkbox"
             },
@@ -1094,7 +1101,7 @@ var __vue_render__$6 = function __vue_render__() {
         }), 0)])];
       },
       proxy: true
-    }], null, false, 1350803417)
+    }], null, false, 4252802422)
   }) : _vm._e(), _vm._ssrNode(" "), _vm._t("append")], 2);
 };
 
@@ -1103,8 +1110,8 @@ var __vue_staticRenderFns__$6 = [];
 
 var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-e71baba8_0", {
-    source: ".loading[data-v-e71baba8]{overflow:hidden}.loading[data-v-e71baba8]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-e71baba8]{font-size:10px;font-weight:700}table[data-v-e71baba8]{max-height:250px;overflow:scroll}input[data-v-e71baba8]{height:17px}.scrollable-y[data-v-e71baba8]{overflow-y:auto}.select-td[data-v-e71baba8]{width:60px}.medium-td[data-v-e71baba8]{max-width:120px}.no-space-left[data-v-e71baba8]{padding-left:1px}.config-icon[data-v-e71baba8]{padding-left:0}.config-icon>i[data-v-e71baba8]{padding-top:10px}.col-1.config-icon.text-right[data-v-e71baba8]{padding-right:0}tr[data-v-e71baba8]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-ae671ac2_0", {
+    source: ".loading[data-v-ae671ac2]{overflow:hidden}.loading[data-v-ae671ac2]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-ae671ac2]{font-size:10px;font-weight:700}table[data-v-ae671ac2]{max-height:250px;overflow:scroll}input[data-v-ae671ac2]{height:17px}.scrollable-y[data-v-ae671ac2]{overflow-y:auto}.select-td[data-v-ae671ac2]{width:60px}.medium-td[data-v-ae671ac2]{max-width:120px}.no-space-left[data-v-ae671ac2]{padding-left:1px}.config-icon[data-v-ae671ac2]{padding-left:0}.config-icon>i[data-v-ae671ac2]{padding-top:10px}.col-1.config-icon.text-right[data-v-ae671ac2]{padding-right:0}tr[data-v-ae671ac2]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1112,10 +1119,10 @@ var __vue_inject_styles__$6 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$6 = "data-v-e71baba8";
+var __vue_scope_id__$6 = "data-v-ae671ac2";
 /* module identifier */
 
-var __vue_module_identifier__$6 = "data-v-e71baba8";
+var __vue_module_identifier__$6 = "data-v-ae671ac2";
 /* functional template */
 
 var __vue_is_functional_template__$6 = false;

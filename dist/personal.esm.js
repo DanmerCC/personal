@@ -458,6 +458,9 @@ var script$2 = {
     value: {
       type: Object,
       default: null
+    },
+    classInput: {
+      default: 'form-control'
     }
   },
   methods: {
@@ -516,7 +519,7 @@ var __vue_render__$2 = function () {
       expression: "ischecked"
     }],
     ref: "myinput",
-    staticClass: "form-control ",
+    class: _vm.classInput,
     attrs: {
       "type": "checkbox",
       "disabled": _vm.value.noselect
@@ -552,8 +555,8 @@ var __vue_staticRenderFns__$2 = [];
 
 const __vue_inject_styles__$2 = function (inject) {
   if (!inject) return;
-  inject("data-v-313bc5bd_0", {
-    source: "input[data-v-313bc5bd]{max-width:60px}",
+  inject("data-v-e9f7338e_0", {
+    source: "input[data-v-e9f7338e]{max-width:60px}",
     map: undefined,
     media: undefined
   });
@@ -561,7 +564,7 @@ const __vue_inject_styles__$2 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$2 = "data-v-313bc5bd";
+const __vue_scope_id__$2 = "data-v-e9f7338e";
 /* module identifier */
 
 const __vue_module_identifier__$2 = undefined;
@@ -814,6 +817,9 @@ var script$6 = {
     'drop-down2': __vue_component__$5
   },
   props: {
+    classInputs: {
+      default: 'form-control'
+    },
     columns: {
       default: () => []
     },
@@ -1214,6 +1220,7 @@ var __vue_render__$6 = function () {
       ref: "rowselectbox",
       refInFor: true,
       attrs: {
+        "classInput": _vm.classInputs,
         "checked": _vm.isSelected(item),
         "value": item
       },
@@ -1274,7 +1281,7 @@ var __vue_render__$6 = function () {
               value: _vm.columnsSelecteds,
               expression: "columnsSelecteds"
             }],
-            staticClass: "form-control",
+            class: _vm.classInputs,
             attrs: {
               "type": "checkbox"
             },
@@ -1308,7 +1315,7 @@ var __vue_render__$6 = function () {
         }), 0)])];
       },
       proxy: true
-    }], null, false, 1350803417)
+    }], null, false, 4252802422)
   }) : _vm._e(), _vm._v(" "), _vm._t("append")], 2);
 };
 
@@ -1317,8 +1324,8 @@ var __vue_staticRenderFns__$6 = [];
 
 const __vue_inject_styles__$6 = function (inject) {
   if (!inject) return;
-  inject("data-v-e71baba8_0", {
-    source: ".loading[data-v-e71baba8]{overflow:hidden}.loading[data-v-e71baba8]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-e71baba8]{font-size:10px;font-weight:700}table[data-v-e71baba8]{max-height:250px;overflow:scroll}input[data-v-e71baba8]{height:17px}.scrollable-y[data-v-e71baba8]{overflow-y:auto}.select-td[data-v-e71baba8]{width:60px}.medium-td[data-v-e71baba8]{max-width:120px}.no-space-left[data-v-e71baba8]{padding-left:1px}.config-icon[data-v-e71baba8]{padding-left:0}.config-icon>i[data-v-e71baba8]{padding-top:10px}.col-1.config-icon.text-right[data-v-e71baba8]{padding-right:0}tr[data-v-e71baba8]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
+  inject("data-v-ae671ac2_0", {
+    source: ".loading[data-v-ae671ac2]{overflow:hidden}.loading[data-v-ae671ac2]::before{content:'Cargando ..';display:block;text-align:center;font-family:Tahoma,sans-serif;font-size:24px;color:#eee;position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:50%;transform:translateY(-50%);height:20000px;line-height:20000px}tbody[data-v-ae671ac2]{font-size:10px;font-weight:700}table[data-v-ae671ac2]{max-height:250px;overflow:scroll}input[data-v-ae671ac2]{height:17px}.scrollable-y[data-v-ae671ac2]{overflow-y:auto}.select-td[data-v-ae671ac2]{width:60px}.medium-td[data-v-ae671ac2]{max-width:120px}.no-space-left[data-v-ae671ac2]{padding-left:1px}.config-icon[data-v-ae671ac2]{padding-left:0}.config-icon>i[data-v-ae671ac2]{padding-top:10px}.col-1.config-icon.text-right[data-v-ae671ac2]{padding-right:0}tr[data-v-ae671ac2]:hover{background:linear-gradient(5deg,#efefefab 10%,#adadad26 90%)}",
     map: undefined,
     media: undefined
   });
@@ -1326,7 +1333,7 @@ const __vue_inject_styles__$6 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$6 = "data-v-e71baba8";
+const __vue_scope_id__$6 = "data-v-ae671ac2";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;

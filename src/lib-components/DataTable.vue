@@ -62,6 +62,7 @@
             
           >
             <checkable-item
+            :classInput="classInputs"
               ref="rowselectbox"
               :checked="isSelected(item)"
               :value="item"
@@ -123,7 +124,7 @@
               <td>{{ col.name }}</td>
               <td>
                 <input
-                  class="form-control"
+                  :class="classInputs"
                   type="checkbox"
                   v-model="columnsSelecteds"
                   :value="col"
@@ -154,6 +155,9 @@ export default {
     'drop-down2':DropDown2
   },
   props: {
+    classInputs:{
+      default:'form-control'
+    },
     columns: {
       default: () => [],
     },
